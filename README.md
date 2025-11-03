@@ -1,35 +1,38 @@
-# Genomic project on tusk genes identification in Asian elephants (Elephas maximus)
+# WGS Variant Calling : Variant Calling with GATK | a Detailed NGS Analysis
 
-## Introduction
+## 1. Introduction
 
-In Asian elephants, it has been observed by Evans in the 1900s that Asian elephants display a strong sexual dimorphism by the only presence of tusk in males.
-Unlikely African elephants, only males display tusk, however the phenotype without tusk can also be found in males as well as females. 
+The aim of this protocle is to perform a series of steps to determine a set of genetic variants compiled in the ***VCF*** file. 
 
-This difference of phenotype still unexplained, and consequently the aim of this project is to identify the genes which are potentially associated with the phenotype tusk in Asian elephants. 
-For that, blood samples have been collected and DNA have been extracted and sequenced from the Myanmar Timber Enterprise (MTE) before 2021. Thanks to the India Institude Science (IISc) collaboration, the study covered 93 individuals. The analysis were based on analysis in Campbell-Staton et al., 2021 which have identified two genes involved in the expression and the growth of tusk in African elephants in an anthropogenetic selective pressure (i.e poaching and loss of tusk in African elephants). Theses genes are AMELX and MEP1A, which can also be find in mices. In this study, females were also taken into account for the analysis. In this study on Asian elephants, we will also take females into analysis of gene identification given they is a dimorphism context. 
+For that, I used GATK : **Genome Analysis ToolKit**
 
-This project is separated into three sections : **WGS Variant Calling**, **Pre-GWAS** and **GWAS**. 
+GATK is a standart tookit to analyse and identify variants in genome. GATK tools can be used individually or chained together into complete workflows. I followed the schematic picture in **README**  in the main branch. 
 
-## Project Part
+The reference for this workflow is called : _GCA.024166365.1_mEleMAX1_primary_haplotypes_genomic.fa_ 
+This reference have been used for India individuals and Myanmar individuals. Whole genome sequencing have been done for 28 and 65 individuals respectively, for a total of 93 individuals sequenced.
 
-### WGS Variant Calling
-The first part **WGS Variant Calling** is a workflow intitled "*Variant Calling Pipeline : GATK Best practise Germline short variant discovery (SNPs+Indels) workflow*" from this main source (source referenced after) :
- - > https://www.youtube.com/watch?v=iHkiQvxyr5c&t=1803s
- - > https://www.cog-genomics.org/plink/1.9/strat
- - > https://vcftools.sourceforge.net/man_latest.html 
- - > https://gatk.broadinstitute.org/hc/en-us/articles/360035890471-Hard-filtering-germline-short-variants
+For Myanmar individuals, all the ***.bam*** files and ***.vcf*** files were generated for all the individuals. 
+For India, the data comes from _Anubhab et al., 2024 :"Divergence and serial colonization shape genetic variation and define conservation units in Asian elephants"_.
+  > NCBI Bioproject link : _https://ncbi.nlm.nih.gov/bioproject/PRJNA1013751_
+  > All the ***.fastq*** files can be reach at : _https://www.ncbi.nlm.nih.gov/sra_
 
-The aim of this part is to start with sequencing reads and perform a series of steps to determine a set of genetic variants. We start with data preprocesssing, then variant discovery and finally filtering and annotation, to end with a clean VCF file, Analysis-ready. 
+There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and merge the final ***.bam*** and ***.vcf*** files to Myanmar files and have Analysis-ready vcf file for Pre-GWAS step. 
 
- 
-  <img width="834" height="452" alt="image" src="https://github.com/user-attachments/assets/60897ab0-24cc-4cd1-8974-b2775ab4661b" />
+For that, I followed those links: _www.youtube.com/watch?v=iHkiQvxyr5c_ & _https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-indels_
 
+## 2. Detailed protocol
 
-For this part, I used ***.sra*** files from NCBI collaborator project to download all the individual files on **Puhti** server from CSC, in order to convert them into **.fastq** and **.fastq.gz** files and then into **.bam** files to combine them to those for Myanmar. Before the recalibrate base quality scores and the conversion into .bam files, I used ***boostrapping***, because no known set of variants were available before this study to respect the bio-informatic protocol of variant calling. 
+### 2.1 Data pre-processing
 
-All the script are numeroted and explicitly intitled to make the protocol easier to follow. 
+This step only concerns indian individuals.
+For this first step, I started by downloading the ***.sra*** files stored in [NCBI  Bioproject link SRA](https://www.ncbi.nlm.nih.gov/sra), into Puhti server. Then I converted ***.sra*** files into ***.fastq*** files. All the individuals were paired-end sequenced, which means that individuals were sequenced in 5'3' and 3'5' directions. So the conversion returned two ***.fastq*** files for each individual [SEE 02.SCRIPT]. Then each ***.fastq*** files are controlled for quality with **fastqc** parameter. If any adapters were detected in the html returned files then ***.fastq*** files have to be trimmed. Here no adapters were found. 
 
-### Pre-GWAS
+Once I get the aligned read ***.bam***, I flagged the duplicate reads. During sequencing process the same DNA fragments may be sequenced multiple times. Duplicate reads can arise during sample preparation step that is library construction during PCR. Duplicate reads are not informative and can be evidence for or against a variant, so they can be elimate. Once flagged, duplicate reads will be ignored for the rest of the downstream category tools. To flag and eliminate duplicate reads, I used **MarkDuplicates Spark**.
+
+The last step of data pre-processing, is to recalibrate base quality scores. For that an algorithms is called to rely heavily on the quality scores that are assigned to individual bases in each sequencing read. The quality scores can tell us how much one particular base can be trust at one location. So if a base call with a low quality score, it means that this base is not sure. This quality score serve as evidence to decide on removing this base at this location.  
+For this step, I applied **Boostrapping**: In the case that no known set of variants is available for the system studied (i.e Asian elephants), a first step can be to generate a raw ***.vcf*** file filtered, but without using base quality score recalibration and filtering the variance to obtain high confidence set of variants and then using those variants as an input for the base quality score recalibration. 
+
+### 2.2 Variant discovery
 
 
 
