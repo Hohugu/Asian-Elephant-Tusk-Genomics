@@ -13,7 +13,7 @@ This project is separated into three sections : **WGS Variant Calling**, **Pre-G
 ## Project Part
 
 ### WGS Variant Calling
-The first part **WGS Variant Calling** is a workflow intitled "*Variant Calling Pipeline : GATK Best practise Germline short variant discovery (SNPs+Indels) workflow*" from this main source (source referenced after) :
+The first part **WGS Variant Calling** is a workflow intitled "*Variant Calling Pipeline : GATK Best practise Germline short variant discovery (SNPs+Indels) workflow*" from these sources :
  - > https://www.youtube.com/watch?v=iHkiQvxyr5c&t=1803s
  - > https://www.cog-genomics.org/plink/1.9/strat
  - > https://vcftools.sourceforge.net/man_latest.html 
