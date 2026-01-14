@@ -35,7 +35,7 @@ module load parallel
 find "$fastq_dir" -name "*.sra" | parallel -j $SLURM_CPUS_PER_TASK '
     sra_file={}
     out_dir=$(dirname "$sra_file")
-    echo "🧬 Conversion $(basename $sra_file) dans $out_dir"
+    echo "Conversion $(basename $sra_file) in $out_dir"
     fastq-dump --split-files --gzip "$sra_file" --outdir "$out_dir"
 '
 
