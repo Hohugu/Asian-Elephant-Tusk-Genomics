@@ -1,0 +1,61 @@
+#!/bin/bash
+#SBATCH --job-name=fastqc_WGS
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --output=logs/fastqc_WGS_%j.out
+#SBATCH --error=logs/fastqc_WGS_%j.err
+
+# ======================================================
+# FastQC for WGS FASTQ files (non-SRR samples only)
+# Smart resume: skip samples whose FastQC report already exists
+# ======================================================
+
+set -euo pipefail
+shopt -s nullglob
+
+module load biokit
+
+data="/scratch/project_2000886/Hoedric/GWAS_2025/data/GENOTYPE/Fastq"
+outdir="/scratch/project_2000886/Hoedric/GWAS_2025/results/FastQC"
+
+mkdir -p "$outdir"
+
+echo "=== Starting FastQC for WGS samples ==="
+echo "Start time: $(date)"
+echo "Input directory: $data"
+echo "Output directory: $outdir"
+echo "======================================="
+
+# Loop over all sample directories EXCLUDING SRR samples
+for sample_dir in "${data}"/*; do
+    sample_name=$(basename "$sample_dir")
+
+    # Skip SRR samples
+    if [[ "$sample_name" == SRR* ]]; then
+        continue
+    fi
+
+    echo "--- Sample: $sample_name ---"
+
+    # Loop over all FASTQ files in this sample directory
+    for fq in "${sample_dir}"/*.fastq.gz; do
+        base=$(basename "$fq" .fastq.gz)
+        report="${outdir}/${base}_fastqc.html"
+
+        # Skip if FastQC report already exists
+        if [ -f "$report" ]; then
+            echo "FastQC already exists for: $base — skipping."
+        else
+            echo "Running FastQC for: $base"
+            fastqc -t "$SLURM_CPUS_PER_TASK" -o "$outdir" "$fq"
+        fi
+    done
+
+done
+
+echo "======================================="
+echo "✅ FastQC WGS completed at: $(date)"
+
