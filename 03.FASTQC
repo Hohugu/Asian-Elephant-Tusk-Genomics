@@ -1,0 +1,45 @@
+#!/bin/bash
+#SBATCH --job-name=fastqc_genotype
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --output=logs/fastqc_%j.out
+#SBATCH --error=logs/fastqc_%j.err
+
+# ======================================================
+# Control quality of FASTQ files with FastQC
+# (version : relaunch only missing files)
+# ======================================================
+
+module load biokit
+
+data="/scratch/project_2000886/Hoedric/GWAS_2025/data/GENOTYPE/Fastq"
+outdir="/scratch/project_2000886/Hoedric/GWAS_2025/results/FastQC"
+
+mkdir -p $outdir
+
+echo "=== Start of quality contol FastQC ==="
+echo "Heure de début : $(date)"
+echo "Répertoire d’entrée : $data"
+echo "Répertoire de sortie : $outdir"
+echo "======================================================="
+
+# Loop on every .fastq.gz file founded
+for fq in ${data}/SRR*/SRR*_*.fastq.gz; do
+    base=$(basename $fq .fastq.gz)
+    report="${outdir}/${base}_fastqc.html"
+
+    # Check if fastqc report already exists
+    if [ -f "$report" ]; then
+        echo "FastQC present for : $base — ignored."
+    else
+        echo "Start FastQC for : $base"
+        fastqc -t $SLURM_CPUS_PER_TASK -o $outdir $fq
+    fi
+done
+
+echo "======================================================="
+echo "✅ FastQC analysis done : $(date)"
+
