@@ -11,13 +11,13 @@ GATK is a standart tookit to analyse and identify variants in genome. GATK tools
 The reference for this workflow is called : _GCA.024166365.1_mEleMAX1_primary_haplotypes_genomic.fa_ 
 This reference have been used for India individuals and Myanmar individuals. Whole genome sequencing have been done for 28 and 65 individuals respectively, for a total of 93 individuals sequenced.
 
-For Myanmar individuals, all the ***.bam*** files and ***.vcf*** files were generated for all the individuals. 
-For India, the data comes from _Anubhab et al., 2024 :"Divergence and serial colonization shape genetic variation and define conservation units in Asian elephants"_.
+For Myanmar individuals, the ***.fastq*** files are stored in online platform ALLAS from CSC and are not public. 
+For India, the data comes from [_A. Khan et al., 2024_](https://doi.org/10.1016/j.cub.2024.08.062) _:"Divergence and serial colonization shape genetic variation and define conservation units in Asian elephants"_.
   > NCBI Bioproject link : _https://ncbi.nlm.nih.gov/bioproject/PRJNA1013751_
 
   > All the ***.fastq*** files can be reach at : _https://www.ncbi.nlm.nih.gov/sra_
 
-There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and merge the final ***.bam*** and ***.vcf*** files to Myanmar files and have Analysis-ready vcf file for Pre-GWAS step. 
+There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and convert the ***.fastq*** files of Myanmar and Indian elephants to ***.bam*** files. Then the ***.bam*** files will be also convert after several steps into a final ***.vcf*** file to have Analysis-ready vcf file for Pre-GWAS step. 
 
 For that, I followed those links: _www.youtube.com/watch?v=iHkiQvxyr5c_ & _https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-indels_
 
@@ -25,15 +25,15 @@ For that, I followed those links: _www.youtube.com/watch?v=iHkiQvxyr5c_ & _https
 
 ### 2.1 Data pre-processing & Variant discorery
 
-This step only concerns indian individuals.
-For this first step, I started by downloading the ***.sra*** files stored in [NCBI  Bioproject link SRA](https://www.ncbi.nlm.nih.gov/sra), into Puhti server. Then I converted ***.sra*** files into ***.fastq*** files. All the individuals were paired-end sequenced, which means that individuals were sequenced in 5'3' and 3'5' directions. So the conversion returned two ***.fastq*** files for each individual [SEE 02.SCRIPT]. Then each ***.fastq*** files are controlled for quality with **fastqc** parameter. If any adapters were detected in the html returned files then ***.fastq*** files have to be trimmed. Here no adapters were found. 
+For this first step, I started by downloading the ***.sra*** files of the Indian individuals stored in [NCBI  Bioproject link SRA](https://www.ncbi.nlm.nih.gov/sra), into Puhti server. Then I converted ***.sra*** files into ***.fastq*** files with **fastq-dump** fonction. All the individuals were paired-end sequenced, which means that individuals were sequenced in 5'3' and 3'5' directions. So the conversion returns 2 ***.fastq*** files for each individual [SEE 02.SCRIPT]. Then each ***.fastq*** files are controlled for quality with **fastqc** parameter [SEE 03.SCRIPT]. If any adapters were detected in the html returned files then ***.fastq*** files have to be trimmed. Here no adapters were found in the html generated files and very good quality has been returned. 
 
-Once I get the aligned read ***.bam***, I flagged the duplicate reads. During sequencing process the same DNA fragments may be sequenced multiple times. Duplicate reads can arise during sample preparation step that is library construction during PCR. Duplicate reads are not informative and can be evidence for or against a variant, so they can be elimate. Once flagged, duplicate reads will be ignored for the rest of the downstream category tools. To flag and eliminate duplicate reads, I used **MarkDuplicates Spark**.
+Once I get the aligned read ***.bam*** with **bwa mem**, I flagged the duplicate reads with ***MarkDuplicates Spark***. During sequencing process the same DNA fragments may be sequenced multiple times. Duplicate reads can arise during sample preparation step that is library construction during PCR. Duplicate reads are not informative and can be evidence for or against a variant, so they can be elimate. Once flagged, duplicate reads will be ignored for the rest of the downstream category tools. [SEE 04.SCRIPT]
 
 The last step of data pre-processing, is to recalibrate base quality scores. For that an algorithms is called to rely heavily on the quality scores that are assigned to individual bases in each sequencing read. The quality scores can tell us how much one particular base can be trust at one location. So if a base call with a low quality score, it means that this base is not sure. This quality score serve as evidence to decide on removing this base at this location.  
-For this step, I applied **Boostrapping**: In the case that no known set of variants is available for the system studied (i.e Asian elephants), a first step can be to generate a raw ***.vcf*** file filtered, but without using base quality score recalibration and filtering the variance to obtain high confidence set of variants and then using those variants as an input for the base quality score recalibration. 
+For this step, **Boostrapping** can be used: In the case that no known set of variants is available for the system studied (i.e Asian elephants), a first step can be to generate a raw ***.vcf*** file with standard filtration, but without using base quality score recalibration and filtering the variance to obtain high confidence set of variants and then using those variants as an input for the base quality score recalibration. This step is recommended but optional. As in this study, we lack of known variant and in a matter of time and HPC's space, I had to skip this step, but once the results done, it totally possible to re-run the process from ***.bam*** files and configurate **Boostrapping**, to the end compare with first results.
 
-For the **Variant discovery** step, the parameter _HaplotypeCaller_ is used from GATK, and returns a ***.vcf*** file. According the protocol, one file is generated with SNPs and another with indels, with their respective index file. _HaplotypeCaller_ is used to call variance from the reads. The choice of variant calling algorithm has to be dependent on certain critera. _HaplotypeCaller_ can handle multiple samples but it is not recommended to use it when you are trying to analyse more than 100 samples at a time. 
+For the **Variant discovery** step, the parameter ***HaplotypeCaller*** is used from GATK, and returns a ***g.vcf*** file for each individuals [SEE 05.SCRIPT]. According the protocol, one file is generated with SNPs and another with indels, with their respective index file. ***HaplotypeCaller*** is used to call variance from the reads. The choice of variant calling algorithm has to be dependent on certain critera. ***HaplotypeCaller*** can handle multiple samples but it is not recommended to use it when you are trying to analyse more than 100 samples at a time. In our study, I took the choice to apply ***HaplotypeCaller*** only for 1 individual at a time, to avoid bad scalability and use large memory and CPU.
+According to the [Broad Institute’s GATK documentation](https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller?utm_source=chatgpt.com), the recommended germline variant calling workflow is to run ***HaplotypeCaller*** in GVCF mode per individual to produce single-sample gVCFs, then consolidate those gVCFs using ***GenomicsDBImport*** (or CombineGVCFs) [SEE 06.SCRIPT], and finally perform joint genotyping using ***GenotypeGVCFs*** to produce a multi-sample VCF [SEE 07.SCRIPT].
 
 ### 2.2 Filtering and Annotation
 
@@ -56,3 +56,5 @@ The filter site-level and sample-levels can be found more in detail in [GATK tra
 Following, a resume of the filter (source : https://www.youtube.com/watch?v=XZ8scaScfjw ) 
 
 <img width="954" height="453" alt="image" src="https://github.com/user-attachments/assets/635ddfe0-7edc-431b-98b8-750097a8aeef" />
+
+I didn't use this step of filtering because in the pre-GWAS step, initialization and filtering are performed to prepare the data for the GWAS [SEE Pre-GWAS branch].
