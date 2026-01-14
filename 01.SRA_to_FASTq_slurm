@@ -1,0 +1,45 @@
+#!/bin/bash
+#SBATCH --job-name=convert_sra_fastq
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=24:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --output=logs/convert_sra_%j.out
+#SBATCH --error=logs/convert_sra_%j.err
+
+# ======================================================
+# Script SLURM to convert all files .sra into .fastq.gz
+# Each .fastq is generated in the same folder as .sra
+# ======================================================
+
+# === Repertory ===
+data="/scratch/project_2000886/Hoedric/GWAS_2025/data"
+fastq_dir="${data}/GENOTYPE/Fastq"
+toolkit="${data}/package/sratoolkit.3.2.1-ubuntu64/bin"
+
+# === Load or add toolkit ===
+export PATH=$toolkit:$PATH
+
+echo "=== Start conversion SRA → FASTQ ==="
+echo "Heure de début : $(date)"
+echo "Dossier de travail : $fastq_dir"
+echo "====================================================="
+
+# === Launch conversion in parallel ===
+# Each .sra founded will be treated on distinct CPU
+
+module load parallel
+
+find "$fastq_dir" -name "*.sra" | parallel -j $SLURM_CPUS_PER_TASK '
+    sra_file={}
+    out_dir=$(dirname "$sra_file")
+    echo "🧬 Conversion $(basename $sra_file) dans $out_dir"
+    fastq-dump --split-files --gzip "$sra_file" --outdir "$out_dir"
+'
+
+
+echo "==================================================="
+echo "✅ Conversion done : $(date)"
+
