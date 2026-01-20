@@ -1,0 +1,22 @@
+
+### Conversion
+samtools view -C -T /scratch/project_2000886/Elisa/reseq/GCA_024166365.1_mEleMax1_primary_haplotype_genomic.fa \
+  -o SAMPLENAME_sorted_duplicates_reads.cram \
+  SAMPLENAME_sorted_duplicates_reads.bam
+
+### Indexation
+samtools index SAMPLENAME_sorted_duplicates_reads.cram
+
+### Verification
+samtools quickcheck SAMPLENAME_sorted_duplicates_reads.cram
+
+### Flagstat
+samtools flagstat SAMPLENAME_sorted_duplicates_reads.cram > SAMPLENAME_sorted_duplicates_reads.flagstat.cram.txt
+
+
+### If need to go back to BAM
+#samtools view \
+#  -b \
+#  -T GCA_024166365.1_mEleMax1_primary_haplotype_genomic.fa \
+#  -o SAMPLENAME_sorted_duplicates_reads.bam \
+#  SAMPLENAME_sorted_duplicates_reads.cram
