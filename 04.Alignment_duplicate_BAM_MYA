@@ -1,0 +1,92 @@
+
+#!/bin/bash
+#SBATCH --job-name=04.AlignDup_Myanmar
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=32G
+#SBATCH --time=24:00:00
+#SBATCH --output=logs/%x_%A_%a.out
+#SBATCH --error=logs/%x_%A_%a.err
+#SBATCH --array=25-27%2
+
+set -euo pipefail
+
+module load biokit
+module load gatk
+
+# Paths
+ref="/scratch/project_2000886/Elisa/reseq/GCA_024166365.1_mEleMax1_primary_haplotype_genomic.fa"
+fastq_base="/scratch/project_2000886/Hoedric/GWAS_2025/data/GENOTYPE/Fastq"
+LIST="/scratch/project_2000886/Hoedric/GWAS_2025/data/PHENOTYPE/Myanmar_list.txt"
+outdir="/scratch/project_2000886/Hoedric/GWAS_2025/aligned_reads/BWA"
+tmp_base="/scratch/project_2000886/Hoedric/GWAS_2025/tmp_myanmar"
+
+mkdir -p "$outdir"
+mkdir -p "$tmp_base"
+
+# Select sample from Myanmar list
+SAMPLE=$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$LIST" | tr -d '[:space:]')
+
+echo "=================================="
+echo " Alignment and duplicate marking"
+echo " Sample: $SAMPLE"
+echo " Task:   ${SLURM_ARRAY_TASK_ID}"
+echo " Time:   $(date)"
+echo "=================================="
+
+# FASTQ files
+R1="${fastq_base}/${SAMPLE}/${SAMPLE}_R1_001.fastq.gz"
+R2="${fastq_base}/${SAMPLE}/${SAMPLE}_R2_001.fastq.gz"
+
+if [[ ! -f "$R1" || ! -f "$R2" ]]; then
+    echo "FASTQ files not found for $SAMPLE, skipping."
+    echo "R1: $R1"
+    echo "R2: $R2"
+    exit 0
+fi
+
+sorted_bam="${outdir}/${SAMPLE}.sorted.bam"
+dedup_bam="${outdir}/${SAMPLE}_sorted_duplicates_reads.bam"
+metrics="${outdir}/${SAMPLE}_markdup_metrics.txt"
+tmp_dir="${tmp_base}/${SAMPLE}"
+mkdir -p "$tmp_dir"
+
+# If final BAM already exists, skip (resume safely)
+if [[ -f "$dedup_bam" ]]; then
+    echo "Final BAM already exists for $SAMPLE, skipping."
+    exit 0
+fi
+
+# 1. Alignment + sorting
+echo "Step 1: Running BWA-MEM alignment and sorting"
+bwa mem -t "$SLURM_CPUS_PER_TASK" \
+    -R "@RG\tID:${SAMPLE}\tPL:ILLUMINA\tSM:${SAMPLE}" \
+    "$ref" "$R1" "$R2" \
+| samtools sort -@ 8 -o "$sorted_bam" -
+
+echo "Sorted BAM created: $sorted_bam"
+
+# 2. Mark duplicates (non-Spark)
+echo "Step 2: Running GATK MarkDuplicates (non-Spark)"
+echo "Input BAM:  $sorted_bam"
+echo "Output BAM: $dedup_bam"
+echo "Metrics:    $metrics"
+echo "Tmp dir:    $tmp_dir"
+
+gatk MarkDuplicates \
+    -I "$sorted_bam" \
+    -O "$dedup_bam" \
+    -M "$metrics" \
+    --TMP_DIR "$tmp_dir" \
+    --VALIDATION_STRINGENCY SILENT \
+    --CREATE_INDEX true
+
+echo "Deduplicated BAM created: $dedup_bam"
+
+# 3. Cleanup intermediate sorted BAM
+rm -f "$sorted_bam"
+echo "Removed intermediate BAM: $sorted_bam"
+
+echo "Finished sample $SAMPLE at $(date)"
+
