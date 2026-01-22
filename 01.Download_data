@@ -1,0 +1,25 @@
+#!/bin/bash
+# Download and conversion of SRA list into FASTQ.gz
+
+# === Directories ===
+Geno="/scratch/project_2000886/Hoedric/GWAS_2025/data/GENOTYPE/Fastq"
+script="/scratch/project_2000886/Hoedric/GWAS_2025/scripts"
+INPUT_FILE="/scratch/project_2000886/Hoedric/GWAS_2025/data/PHENOTYPE/SRA_SRR_list.txt"
+
+# === Add SRA Toolkit to PATH ===
+export PATH=/scratch/project_2000886/Hoedric/GWAS_2025/data/package/sratoolkit.3.2.1-ubuntu64/bin:$PATH
+
+# === Download .sra files ===
+while read line; do
+    echo "🔹 Downloading $line ..."
+    prefetch "$line" --max-size 100G --output-directory "$Geno"
+done < "$INPUT_FILE"
+
+# === Convert each .sra to FASTQ.gz ===
+for sra in $(cat "$INPUT_FILE"); do
+    echo "🔹 Converting $sra to FASTQ.gz ..."
+    fastq-dump --split-files --gzip "$Geno/$sra.sra" --outdir "$Geno"
+done
+
+echo "All downloads and conversions completed."
+
