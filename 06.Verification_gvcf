@@ -1,25 +1,25 @@
 module load samtools/1.21
 
 # Check if the file is trimmed or not
-zcat 3297.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "zcat OK"
+zcat XXX.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "zcat OK"
 
 # Check that index tabix works
-tabix -H 3297.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "tabix header OK"
+tabix -H XXX.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "tabix header OK"
 
 #Check that VCF is valide (#CHROM present)
-zcat 3297.g.vcf.gz.tmp.31306257.9 | grep -m1 '^#CHROM' && echo "#CHROM OK"
+zcat XXX.g.vcf.gz.tmp.31306257.9 | grep -m1 '^#CHROM' && echo "#CHROM OK"
 
 #Verification that tabix can read region
-contig=$(tabix -l 3297.g.vcf.gz.tmp.31306257.9 | head -n1)
-tabix 3297.g.vcf.gz.tmp.31306257.9 "${contig}:1-1" >/dev/null && echo "tabix query OK"
+contig=$(tabix -l XXX.g.vcf.gz.tmp.31306257.9 | head -n1)
+tabix XXX.g.vcf.gz.tmp.31306257.9 "${contig}:1-1" >/dev/null && echo "tabix query OK"
 
 #Rename files
-mv 3297.g.vcf.gz.tmp.31306257.9 3297.g.vcf.gz
-mv 3297.g.vcf.gz.tmp.31306257.9.tbi 3297.g.vcf.gz.tbi
+mv XXX.g.vcf.gz.tmp.31306257.9 XXX.g.vcf.gz
+mv XXX.g.vcf.gz.tmp.31306257.9.tbi XXX.g.vcf.gz.tbi
 
 #Remove VCF
-rm -f 3297.g.vcf.tmp.31306257.9.vcf
+rm -f XXX.g.vcf.tmp.31306257.9.vcf
 
 #Last Verification
-tabix -H 3297.g.vcf.gz >/dev/null && echo "FINAL tabix OK"
-zcat 3297.g.vcf.gz | grep -m1 '^#CHROM'
+tabix -H XXX.g.vcf.gz >/dev/null && echo "FINAL tabix OK"
+zcat XXX.g.vcf.gz | grep -m1 '^#CHROM'
