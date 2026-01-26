@@ -1,0 +1,142 @@
+#!/bin/bash
+#SBATCH --job-name=HC_GVCF
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=32G
+#SBATCH --output=/scratch/project_2000886/Hoedric/GWAS_2025/reads/gvcf/logs/gvcf_%A_%a.out
+#SBATCH --error=/scratch/project_2000886/Hoedric/GWAS_2025/reads/gvcf/logs/gvcf_%A_%a.err
+#SBATCH --array=1-93%2
+
+set -euo pipefail
+
+module purge
+module load gatk/4.5.0.0
+module load samtools/1.21
+echo "[ENV] tabix=$(which tabix 2>/dev/null || echo MISSING)" >&2
+echo "[ENV] bgzip=$(which bgzip 2>/dev/null || echo MISSING)" >&2
+
+echo "[ENV] samtools=$(samtools --version | head -n1 2>/dev/null || echo MISSING)" >&2
+echo "[ENV] tabix_ver=$(tabix --version 2>/dev/null | head -n1 || echo MISSING)" >&2
+
+BASE="/scratch/project_2000886/Hoedric/GWAS_2025"
+IN_DIR="${BASE}/aligned_reads/BWA"
+OUT_DIR="${BASE}/reads/gvcf"
+LOG_DIR="${OUT_DIR}/logs"
+
+SAMPLE_LIST="${BASE}/data/PHENOTYPE/sample_list_India_Myanmar.txt"
+REF="/scratch/project_2000886/Elisa/reseq/GCA_024166365.1_mEleMax1_primary_haplotype_genomic.fa"
+
+mkdir -p "$OUT_DIR" "$LOG_DIR"
+
+# Verification if bgzip/tabix exist (on some clusters tabix is in bcftools/htslib)
+command -v bgzip >/dev/null 2>&1 || { echo "ERROR: bgzip not found in PATH"; exit 1; }
+command -v tabix >/dev/null 2>&1 || { echo "ERROR: tabix not found in PATH"; exit 1; }
+
+THREADS="${SLURM_CPUS_PER_TASK:-8}"
+
+SAMPLE="$(sed -n "${SLURM_ARRAY_TASK_ID}p" "$SAMPLE_LIST" | tr -d '\r' || true)"
+if [[ -z "${SAMPLE}" ]]; then
+  echo "ERROR: No sample for task ${SLURM_ARRAY_TASK_ID}"
+  exit 1
+fi
+
+SUM="${LOG_DIR}/summary_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.tsv"
+echo -e "sample\tstatus\tinput\tgvcf\tmessage" > "$SUM"
+
+# Skip ambigous names type "3357or3352" , let see later
+if echo "$SAMPLE" | grep -qiE 'or'; then
+  echo -e "${SAMPLE}\tSKIP\tNA\tNA\tAmbiguous_sample_name_contains_or" >> "$SUM"
+  exit 0
+fi
+
+# Choose input : CRAM first, else BAM
+CRAM="${IN_DIR}/${SAMPLE}_sorted_duplicates_reads.cram"
+BAM="${IN_DIR}/${SAMPLE}_sorted_duplicates_reads.bam"
+
+INPUT=""
+if [[ -f "$CRAM" ]]; then
+  INPUT="$CRAM"
+elif [[ -f "$BAM" ]]; then
+  INPUT="$BAM"
+else
+  echo -e "${SAMPLE}\tSKIP\tNA\tNA\tNo_BAM_or_CRAM_found" >> "$SUM"
+  exit 0
+fi
+
+# Check REF 
+if [[ ! -f "$REF" ]]; then
+  echo -e "${SAMPLE}\tFAIL\t${INPUT}\tNA\tReference_missing" >> "$SUM"
+  exit 0
+fi
+if [[ ! -f "${REF}.fai" ]]; then
+  echo -e "${SAMPLE}\tFAIL\t${INPUT}\tNA\tReference_fai_missing" >> "$SUM"
+  exit 0
+fi
+
+# dict :  .fa ou .fasta 
+DICT="${REF%.*}.dict"
+if [[ ! -f "$DICT" ]]; then
+  echo -e "${SAMPLE}\tFAIL\t${INPUT}\tNA\tReference_dict_missing_expected_${DICT}" >> "$SUM"
+  exit 0
+fi
+
+OUT="${OUT_DIR}/${SAMPLE}.g.vcf.gz"
+TMP_VCF="${OUT_DIR}/${SAMPLE}.g.vcf.tmp.${SLURM_ARRAY_JOB_ID}.${SLURM_ARRAY_TASK_ID}.vcf"
+TMP_GZ="${OUT}.tmp.${SLURM_ARRAY_JOB_ID}.${SLURM_ARRAY_TASK_ID}"
+
+# Skip if already OK (gvcf + index)
+if [[ -f "$OUT" && -f "${OUT}.tbi" ]]; then
+  echo -e "${SAMPLE}\tSKIP\t${INPUT}\t${OUT}\tGVCF_exists" >> "$SUM"
+  exit 0
+fi
+
+# Clean left tmp (inclut idx/tbi éventuels)
+rm -f "$TMP_VCF" "${TMP_VCF}.idx" "$TMP_GZ" "${TMP_GZ}.tbi" "${TMP_GZ}.idx" || true
+
+# --- 1) HaplotypeCaller -> VCF non-compressed ---
+# Note: --create-output-variant-index false évite la création de .idx tribble
+gatk --java-options "-Xmx28g" HaplotypeCaller \
+  -R "$REF" \
+  -I "$INPUT" \
+  -O "$TMP_VCF" \
+  -ERC GVCF \
+  --native-pair-hmm-threads "$THREADS" \
+  --create-output-variant-index false
+
+# Sécurity : virer tout index tribble parasite si jamais il apparaît
+rm -f "${TMP_VCF}.idx" "${TMP_GZ}.idx" "${TMP_GZ}.idx.tmp" "${TMP_VCF}.idx.tmp" || true
+
+# --- 2) BGZF + tabix ---
+bgzip -@ "$THREADS" -c "$TMP_VCF" > "$TMP_GZ"
+tabix -f -p vcf "$TMP_GZ"
+
+# Check BGZF
+# (htsfile est souvent dispo via samtools, sinon on saute la vérif)
+if command -v htsfile >/dev/null 2>&1; then
+  if ! htsfile "$TMP_GZ" | grep -qi 'BGZF'; then
+    echo -e "${SAMPLE}\tFAIL\t${INPUT}\t${TMP_GZ}\tNot_BGZF_after_bgzip" >> "$SUM"
+    exit 1
+  fi
+fi
+
+# --- 3) Validation ---
+echo "[CHECK] #CHROM line:" >&2
+if ! zcat "$TMP_GZ" | grep -m1 '^#CHROM' >&2; then
+  echo -e "${SAMPLE}\tFAIL\t${INPUT}\t${TMP_GZ}\tMissing_#CHROM_header" >> "$SUM"
+  exit 1
+fi
+
+echo "[CHECK] tabix header read:" >&2
+tabix -H "$TMP_GZ" >/dev/null
+echo "[CHECK] tabix OK" >&2
+
+
+# --- 4) Publication atomic ---
+mv -f "$TMP_GZ" "$OUT"
+mv -f "${TMP_GZ}.tbi" "${OUT}.tbi"
+rm -f "$TMP_VCF"
+
+echo -e "${SAMPLE}\tOK\t${INPUT}\t${OUT}\tDone_BGZF_TBI" >> "$SUM"
+
