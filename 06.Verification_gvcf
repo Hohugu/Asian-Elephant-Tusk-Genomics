@@ -23,3 +23,5 @@ rm -f XXX.g.vcf.tmp.31306257.9.vcf
 #Last Verification
 tabix -H XXX.g.vcf.gz >/dev/null && echo "FINAL tabix OK"
 zcat XXX.g.vcf.gz | grep -m1 '^#CHROM'
+
+bcftools stats XXX.g.vcf.gz > /dev/null && echo "bcftools stats OK"
