@@ -15,7 +15,7 @@ For Myanmar individuals, the ***.fastq*** files are stored in online platform AL
 For India, the data comes from [_A. Khan et al., 2024_](https://doi.org/10.1016/j.cub.2024.08.062) _:"Divergence and serial colonization shape genetic variation and define conservation units in Asian elephants"_.
   > NCBI Bioproject link : _https://ncbi.nlm.nih.gov/bioproject/PRJNA1013751_
 
-  > All the ***.fastq*** files can be reach at : _https://www.ncbi.nlm.nih.gov/sra_
+  > All the ***.fastq*** files can be reach at : [_https://www.ncbi.nlm.nih.gov/sra_](https://trace.ncbi.nlm.nih.gov/Traces/?run=SRR25983372)
 
 There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and convert the ***.fastq*** files of Myanmar and Indian elephants to ***.bam*** files. Then the ***.bam*** files will be also convert after several steps into a final ***.vcf*** file to have Analysis-ready vcf file for Pre-GWAS step. 
 
@@ -25,7 +25,7 @@ For that, I followed those links: _www.youtube.com/watch?v=iHkiQvxyr5c_ & _https
 
 ### 2.1 Data pre-processing & Variant discorery
 
-For this first step, I started by downloading the ***.sra*** files of the Indian individuals stored in [NCBI  Bioproject link SRA](https://www.ncbi.nlm.nih.gov/sra), into Puhti server. Then I converted ***.sra*** files into ***.fastq*** files with **fastq-dump** fonction. All the individuals were paired-end sequenced, which means that individuals were sequenced in 5'3' and 3'5' directions. So the conversion returns 2 ***.fastq*** files for each individual [SEE 02.SRA_to_FASTq_slurm]. Then each ***.fastq*** files are controlled for quality with **fastqc** parameter [SEE 03.FASTQC MYA and SRR]. If any adapters were detected in the html returned files then ***.fastq*** files have to be trimmed. Here no adapters were found in the html generated files and very good quality has been returned. 
+For this first step, I started by downloading the ***.sra*** files of the Indian individuals stored in [NCBI  Bioproject link SRA](https://trace.ncbi.nlm.nih.gov/Traces/?run=SRR25983372), into Puhti server. Then I converted ***.sra*** files into ***.fastq*** files with **fastq-dump** fonction. All the individuals were paired-end sequenced, which means that individuals were sequenced in 5'3' and 3'5' directions. So the conversion returns 2 ***.fastq*** files for each individual [SEE 02.SRA_to_FASTq_slurm]. Then each ***.fastq*** files are controlled for quality with **fastqc** parameter [SEE 03.FASTQC MYA and SRR]. If any adapters were detected in the html returned files then ***.fastq*** files have to be trimmed. Here no adapters were found in the html generated files and very good quality has been returned. 
 
 Once I get the aligned read ***.bam*** with **bwa mem**, I flagged the duplicate reads with ***MarkDuplicates Spark***. During sequencing process the same DNA fragments may be sequenced multiple times. Duplicate reads can arise during sample preparation step that is library construction during PCR. Duplicate reads are not informative and can be evidence for or against a variant, so they can be elimate. Once flagged, duplicate reads will be ignored for the rest of the downstream category tools. [SEE 04.Alignment_duplicate_BAM]
 
