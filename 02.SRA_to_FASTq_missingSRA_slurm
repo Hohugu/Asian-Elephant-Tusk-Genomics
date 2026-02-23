@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --job-name=convert_missing_fastq
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --output=logs/convert_sra_%j.out
+#SBATCH --error=logs/convert_sra_%j.err
+
+# ======================================================
+# Conversion .sra into .fastq.gz
+# ======================================================
+
+data="/scratch/project_2000886/Hoedric/GWAS_2025/data/GENOTYPE/Fastq"
+toolkit="/scratch/project_2000886/Hoedric/GWAS_2025/data/package/sratoolkit.3.2.1-ubuntu64/bin"
+
+export PATH=$toolkit:$PATH
+
+echo "=== Début de la conversion sélective avec fasterq-dump ==="
+echo "Heure de début : $(date)"
+echo "Dossier : $data"
+echo "=========================================================="
+
+for dir in ${data}/SRR*; do
+    sra_file="${dir}/$(basename $dir).sra"
+    fq1="${dir}/$(basename $dir)_1.fastq.gz"
+    fq2="${dir}/$(basename $dir)_2.fastq.gz"
+
+    # Vérifie si le .sra existe et si les .fastq.gz sont absents
+    if [ -f "$sra_file" ] && [ ! -f "$fq1" ] && [ ! -f "$fq2" ]; then
+        echo "🧬 Conversion de $(basename $sra_file) ..."
+        fasterq-dump "$sra_file" --split-files -e $SLURM_CPUS_PER_TASK -O "$dir"
+        gzip "$dir"/*.fastq
+        echo "✅ Conversion terminée pour $(basename $sra_file)"
+    else
+        echo "⏩ $(basename $dir) déjà converti ou fichier .sra manquant, saut."
+    fi
+done
+
+echo "=========================================================="
+echo "✅ Conversion sélective terminée à : $(date)"
