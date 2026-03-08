@@ -1,27 +1,31 @@
 module load samtools/1.21
 
-# Check if the file is trimmed or not
-zcat XXX.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "zcat OK"
+# 1. Vérifier que le flux BGZF est lisible
+bgzip -dc 6072.g.vcf.gz.tmp.32110661.40 >/dev/null && echo "bgzip stream OK"
 
-# Check that index tabix works
-tabix -H XXX.g.vcf.gz.tmp.31306257.9 >/dev/null && echo "tabix header OK"
+# 2. Vérifier que le fichier est bien BGZF
+htsfile 6072.g.vcf.gz.tmp.32110661.40
 
-#Check that VCF is valide (#CHROM present)
-zcat XXX.g.vcf.gz.tmp.31306257.9 | grep -m1 '^#CHROM' && echo "#CHROM OK"
+# 3. Vérifier que tabix peut lire le header
+tabix -H 6072.g.vcf.gz.tmp.32110661.40 >/dev/null && echo "tabix header OK"
 
-#Verification that tabix can read region
-contig=$(tabix -l XXX.g.vcf.gz.tmp.31306257.9 | head -n1)
-tabix XXX.g.vcf.gz.tmp.31306257.9 "${contig}:1-1" >/dev/null && echo "tabix query OK"
+# 4. Vérifier que le header VCF contient #CHROM
+tabix -H 6072.g.vcf.gz.tmp.32110661.40 | grep -m1 '^#CHROM' && echo "#CHROM OK"
 
-#Rename files
-mv XXX.g.vcf.gz.tmp.31306257.9 XXX.g.vcf.gz
-mv XXX.g.vcf.gz.tmp.31306257.9.tbi XXX.g.vcf.gz.tbi
+# 5. Vérifier qu'une requête tabix fonctionne
+contig=$(tabix -l 6072.g.vcf.gz.tmp.32110661.40 | head -n1)
+tabix 6072.g.vcf.gz.tmp.32110661.40 "${contig}:1-1" >/dev/null && echo "tabix query OK"
 
-#Remove VCF
-rm -f XXX.g.vcf.tmp.31306257.9.vcf
+# 6. Renommer vers fichier final
+mv 6072.g.vcf.gz.tmp.32110661.40 6072.g.vcf.gz
+mv 6072.g.vcf.gz.tmp.32110661.40.tbi 6072.g.vcf.gz.tbi
 
-#Last Verification
-tabix -H XXX.g.vcf.gz >/dev/null && echo "FINAL tabix OK"
-zcat XXX.g.vcf.gz | grep -m1 '^#CHROM'
+# 7. Supprimer le VCF temporaire non compressé
+rm -f 6072.g.vcf.tmp.32110661.40.vcf
 
-bcftools stats XXX.g.vcf.gz > /dev/null && echo "bcftools stats OK"
+# 8. Vérification finale
+tabix -H 6072.g.vcf.gz >/dev/null && echo "FINAL tabix OK"
+tabix -H 6072.g.vcf.gz | grep -m1 '^#CHROM'
+
+# 9. Vérification bcftools
+bcftools stats 6072.g.vcf.gz >/dev/null && echo "bcftools stats OK"
