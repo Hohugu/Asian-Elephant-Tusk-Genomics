@@ -1,11 +1,1 @@
-#/bin/bash
-
-# Following GATK4 best practices workflow
-#download data
-
-
-######## Prep files #########
-
-#download ref files
-
 
