@@ -1,0 +1,52 @@
+#!/bin/bash
+#SBATCH --job-name=GenomicsDBImport
+#SBATCH --account=project_2000886
+#SBATCH --partition=small
+#SBATCH --time=72:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
+
+set -euo pipefail
+
+module --force purge
+module load gatk
+
+WORKDIR="/scratch/project_2000886/Hoedric/GWAS_2025/scripts"
+OUTBASE="/scratch/project_2000886/Hoedric/GWAS_2025/results/genomicsdb"
+SAMPLE_MAP="${WORKDIR}/sample_map.txt"
+TMPDIR="${LOCAL_SCRATCH:-/tmp}/${SLURM_JOB_ID}"
+
+INTERVAL="$1"  #USE : sbatch 07.GenomicsDBImport SAMPLENAME
+DB_DIR="${OUTBASE}/${INTERVAL}"
+
+mkdir -p "${WORKDIR}/logs" "${OUTBASE}" "${TMPDIR}"
+cd "${WORKDIR}"
+
+if [[ ! -s "${SAMPLE_MAP}" ]]; then
+    echo "ERROR: sample_map.txt not found or empty: ${SAMPLE_MAP}"
+    exit 1
+fi
+
+echo "Using sample map : ${SAMPLE_MAP}"
+echo "Samples number : $(wc -l < "${SAMPLE_MAP}")"
+echo "Contig : ${INTERVAL}"
+echo "Workspace : ${DB_DIR}"
+
+if [[ -d "${DB_DIR}" ]]; then
+    echo "ERROR: workspace already exists: ${DB_DIR}"
+    echo "Remove it manually if you want to rerun this contig."
+    exit 1
+fi
+
+gatk --java-options "-Xmx56g -Djava.io.tmpdir=${TMPDIR}" GenomicsDBImport \
+    --genomicsdb-workspace-path "${DB_DIR}" \
+    --sample-name-map "${SAMPLE_MAP}" \
+    --intervals "${INTERVAL}" \
+    --reader-threads 4 \
+    --batch-size 20 \
+    --tmp-dir "${TMPDIR}"
+
+echo "GenomicsDBImport done for ${INTERVAL}"
+echo "Results : ${DB_DIR}"
