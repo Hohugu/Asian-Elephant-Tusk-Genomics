@@ -1,0 +1,13 @@
+### CM044020.1 can be replace by other contig names
+
+cd /scratch/project_2000886/Hoedric/GWAS_2025/results/genotyped_vcf
+module load biokit
+bcftools view -h CM044020.1.vcf.gz | head
+bcftools view -H CM044020.1.vcf.gz | wc -l
+bcftools query -l CM044020.1.vcf.gz | wc -l
+bcftools view -H CM044020.1.vcf.gz | cut -f1 | sort | uniq
+bcftools view CM044020.1.vcf.gz | head -n 50
+bcftools stats CM044020.1.vcf.gz > CM044020.1.stats.txt
+less CM044020.1.stats.txt
+bcftools view CM044020.1.vcf.gz > /dev/null
+bcftools view -r CM044020.1:1-1000000 CM044020.1.vcf.gz | less
