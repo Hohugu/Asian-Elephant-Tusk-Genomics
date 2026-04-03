@@ -37,44 +37,7 @@ To optimize the space on HPC, I converted the ***.bam*** files into ***.cram*** 
 For the **Variant discovery** step, the parameter ***HaplotypeCaller*** is used from GATK, and returns a ***g.vcf*** file for each individuals [SEE 06.GVCF]. A step of verification of files is applied to ensure the good use of ***g.vcf*** files for further steps. ***HaplotypeCaller*** is used to call variance from the ***.cram*** reads. The choice of variant calling algorithm has to be dependent on certain critera. ***HaplotypeCaller*** can handle multiple samples but it is not recommended to use it when you are trying to analyse more than 100 samples at a time. In our study, I took the choice to apply ***HaplotypeCaller*** only for 1 individual at a time, to avoid bad scalability, batch effects and use large memory and CPU.
 According to the [Broad Institute’s GATK documentation](https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller?utm_source=chatgpt.com), the recommended germline variant calling workflow is to run ***HaplotypeCaller*** in GVCF mode per individual to produce single-sample gVCFs, then consolidate those gVCFs using ***GenomicsDBImport*** (or CombineGVCFs) [SEE 07.GenomicsDBImport], and finally perform joint genotyping using ***GenotypeGVCFs*** to produce a multi-sample VCF [SEE 08.GenotypeGVCF].
 
-        🧍‍♂️ Individu 1        🧍‍♂️ Individu 2        🧍‍♂️ Individu 93
-              │                     │                      │
-              ▼                     ▼                      ▼
-      ┌─────────────────────────────────────────────────────────┐
-      │      HaplotypeCaller (mode GVCF, par individu)          │
-      └─────────────────────────────────────────────────────────┘
-              │                     │                      │
-              ▼                     ▼                      ▼
-        sample1.g.vcf       sample2.g.vcf         sample93.g.vcf
-                        (gVCF individuels)
-                              │
-                              ▼
-      ┌─────────────────────────────────────────────────────────┐
-      │     GenomicsDBImport (par contig, ex: CM044020.1)       │
-      │     → base de données optimisée (GenomicsDB)            │
-      └─────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                📦 GenomicsDB (tous les individus)
-                              │
-                              ▼
-      ┌─────────────────────────────────────────────────────────┐
-      │         GenotypeGVCFs (joint genotyping)                │
-      └─────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-        🧾 CM044020.1.vcf.gz (multi-échantillons)
-                              │
-                              ▼
-                (répéter pour chaque contig)
-                              │
-                              ▼
-      ┌─────────────────────────────────────────────────────────┐
-      │        concaténation (bcftools concat)                  │
-      └─────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-        🧾 all_contigs.vcf.gz (VCF final pour GWAS)
+![GATKprotocol](GenomicsDBImport&GenotypeVCF.png)
 
 ### 2.2 Filtering and Annotation
 
