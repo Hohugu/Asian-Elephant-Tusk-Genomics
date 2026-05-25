@@ -30,4 +30,15 @@ For this part, I used ***.sra*** files from NCBI collaborator project to downloa
 All the script are numeroted and explicitly intitled to make the protocol easier to follow. 
 
 ### Pre-GWAS
+For this step, I based all the steps on the manual from Physalia, called "introduction_to_GWAS", but also on other format ...
+This step concerns data pre-processing with initial and explonatory data analysis (IDA & EDA). Then, a quality control is effectuated, followed by the imputation step. I require different software and packages to compute the pipeline for data pre-processing but also for GWAS later : RStudio (R) using the R package rrBLUP, PLINK 1.9 (PLINK is a very powerful open-source genome analysis toolset, with a lot of computationally efficient functions for data pre-processing, filtering, formatting, and analysis), [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html). A R script is also provided to prepare and explore the phenotype and genomic data. 
 
+(From the introduction GWAS manual :) "
+**Initial data analysis (IDA)** mainly focuses on data cleaning, a first screening, and transformation (if necessary) to ensure data quality and confirm that our data set meets the relevant distributional and model assumptions. Data cleaning may include steps such as elimination of duplicate records, handling of missing values, identification of systematic errors, or correction of coding inconsistencies.
+
+**Exploratory data analysis (EDA)** is used to examine data sets and summarize their main characteristics. EDA helps to discover patterns in the data, spot anomalies and outliers, test a hypothesis and check our assumptions. EDA tells us what data can reveal beyond the formal modeling or hypothesis testing and provides a better understanding of data set variables and their interactions. It can also help determine if the statistical techniques you are considering for
+data analysis are appropriate. IDA and EDA often employ data visualization methods to check distributional characteristics, identify relationships between variables, identify potential cofactors, and spot inconsistencies. 
+
+We will run an IDA and EDA for both our phenotypic data and the genotypic data."
+
+In PreGWAS step, I will also conduct the Genotype filtering and then the Imputation. For the Imputation, I will use Beagle.
