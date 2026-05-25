@@ -30,7 +30,7 @@ For this part, I used ***.sra*** files from NCBI collaborator project to downloa
 All the script are numeroted and explicitly intitled to make the protocol easier to follow. 
 
 ### Pre-GWAS
-For this step, I based all the steps on the manual from Physalia, called "introduction_to_GWAS", but also on other format ...
+For this step, I based all the steps on the manual from Physalia, called "introduction_to_GWAS", but also on other format like GWAS tutorial available on https://cloufield.github.io/GWASTutorial/01_Dataset/
 This step concerns data pre-processing with initial and explonatory data analysis (IDA & EDA). Then, a quality control is effectuated, followed by the imputation step. I require different software and packages to compute the pipeline for data pre-processing but also for GWAS later : RStudio (R) using the R package rrBLUP, PLINK 1.9 (PLINK is a very powerful open-source genome analysis toolset, with a lot of computationally efficient functions for data pre-processing, filtering, formatting, and analysis), [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html). A R script is also provided to prepare and explore the phenotype and genomic data. 
 
 (From the introduction GWAS manual :) "
