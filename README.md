@@ -12,7 +12,9 @@ After EDA and QC, for 93 individuals, 28M variants are presents in the raw genot
 
 <img width="412" height="534" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/tusk_by_sex.png" /> <img width="412" height="534" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_sex.png" />
 
-Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population strucutre, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
+The heterozygosity rate between females and males are the same in average, despite a large variation for males. This figure means that both sexes dispose of an similare average level of heterozygosity. 
+
+Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population structure, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
 
 ## 02. Genotype filtering and Post EDQ/QC
 
