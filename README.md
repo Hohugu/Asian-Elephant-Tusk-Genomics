@@ -10,7 +10,8 @@ _Phenotypic data_ : The Phenotypic data were also explored in the same Rscript, 
 
 After EDA and QC, for 93 individuals, 28M variants are presents in the raw genotype data. The mean sample and variant missing are both equal to 1.03% with a median variant missing of 0, meaning that the majority of SNPs are complete and that sequencing and global genotyping is good. I detect that the phenotype is extremely correlated to sexe, as only males show a variability in tusk (i.e tusked or tuskless) while females are tuskless. This first observation allows to conlude on a strong sexual dimorphism on tusk phenotype. Statistically, this confounding factor may induced tusk signal to sexe signal. 
 
-
+<img width="512" height="634" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/tusk_by_sex.png" />
+<img width="512" height="634" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_sex.png" />
 
 Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population strucutre, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
 
