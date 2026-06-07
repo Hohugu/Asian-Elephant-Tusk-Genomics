@@ -35,13 +35,15 @@ For this step, **Boostrapping** can be used: In the case that no known set of va
 To optimize the space on HPC, I converted the ***.bam*** files into ***.cram*** files with a default compression level fixed at 5 [SEE 05.BAM_CRAM].
 
 For the **Variant discovery** step, the parameter ***HaplotypeCaller*** is used from GATK, and returns a ***g.vcf*** file for each individuals [SEE 06.GVCF]. A step of verification of files is applied to ensure the good use of ***g.vcf*** files for further steps. ***HaplotypeCaller*** is used to call variance from the ***.cram*** reads. The choice of variant calling algorithm has to be dependent on certain critera. ***HaplotypeCaller*** can handle multiple samples but it is not recommended to use it when you are trying to analyse more than 100 samples at a time. In our study, I took the choice to apply ***HaplotypeCaller*** only for 1 individual at a time, to avoid bad scalability, batch effects and use large memory and CPU.
-According to the [Broad Institute’s GATK documentation](https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller?utm_source=chatgpt.com), the recommended germline variant calling workflow is to run ***HaplotypeCaller*** in GVCF mode per individual to produce single-sample gVCFs, then consolidate those gVCFs using ***GenomicsDBImport*** (or CombineGVCFs) [SEE 07.GenomicsDBImport], and finally perform joint genotyping using ***GenotypeGVCFs*** to produce a multi-sample VCF [SEE 08.GenotypeGVCF].
+According to the [Broad Institute’s GATK documentation](https://gatk.broadinstitute.org/hc/en-us/articles/360042913231-HaplotypeCaller?utm_source=chatgpt.com), the recommended germline variant calling workflow is to run ***HaplotypeCaller*** in GVCF mode per individual to produce single-sample gVCFs, then consolidate those gVCFs using ***GenomicsDBImport*** (or CombineGVCFs) [SEE 07.GenomicsDBImport], and finally perform joint genotyping using ***GenotypeGVCFs*** to produce a multi-sample VCF [SEE 08.GenotypeGVCF]. The final step combining all the vcf files together is resume in [SEE 09.Concatenation_VCFs]. 
 
 This part of the protocole is resume in the following picture : 
 
   <img width="412" height="834" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/main/GenomicsDBI_GenotypeVCFs.png" />
 
 ### 2.2 Filtering and Annotation
+
+This part is facultative in our situation because the filtering step is planned before the GWAS [See Pre-GWAS part]. 
 
 Once the ***.vcf*** file is generated, a new filtering step can be done. For that, they are two filtering way :
 > - **Variant Quality Score Recalibration (VQSR)**
