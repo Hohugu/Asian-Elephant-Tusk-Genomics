@@ -6,7 +6,7 @@ Pre-GWAS step is a crucial step to generate the right file format but also to ex
 
 ## 01. IDA & EDA
 ### _1.1. Genomics data_
-The raw genomic data called "all_contigs.raw.vcf.gz" [See 01.WGS-Variant-Calling] is used to generate the first genomic files as output of the first script [01_init_fullgenome_plink_qc.slurm]. The frequencies, allele counting, genomics frequencies, the missingness, Hardy-Weinberg and Heterozygosity files were computed. From these files, the corresponding explonatory figures and tables were generated. 
+The raw genomic data called "all_contigs.raw.vcf.gz" [See 01.WGS-Variant-Calling] is used to generate the first genomic files as output of the first script [01_init_fullgenome_plink_qc.slurm]. The frequencies, allele counting, genomics frequencies, the missingness, Hardy-Weinberg and Heterozygosity files were computed. From these files, the corresponding explonatory figures and tables were generated. Contrary to the Physalia course manual, I do not preselected chromosomes to explore all the Asian elephant genomes. 
 
 
 
@@ -15,3 +15,6 @@ The Phenotypic data were explored using R in HPC puhti, but also verified in loc
 
 
 In PreGWAS step, I will also conduct the Genotype filtering and then the Imputation. For the Imputation, I will use Beagle.
+
+
+Similar as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389), I focused the analyses on the whole genome and not only chromosome 1 and X, to identify the regions 
