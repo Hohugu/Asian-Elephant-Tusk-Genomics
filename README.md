@@ -39,7 +39,7 @@ According to the [Broad Institute’s GATK documentation](https://gatk.broadinst
 
 This part of the protocole is resume in the following picture : 
 
-  <img width="412" height="834" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/main/GenomicsDBIGenotypeVCFs.png" />
+  <img width="412" height="834" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/main/GenomicsDBI_GenotypeVCFs.png" />
 
 ### 2.2 Filtering and Annotation
 
