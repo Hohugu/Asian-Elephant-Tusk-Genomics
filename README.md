@@ -41,7 +41,12 @@ This part of the protocole is resume in the following picture :
 
   <img width="412" height="834" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/main/GenomicsDBI_GenotypeVCFs.png" />
 
-### 2.2 Filtering and Annotation
+### 2.2 Final VCF metrics
+
+After concatenation and verification of the raw vcf file, I generate the metrics of the file. First the ratio Ts/Tv = 1.93. 
+The Ts/Tv Ratio is the transition rate of SNVs that pass the quality filters divided by the transversion rate of SNVs that pass the quality filters. Transitions are interchanges of purines (A, G) or of pyrimidines (C, T). Transversions are interchanges between purine and pyrimidine bases (for example, A to T). [Source1](https://support.illumina.com/help/BaseSpace_App_Enrichment_OLH_15050961/Content/Source/Informatics/Apps/SmallVariantsSummary_swBS_apps.htm) [Source2](https://pmc.ncbi.nlm.nih.gov/articles/PMC4308666/). The expected ratio is equal to 2, meaning that the ratio for Asian elephant is quite good for a raw callset on non-model species. A lot of variants is detected with 24,3 M of SNPs and 4,06M indels for 93 individuals. However, I detected a large number of singletons (Singleton SNPs = 2,6M and Singleton indels = 662k, so around 10.7% on 24,3 SNPs) and mutliallelic sites (n = 1,782,201, so around 6.3% of the total SNPs), which could mean the presence of repeted regions. 
+
+### 2.3 Filtering and Annotation
 
 This part is facultative in our situation because the filtering step is planned before the GWAS [See Pre-GWAS part]. 
 
