@@ -17,3 +17,11 @@ bcftools view all_contigs.raw.vcf.gz > /dev/null
 bcftools query -l all_contigs.raw.vcf.gz | wc -l
 bcftools stats all_contigs.raw.vcf.gz > all_contigs.raw.stats.txt
 
+# Number of total variants
+
+bcftools index -n all_contigs.raw.vcf.gz
+
+# Statistics general metrics
+
+bcftools stats all_contigs.raw.vcf.gz > all_contigs.raw.stats.txt
+
