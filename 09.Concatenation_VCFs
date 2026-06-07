@@ -1,0 +1,19 @@
+# Create ordinate list of VCFs
+
+bcftools view -h /scratch/project_2000886/Hoedric/GWAS_2025/reads/gvcf/4767.g.vcf.gz \
+| grep "^##contig" \
+| sed 's/.*ID=\([^,]*\),length=.*/\1/' \
+| awk '{print $1".vcf.gz"}' \
+> vcf_order.list
+
+# Concatenation
+
+bcftools concat -f vcf_order.list -Oz -o all_contigs.raw.vcf.gz
+tabix -p vcf all_contigs.raw.vcf.gz
+
+# Verification
+
+bcftools view all_contigs.raw.vcf.gz > /dev/null
+bcftools query -l all_contigs.raw.vcf.gz | wc -l
+bcftools stats all_contigs.raw.vcf.gz > all_contigs.raw.stats.txt
+
