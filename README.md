@@ -15,18 +15,33 @@ After EDA and QC, for 93 individuals, 28M variants are presents in the raw genot
 The measure of the level of heterozygosity between India and Myanmar shows a real difference between both populations.
 Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population structure, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
 
-## 02. Genotype filtering and Post EDQ/QC
+## 02. Genotype filtering and Post EDA/QC
 
 ### _2.1. Filtering_
 
-The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals). MAF measures the frequence of the variant in the population (e.g. MAF = 0.5, both alleles are balanced; MAF = 0.01, rare variant). MAF filters out the rare variants because rare SNPs are often noised, few informatives, give false positives. F_miss measures the percentages of missing genotypes per individuals (e.g. F_MISS = 0.40, means that the individuals have 40% of missing genotype, so bad quality). The lmiss measures the missing rate per variant (e.g. F_MISS = 0.60, means that SNP absent on 60% of individuals). Based on the EDA results, I started the filtering step with : 
-            
-            > - Variants with a minor allele frequency below 5% : **geno = 0.05**
-            > - Samples with missing call rates exceeding 5% : **mind = 0.05**
-            > - Variants with missing call rates exceeding 1% : **maf = 0.01**
+The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals) [SEE 03.filter_fullgenome_qc.slurm]. MAF measures the frequence of the variant in the population (e.g. MAF = 0.5, both alleles are balanced; MAF = 0.01, rare variant). MAF filters out the rare variants because rare SNPs are often noised, few informatives, give false positives. F_miss measures the percentages of missing genotypes per individuals (e.g. F_MISS = 0.40, means that the individuals have 40% of missing genotype, so bad quality). The lmiss measures the missing rate per variant (e.g. F_MISS = 0.60, means that SNP absent on 60% of individuals). Based on the EDA results, I started the filtering step with : 
 
+- _Variants with missing call rates exceeding 5% : **geno = 0.05**_
+  filters out all variants with missing call rates exceeding the provided value (default 0.1) to be removed.
+- _Samples with missing call rates exceeding 5% : **mind = 0.05**_
+  mind does the same for samples.
+- _Variants with a minor allele frequency below 1% : **maf = 0.01**_
+  maf filters out all variants with minor allele frequency below the provided threshold (default 0.01).
 
+### _2.2. Post EDA and Quality control_
 
+The Exploratory data analysis is realized once the raw data have been filtered, to control whether the previous patterns (i.e. population structure, difference between sexes and tusk types) have changed [SEE 04.postQC_EDA.R]. 
+
+DO the filtering script for raw_only_males
+DO the postQC_EDA script for raw_only_males
+
+ADD the script for males as 01.init_males_genome_plink_qc.slurm; 02.males_EDA_QC.R ; 03.filter_malesgenome_qc.slurm; 04.postQC_EDQ_males.R
+
+PUT images of tusk by sex (raw data), heterozygosity by sex (raw data), and heterozygosity by tusk (only males)
+
+## 03. Linquage desequilibrium and Principal component analysis
+
+Linquage desequilibrium (**LD**) and Principal component analysis (**PCA**). 
 
 In PreGWAS step, I will also conduct the Genotype filtering and then the Imputation. For the Imputation, I will use Beagle.
 
