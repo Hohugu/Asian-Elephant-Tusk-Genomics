@@ -21,9 +21,9 @@ Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures r
 
 The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals). MAF measures the frequence of the variant in the population (e.g. MAF = 0.5, both alleles are balanced; MAF = 0.01, rare variant). MAF filters out the rare variants because rare SNPs are often noised, few informatives, give false positives. F_miss measures the percentages of missing genotypes per individuals (e.g. F_MISS = 0.40, means that the individuals have 40% of missing genotype, so bad quality). The lmiss measures the missing rate per variant (e.g. F_MISS = 0.60, means that SNP absent on 60% of individuals). Based on the EDA results, I started the filtering step with : 
             
-            > _Variants with a minor allele frequency below 5% : **geno = 0.05**_
-            > _Samples with missing call rates exceeding 5% : **mind = 0.05**_
-            > _Variants with missing call rates exceeding 1% : **maf = 0.01**_
+            > - Variants with a minor allele frequency below 5% : **geno = 0.05**
+            > - Samples with missing call rates exceeding 5% : **mind = 0.05**
+            > - Variants with missing call rates exceeding 1% : **maf = 0.01**
 
 
 
