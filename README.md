@@ -36,7 +36,7 @@ The Exploratory data analysis is realized once the raw data have been filtered a
 
 <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/tusk_by_sex_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_sex_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_tusk_postqc.png" />
 
-<img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/maf_distribution_postqc_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/sample_missingness_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/variant_missingness_postqc.png" />
+<img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/maf_distribution_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/sample_missingness_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/variant_missingness_postqc.png" />
 
 Distributions have been cleaned especially for MAF and Missingness of variants.
 
