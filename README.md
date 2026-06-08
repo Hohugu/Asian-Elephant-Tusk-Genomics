@@ -30,14 +30,9 @@ The filtering step is realized at this moment of the pipeline based on filtering
 
 ### _2.2. Post EDA and Quality control_
 
-The Exploratory data analysis is realized once the raw data have been filtered, to control whether the previous patterns (i.e. population structure, difference between sexes and tusk types) have changed [SEE 04.postQC_EDA.R]. 
+The Exploratory data analysis is realized once the raw data have been filtered and for male only, to control whether the previous patterns (i.e. population structure, difference between sexes and tusk types) have changed [SEE 04.postQC_EDA.R]. 
 
-DO the filtering script for raw_only_males
-DO the postQC_EDA script for raw_only_males
-
-ADD the script for males as 01.init_males_genome_plink_qc.slurm; 02.males_EDA_QC.R ; 03.filter_malesgenome_qc.slurm; 04.postQC_EDQ_males.R
-
-PUT images of tusk by sex (raw data), heterozygosity by sex (raw data), and heterozygosity by tusk (only males)
+<img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/tusk_by_sex_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_sex_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_tusk_postqc.png" />
 
 ## 03. Linquage desequilibrium and Principal component analysis
 
