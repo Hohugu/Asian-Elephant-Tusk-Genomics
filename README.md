@@ -12,15 +12,20 @@ After EDA and QC, for 93 individuals, 28M variants are presents in the raw genot
 
 <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/tusk_by_sex.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_sex.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/heterozygosity_by_tusk.png" />
 
+The measure of the level of heterozygosity between India and Myanmar shows a real difference between both populations.
 Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population structure, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
-
-
 
 ## 02. Genotype filtering and Post EDQ/QC
 
 ### _2.1. Filtering_
 
-The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals). 
+The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals). MAF measures the frequence of the variant in the population (e.g. MAF = 0.5, both alleles are balanced; MAF = 0.01, rare variant). MAF filters out the rare variants because rare SNPs are often noised, few informatives, give false positives. F_miss measures the percentages of missing genotypes per individuals (e.g. F_MISS = 0.40, means that the individuals have 40% of missing genotype, so bad quality). The lmiss measures the missing rate per variant (e.g. F_MISS = 0.60, means that SNP absent on 60% of individuals). Based on the EDA results, I started the filtering step with : 
+            
+            > _Variants with a minor allele frequency below 5% : **geno = 0.05**_
+            > _Samples with missing call rates exceeding 5% : **mind = 0.05**_
+            > _Variants with missing call rates exceeding 1% : **maf = 0.01**_
+
+
 
 
 In PreGWAS step, I will also conduct the Genotype filtering and then the Imputation. For the Imputation, I will use Beagle.
