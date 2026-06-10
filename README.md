@@ -17,7 +17,7 @@ For India, the data comes from [_A. Khan et al., 2024_](https://doi.org/10.1016/
 
   > All the ***.fastq*** files can be reach at : [_https://www.ncbi.nlm.nih.gov/sra_](https://trace.ncbi.nlm.nih.gov/Traces/?run=SRR25983372)
 
-There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and convert the ***.fastq*** files of Myanmar and Indian elephants to ***.bam*** files. Then the ***.bam*** files will be also convert after several steps into a final ***.vcf*** file to have Analysis-ready vcf file for Pre-GWAS step. 
+There the aim of following Variant Calling with GATK protocol, is to generate ***.fastq*** files for India individuals and convert the ***.fastq*** files of Myanmar and Indian elephants to ***.bam*** files. Then the ***.bam*** files will be also convert after several steps into a final ***.vcf*** file to have Analysis-ready vcf file for [Pre-GWAS](https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/README.md#pre-genomic-wide-association-study---gwas) step. 
 
 For that, I followed those links: _www.youtube.com/watch?v=iHkiQvxyr5c_ & _https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-indels_
 
@@ -70,4 +70,4 @@ Following, a resume of the filter (source : https://www.youtube.com/watch?v=XZ8s
 
 <img width="954" height="453" alt="image" src="https://github.com/user-attachments/assets/635ddfe0-7edc-431b-98b8-750097a8aeef" />
 
-I didn't use this step of filtering because in the pre-GWAS step, initialization and filtering are performed to prepare the data for the GWAS [SEE Pre-GWAS branch].
+I didn't use this step of filtering because in the [Pre-GWAS](https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/README.md#pre-genomic-wide-association-study---gwas) step, initialization and filtering are performed to prepare the data for the GWAS [SEE [Pre-GWAS](https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/README.md#pre-genomic-wide-association-study---gwas) branch].
