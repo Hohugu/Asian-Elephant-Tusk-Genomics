@@ -18,6 +18,15 @@ The **model equation** :
 
 The script of this first GWAS model are available [SEE 08.GWAS_PLINK_logistic_PC5_PC10.slurm & 09.GWAS_QQ_Manhattan.R]. 
 
+### 2.3 Q-Q plots and Genomic Control Inflation Factor
+
+Visually, the observed line for Q-Q plot with 5PCs is under the expected line meaning that observed p-values are less extremes as expected. A Genomic Control Inflation Factor, ***lambda GC***,  equal to 1 is a perfect alignment between expected and observed. Over 1.1, it is inflation and under 1 the model is conservative, over-corrected or lack of power. Here lambda = 0.167, meaning that I probably lacking of power and that GWAS model is too conservative (pvalues too high and test statistics too low). The second Q-Q plot is the opposite with an inflation (lambda = 4.286) > 1, a signal of covariable numbers too high.
+
+The Genomic Control Inflation Factor is defined as : 
+> lambda GC = Median(Xobs)/Median(X1,nul)
+>   median(X1,nul) = 0.455
+>   Xobs = F-1|X1 (1-p)
+
 <img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC5.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC10.png" />
 
 
