@@ -46,7 +46,7 @@ Linquage desequilibrium (**LD**) and Principal component analysis (**PCA**) are 
 
 <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_population.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_sex.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_tusk.png" />
 
-<img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_population_males.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_tusk_males.png" />
+<img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_population_males.png" />                                                                                                                     <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/PCA_PC1_PC2_tusk_males.png" />
 
 
 
