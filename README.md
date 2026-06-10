@@ -29,7 +29,7 @@ The Genomic Control Inflation Factor is defined as :
 > 
 > X²obs = F-1|X²1 (1-p)
 
-Here lambda GC = 0.167, meaning that I probably lacking of power and that GWAS model is too conservative (pvalues too high and test statistics too low). The second Q-Q plot is the opposite with an inflation (lambda GC = 4.286) > 1, a signal of covariable numbers too high.
+Here lambda GC = 0.167, meaning that I probably lacking of power and that GWAS model is too conservative (pvalues too high and test statistics too low). The second Q-Q plot is the opposite with an inflation (lambda GC = 4.286) > 1, a signal that covariable numbers is too high.
 
 <img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC5.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC10.png" />
 
