@@ -1,10 +1,10 @@
 # Pre-Genomic Wide Association Study - GWAS
 
-## Introduction
+## 1.Introduction
 
 Pre-GWAS step is a crucial step to generate the right file format but also to explore the genomic data. I have based this protocol mostly on the Physalia GWAS course but also on [tutorial](https://cloufield.github.io/GWASTutorial/01_Dataset/) and [plink webpage](www.cog-genomics.org/plink/1.9/filter). PLINK (v.1.90b6.24), R, and biokit were used during the Pre-GWAS steps. As mentionned in the main README file, the pre-gwas step concerns data pre-processing with initial and explonatory data analysis (IDA and EDA respectively). This two first steps generated and used the files for data cleaning, descriptive informations and transformation to ensure to the right conformity of the files for gwas models, but also to examine and summarise data, discovery patterns or structuration that have to be taken into account for the model configuration. The Pre-GWAS also included the filtering step, and post filtering quality control on raw data (i.e including both sexes) and among males (i.e comparison between tusked and tuskless males). The LD pruning and PCA (population structure) are crucial steps to include control variables for GWAS models. Contrary to Physalia manual, I will not carry out the imputation step, as the genome is sufficiently large, with good coverage and very high quality, so there is no need to replace or simulate missing values. 
 
-## 01. IDA & EDA
+## 2. IDA & EDA
 _Genomics data_ : The raw genomic data called "all_contigs.raw.vcf.gz" [See 01.WGS-Variant-Calling] is used to generate the first genomic files as output of the first script [01_init_fullgenome_plink_qc.slurm]. PLINK conversion has been applied on the whole genome with a total genotyping rate of 0.989733. The genomics metrics, such as frequencies, allele counting, genomics frequencies, the missingness, Hardy-Weinberg and Heterozygosity files were computed. From these files, the corresponding explonatory figures and tables were generated. Contrary to the Physalia course manual, I do not preselected chromosomes to explore all the Asian elephant genomes. The EDA/quality control is done with R in HPC (i.e CSC/Puhti) [SEE 02.global_EDA_QC.R] to generate tables and visualize the genomics metrics. 
 _Phenotypic data_ : The Phenotypic data were also explored in the same Rscript, but also verified in local machine [See 02.global_EDA_QC.R]. 
 
@@ -17,9 +17,9 @@ After EDA and QC, for 93 individuals, 28M variants are presents in the raw genot
 The measure of the level of heterozygosity between India and Myanmar shows a real difference between both populations.
 Heterozygoty returns a mean F = 0.0557 and the median = 0.0357. These measures reveal an exces of heterozygoty which may reflect population structure, high diversity, repeated regions, copy number variation (CNV), or a biological variation. **Therefore, this reflections will have to be explore later**. 
 
-## 02. Genotype filtering and Post EDA/QC
+## 3. Genotype filtering and Post EDA/QC
 
-### _2.1. Filtering_
+### _3.1. Filtering_
 
 The filtering step is realized at this moment of the pipeline based on filtering markers (minor allele frequency MAF, missing calls per marker and missing calls per individuals) [SEE 03.filter_fullgenome_qc.slurm]. MAF measures the frequence of the variant in the population (e.g. MAF = 0.5, both alleles are balanced; MAF = 0.01, rare variant). MAF filters out the rare variants because rare SNPs are often noised, few informatives, give false positives. F_miss measures the percentages of missing genotypes per individuals (e.g. F_MISS = 0.40, means that the individuals have 40% of missing genotype, so bad quality). The lmiss measures the missing rate per variant (e.g. F_MISS = 0.60, means that SNP absent on 60% of individuals). Based on the EDA results, I started the filtering step with : 
 
@@ -32,7 +32,7 @@ The filtering step is realized at this moment of the pipeline based on filtering
 
 Once filtering step applied, 6,9M of variants have been removed from the 28M of variants, with a final total for all individuals genomic dataset of 21M of variants. From the 6,9M variants, mainly were rares variants, multi-allelic or bad quality SNPs with to much missing. No individuals have been excluded. **Rare variants will have to be explore later**.
 
-### _2.2. Post EDA and Quality control_
+### _3.2. Post EDA and Quality control_
 
 The Exploratory data analysis is realized once the raw data have been filtered and for male only, to control whether the previous patterns (i.e. population structure, difference between sexes and tusk types) have changed [SEE 04.postQC_EDA.R]. The following figures represent the genetic metrics to fix filter parameters and evaluate data patterns for all individuals, after filtering step (post EDA).
 
@@ -42,7 +42,7 @@ The Exploratory data analysis is realized once the raw data have been filtered a
 
 Distributions have been cleaned especially for MAF and Missingness of variants. The total genotyping rate post-QC is 0.999757, so 0.0243% of missingness, the dataset remains extremely complete and well conserved so no imputation is needed. **I will continue the analysis with this filtering**.
 
-## 03. Linquage desequilibrium and Principal component analysis
+## 4. Linquage desequilibrium and Principal component analysis
 
 Linquage desequilibrium (**LD**) and Principal component analysis (**PCA**) are used here to control the genetic structure of populations and avoid false positives during the GWAS. Inside the genome, SNPs can be correlated each others, consequently these SNPs would be over-represented and blow artificially the PCA. The LD allows the suppression of redundants SNPs with --indep-pairwise 50 5 0.2, which means window of 50 SNPs, shift of 5 SNPs, and remove highly correlated SNPs (over 0.2) before PCA. 3.7M of SNPs are retained. PCA is computed on LD-pruned dataset. The PCA is used to search for principals sources of genetic variation. The principal components of the PCA will be used in the GWAS model as covariables to compare similar individuals genetically. The LD pruning and PCA were performed on the genomic data after filtering for all individuals and only males [SEE 05.LD_pruning_pca-slurm & 06.plot_PCA_baseR.R]. The variants were named before LD pruning and PCA [Variants_named_bwt05_06.sh].
 
