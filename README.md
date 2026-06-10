@@ -38,7 +38,7 @@ The Exploratory data analysis is realized once the raw data have been filtered a
 
 <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/maf_distribution_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/sample_missingness_postqc.png" /> <img width="330" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/02.Pre-GWAS/variant_missingness_postqc.png" />
 
-Distributions have been cleaned especially for MAF and Missingness of variants. **I will continue the analysis with this filtering**.
+Distributions have been cleaned especially for MAF and Missingness of variants. The total genotyping rate post-QC is 0.999757, so 0.0243% of missingness, so no imputation is needed. **I will continue the analysis with this filtering**.
 
 ## 03. Linquage desequilibrium and Principal component analysis
 
