@@ -30,6 +30,8 @@ The filtering step is realized at this moment of the pipeline based on filtering
 - _Variants with a minor allele frequency below 1% : **maf = 0.01**_
   maf filters out all variants with minor allele frequency below the provided threshold (default 0.01).
 
+Once filtering step applied, 6,9M of variants have been removed from the 28M of variants, with a final total for all individuals genomic dataset of 21M of variants. From the 6,9M variants, mainly were rares variants, multi-allelic or bad quality SNPs with to much missing. No individuals have been excluded. **Rare variants will have to be explore later**.
+
 ### _2.2. Post EDA and Quality control_
 
 The Exploratory data analysis is realized once the raw data have been filtered and for male only, to control whether the previous patterns (i.e. population structure, difference between sexes and tusk types) have changed [SEE 04.postQC_EDA.R]. The following figures represent the genetic metrics to fix filter parameters and evaluate data patterns for all individuals, after filtering step (post EDA).
