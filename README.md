@@ -24,7 +24,9 @@ Visually, the observed line for Q-Q plot with 5PCs is under the expected line me
 
 The Genomic Control Inflation Factor is defined as : 
 > lambda GC = Median(X²obs)/Median(X²1,nul)
+> 
 > median(X²1,nul) = 0.455
+> 
 > X²obs = F-1|X²1 (1-p)
 
 <img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC5.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/QQ_PC10.png" />
