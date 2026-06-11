@@ -45,6 +45,11 @@ Visually Q-Q plots inform that models are lightly conservative with correcte cal
 
 Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups (P = 4.3x10^-198 and 3.2x10^-45), which is after verification a modelisation's artefact. The disappearance of these signals on the 3PCs plot supports the hypothesis that the PC2's model is distorted by artificial SNP. **GWAS model with 3 PCs remains the most likely model**.
 
+## 3. GEMMA GWAS mixed-model
+
+The mixed-model GWAS is implemented with GEMMA, which provides standard modern WGS mixed-model GWAS, efficient and well suited for structured populations. The aim is to correct for kinship and small population effects. Mixed models are important here because population-associated SNPs may appear falsely associated with  tusk phenotype. For this, I compute a genomic relationship matrix (GRM) and add covariables as following : 
+
+> ***Tusk ~ SNP + sex + GRM + population + PCs***
 
 
 
