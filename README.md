@@ -39,6 +39,8 @@ However, by trying with 2 and 3 PCs, results return different, with lambda GC of
 
 Visually Q-Q plots inform that models are lightly conservative with correcte calibration for 99.99% of SNPs. Therefore, I will check the Manhattan plots:
 
+### _2.2 Manhattan plots_
+
 <img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/Manhattan_PC2.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/Manhattan_PC3.png" />
 
 Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups (P = 4.3x10^-198 and 3.2x10^-45), which is after verification a modelisation's artefact. The disappearance of these signals on the 3PCs plot supports the hypothesis that the PC2's model is distorted by artificial SNP. **GWAS model with 3 PCs remains the most likely model**.
