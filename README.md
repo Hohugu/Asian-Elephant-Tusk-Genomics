@@ -51,7 +51,22 @@ The mixed-model GWAS is implemented with GEMMA, which provides standard modern W
 
 > ***Tusk ~ SNP + sex + GRM + population + PCs***
 
+### _3.1 Genomic Control Inflation Factor & Plots_
+
+Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. 
+
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
+
+### _3.2 Bonferroni SNPs_
+
+To identify significant SNP which may associated to phenotype, I used the ***Bonferroni threshold*** : 
+
+> PBonf = 0.05 / Ntests  with Ntests = number of total SNPs, 21 283 317
+> PBonf = 2.35 x 10^-9
+> -log10(PBonf) = 8.63
+
+So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. 
+
 
 
 
