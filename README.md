@@ -51,7 +51,7 @@ The mixed-model GWAS is implemented with GEMMA, which provides standard modern W
 
 > ***Tusk ~ SNP + sex + GRM + population + PCs***
 
-<img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
+<img width="410" height="510" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
 
 
 
