@@ -62,7 +62,9 @@ Le lambda GC is equal to 0.858, indicating a slightly conservative model and wit
 To identify significant SNP which may associated to phenotype, I used the ***Bonferroni threshold*** : 
 
 > PBonf = 0.05 / Ntests  with Ntests = number of total SNPs, 21 283 317
+> 
 > PBonf = 2.35 x 10^-9
+> 
 > -log10(PBonf) = 8.63
 
 So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. 
