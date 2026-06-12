@@ -67,7 +67,8 @@ To identify significant SNP which may associated to phenotype, I used the ***Bon
 > 
 > -log10(PBonf) = 8.63
 
-So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. 
+So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. **262 significants SNPs are superior to 8.63**. 
+
 
 
 
