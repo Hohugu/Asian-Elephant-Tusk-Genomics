@@ -92,6 +92,8 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the referen
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M. 
 For the 500kb window, despite the non-significant association with tusk morphology, a suggestif signal is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
 
+IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL POUR LNCRNA POUR AMELX
+
 | Candidat Gene | Closest & Best SNP | p-value  |
 | ---- | ----------------------- | -------- |
 | ENAM | CM044024.1:87145701:G:T | 1.85e-08 |
