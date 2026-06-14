@@ -119,7 +119,7 @@ IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL P
 
 | Candidat Gene | Closest & Best SNP | p-value  |
 | ---- | ----------------------- | -------- |
-| ENAM | CM044024.1:87145701:G:T | 1.85e⁻08 |
+| ENAM | CM044024.1:87145701:G:T | 1.85e-08 |
 | AMBN | CM044024.1:87145701:G:T | 1.85e-08 |
 | AMTN | CM044024.1:87145701:G:T | 1.85e-08 |
 
