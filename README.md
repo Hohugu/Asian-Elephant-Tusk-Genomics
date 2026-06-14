@@ -79,9 +79,9 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 
 MANQUE LE TABLEAU DES MEILLEURS SNPS, AJOUTER NOMS, POSITIONS, FUNCTION, PVALUES
 
-Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
+Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
-MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
+**Table of orthologue candidat genes in Asian elephants.** 
 
 | Candidat Gene  | Gene symbol | CHR | Position | Description | Best p-value |
 | ----- | ------ | ------ | ------| --------------- | ------- |
