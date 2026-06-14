@@ -83,14 +83,14 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 
 MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
 
-| Candidat Gene  | Best p-value |
-| ----- | ----------------- |
-| ODAM  | 3.37e-03          |
-| MEP1A | 1.52e-02          |
-| AMTN  | 5.02e-02          |
-| ENAM  | 5.10e-02          |
-| AMELX | 8.00e-02          |
-| AMBN  | 9.55e-02          |
+| Candidat Gene  | Gene name | CHR | Position | Best p-value |
+| ----- | ------ | ------ | ------| --------- |
+| ODAM  | ODAM_LOC126077139 | NC_064823.1 | 87832910-87841335 | 3.37e-03 |
+| MEP1A | MEP1A_LOC126069657 | NC_064819.1 | 111679947-111709525 | 1.52e-02 |
+| AMTN  | AMTN_LOC126076721 | NC_064823.1 | 87416785-87432258 | 5.02e-02 |
+| ENAM  | ENAM_LOC126077098 | NC_064823.1 | 87316884-87332008 | 5.10e-02 |
+| AMELX | AMELX_LOC126069472 | NC_064846.1 | 168725165-168729418 | 8.00e-02 |
+| AMBN  | AMBN_LOC126076719 | NC_064823.1 | 87354290-87366652 | 9.55e-02 |
 
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
 For the 500kb window, despite the non-significant association with tusk morphology, a suggestif signal is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
