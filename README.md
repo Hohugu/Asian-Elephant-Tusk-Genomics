@@ -1,7 +1,7 @@
 # Genomic Wide Association Study (GWAS)
 
 ## 1. Introduction
-GWAS is commonly used to test the association between a phenotype and genotypes. For that several models are proposed. The GWAS protocol is based on [cloudfiel.github.io/GWASTutorial](cloudfield.github.io/GWASTutorial/06_Association_tests/#overview). As we can see on the _following picture_, GWAS requires initialisation, filtering, QC and PCA steps. 
+GWAS is commonly used to test the association between a phenotype and genotypes. For that several models are proposed. The GWAS protocol is based on **cloudfiel.github.io/GWASTutorial**. As we can see on the _following picture_, GWAS requires initialisation, filtering, QC and PCA steps. 
 
 <img width="515" height="470" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GWAS_overview.png" />
 
