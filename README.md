@@ -73,6 +73,10 @@ Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interest
 From 262 SNPs, only 121 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
 Genes with highest significants SNPs are not directly related to tusk development as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389) found for African elephants with AMELX and MEP1a genes. These genes are involved in enamel and dentin expression and development. Further analyses will be made following Campbell et al protocol. I detected real loci associated to tusk morphology. However, with 93 individuals and an unbalanced binary phenotype, some signals may reflected a family or geographic structure. Nethertheless, Lambda GC (0.858) suggests that GEMMA would over corrected than inflate statistics, which lead main signals very likely. 
 
+### _3.3 Annotation & Candidate genes_
+
+After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. 
+
 ## 4. GEMMA only-males GWAS mixed-model
 
 The only-male GWAS is similar to the previous mixed-model GWAS. 
