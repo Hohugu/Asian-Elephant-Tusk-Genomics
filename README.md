@@ -77,7 +77,7 @@ Genes with highest significants SNPs are not directly related to tusk developmen
 
 After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. A total of 47 unique genes overlapped Bonferroni-significant GEMMA associations.
 
-# Bonferroni-significant genes identified by GEMMA mixed-model GWAS (PC1–PC3)
+**Table of Bonferroni-significant genes identified by GEMMA mixed-model GWAS (PC1–PC3)**
 
 | Gene name | Gene symbol | NC chr | CM chr | Start | End | Best SNP | Description | Best p-value |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
@@ -96,26 +96,8 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 | LOC126079052 | LOC126079052 | NC_064825.1 | CM044026.1 | 117237266 | 117238198 | CM044026.1:117237421:A:G | olfactory receptor 5M3-like | 1.314175e-12 |
 | LOC126080471 | LOC126080471 | NC_064825.1 | CM044026.1 | 115144203 | 115163744 | CM044026.1:115160186:A:G | olfactory receptor 10AG1-like | 1.314175e-12 |
 | LOC126073164 | LOC126073164 | NC_064819.1 | CM044020.1 | 90003377 | 90377483 | CM044020.1:90108700:A:C | patr class I histocompatibility antigen A126 | 1.292884e-13 |
-| LOC126078246 | NA | NC_064819.1 | CM044020.1 | 90005325 | 90567727 | CM044020.1:90108700:A:C | uncharacterized LOC126078246 | 1.292884e-13 |
-| LOC126078111 | LOC126078111 | NC_064819.1 | CM044020.1 | 92276511 | 92874619 | CM044020.1:92793650:A:G | HLA class I histocompatibility antigen A chain | 7.136186e-14 |
-| LOC126058339 | PIBF1 | NC_064832.1 | CM044033.1 | 65228172 | 65465800 | CM044033.1:65379405:G:T | progesterone immunomodulatory binding factor 1 | 3.441836e-12 |
-| LOC126060315 | NPAS2 | NC_064835.1 | CM044036.1 | 84837012 | 85021757 | CM044036.1:85009538:C:T | neuronal PAS domain protein 2 | 3.258003e-12 |
-| LOC126060403 | REV1 | NC_064835.1 | CM044036.1 | 86282146 | 86390755 | CM044036.1:86341456:C:T | REV1 DNA directed polymerase | 3.258003e-12 |
-| LOC126081376 | RELN | NC_064826.1 | CM044027.1 | 45605604 | 46132261 | CM044027.1:45964484:G:T | reelin | 3.258003e-12 |
-| LOC126060649 | LOC126060649 | NC_064835.1 | CM044036.1 | 22956160 | 23263014 | CM044036.1:23188712:A:G | putative olfactory receptor 8G2 | 2.085406e-12 |
-| LOC126085826 | CDH20 | NC_064829.1 | CM044030.1 | 69595564 | 69867169 | CM044030.1:69671589:A:G | cadherin 20 | 2.085406e-12 |
-| LOC126068977 | PDK3 | NC_064846.1 | CM044047.1 | 154393448 | 154467303 | CM044047.1:154448329:G:T | pyruvate dehydrogenase kinase 3 | 1.461980e-09 |
-| LOC126078206 | NA | NC_064819.1 | CM044020.1 | 90283991 | 90475346 | CM044020.1:90410112:C:T | uncharacterized LOC126078206 | 1.328766e-09 |
-| LOC126081686 | NA | NC_064819.1 | CM044020.1 | 98615028 | 98860125 | CM044020.1:98660829:G:T | DLA class II histocompatibility antigen DR-1 beta chain-like | 2.290510e-09 |
-| LOC126082017 | NA | NC_064826.1 | CM044027.1 | 19146183 | 19718806 | CM044027.1:19393531:C:G | COPI coat complex subunit gamma 2 | 1.489133e-09 |
-| LOC126078417 | ERBB4 | NC_064824.1 | CM044025.1 | 109753162 | 111018241 | CM044025.1:110479786:A:G | erb-b2 receptor tyrosine kinase 4 | 7.168555e-10 |
-| LOC126069437 | DMD | NC_064846.1 | CM044047.1 | 143239385 | 145686448 | CM044047.1:144848375:A:C | dystrophin | 7.248817e-10 |
-| LOC126066932 | RALGPS2 | NC_064842.1 | CM044043.1 | 41588899 | 41834548 | CM044043.1:41633085:A:C | Ral GEF with PH domain and SH3 binding motif 2 | 5.355284e-10 |
-| LOC126085419 | RNF152 | NC_064829.1 | CM044030.1 | 70097474 | 70174973 | CM044030.1:70166561:C:G | ring finger protein 152 | 3.195998e-10 |
-| LOC126067751 | PLCB4 | NC_064843.1 | CM044044.1 | 47734980 | 48181413 | CM044044.1:47853751:A:T | phospholipase C beta 4 | 3.383248e-10 |
-| LOC126060934 | NA | NC_064835.1 | CM044036.1 | 22696353 | 22784043 | CM044036.1:22699990:A:C | olfactory receptor 150-like | 3.359764e-10 |
-| LOC126063585 | LOC126063585 | NC_064838.1 | CM044039.1 | 48483022 | 48623993 | CM044039.1:48520852:A:G | uncharacterized | 2.720321e-10 |
-| LOC126069593 | LOC126069593 | NC_064846.1 | CM044047.1 | 170107747 | 170332119 | CM044047.1:170145312:G:T | uncharacterized | 1.563143e-10 |
+
+You can find the rest of the table in **Table of Bonferroni-significant genes**. I noticed that some genes are uncharacterized while they are significant
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
