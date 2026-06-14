@@ -97,7 +97,7 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 | LOC126080471 | LOC126080471 | NC_064825.1 | CM044026.1 | 115144203 | 115163744 | CM044026.1:115160186:A:G | olfactory receptor 10AG1-like | 1.314175e-12 |
 | LOC126073164 | LOC126073164 | NC_064819.1 | CM044020.1 | 90003377 | 90377483 | CM044020.1:90108700:A:C | patr class I histocompatibility antigen A126 | 1.292884e-13 |
 
-You can find the rest of the table in **Table of Bonferroni-significant genes**. I noticed that some genes are uncharacterized while they are significant
+You can find the rest of the table in **Table of Bonferroni-significant genes**. I noticed that some genes are uncharacterized while they are significant.
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
