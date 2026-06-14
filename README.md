@@ -63,7 +63,7 @@ To identify significant SNP which may associated to phenotype, I used the ***Bon
 
 > PBonf = 0.05 / Ntests  with Ntests = number of total SNPs, 21 283 317
 > 
-> PBonf = 2.35 x 10^-9
+> PBonf = 2.35e-09
 > 
 > -log10(PBonf) = 8.63
 
@@ -79,7 +79,7 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 
 MANQUE LE TABLEAU DES MEILLEURS SNPS, AJOUTER NOMS, POSITIONS, FUNCTION, PVALUES
 
-Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35 x 10^-9) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
+Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
 MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
 
@@ -99,11 +99,11 @@ IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL P
 
 | Candidat Gene | Closest & Best SNP | p-value  |
 | ---- | ----------------------- | -------- |
-| ENAM | CM044024.1:87145701:G:T | 1.85e-08 |
+| ENAM | CM044024.1:87145701:G:T | 1.85e⁻08 |
 | AMBN | CM044024.1:87145701:G:T | 1.85e-08 |
 | AMTN | CM044024.1:87145701:G:T | 1.85e-08 |
 
-Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56×10⁻¹⁰). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
+Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56e-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
 A functional annotation on this SNP and a LD analysis are needed to asses its potential link with AMELX region.
 
 ## 4. GEMMA only-males GWAS mixed-model
