@@ -80,6 +80,8 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the reference genome ggf of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35 x 10^-9). 
 
+MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
+
 | Candidat Gene  | Best p-value |
 | ----- | ----------------- |
 | ODAM  | 3.37e-03          |
