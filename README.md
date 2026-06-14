@@ -80,7 +80,7 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 **Table of Bonferroni-significant genes identified by GEMMA mixed-model GWAS (PC1–PC3)**
 
 | Gene name | Gene symbol | NC chr | CM chr | Start | End | Best SNP | Description | Best p-value |
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|
+|------------|--------|------------|------------|------------|------------|------------|------------------|------------|
 | LOC126073692 | IL6R | NC_064821.1 | CM044022.1 | 192207359 | 192266911 | CM044022.1:192234282:C:G | interleukin 6 receptor | 2.115881e-19 |
 | LOC126080233 | LOC126080233 | NC_064825.1 | CM044026.1 | 106830358 | 106864305 | CM044026.1:106837590:A:G | olfactory receptor 8K3-like | 4.617250e-18 |
 | LOC126057365 | PDGFC | NC_064831.1 | CM044032.1 | 23468358 | 23734364 | CM044032.1:23712353:C:T | platelet derived growth factor C | 6.904120e-15 |
