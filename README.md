@@ -77,6 +77,7 @@ Genes with highest significants SNPs are not directly related to tusk developmen
 
 After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. 
 
+MANQUE LE TABLEAU DES MEILLEURS SNPS, AJOUTER NOMS, POSITIONS, FUNCTION, PVALUES
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the reference genome ggf of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35 x 10^-9). 
 
