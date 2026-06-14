@@ -79,7 +79,7 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 
 MANQUE LE TABLEAU DES MEILLEURS SNPS, AJOUTER NOMS, POSITIONS, FUNCTION, PVALUES
 
-Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35 x 10^-9). 
+Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35 x 10^-9) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
 MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
 
@@ -92,7 +92,7 @@ MANQUE LES POSITIONS DES CANDIDAT GENES ET LEUR FONCTIONS
 | AMELX | 8.00e-02          |
 | AMBN  | 9.55e-02          |
 
-I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M. 
+I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
 For the 500kb window, despite the non-significant association with tusk morphology, a suggestif signal is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
 
 IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL POUR LNCRNA POUR AMELX
