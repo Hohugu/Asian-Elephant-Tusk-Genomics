@@ -77,7 +77,14 @@ Genes with highest significants SNPs are not directly related to tusk developmen
 
 After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. 
 
-      tables with Best genes with lowest pvalues and gene description/functions. 
+      | Gene  | Best p-value |
+      | ----- | ----------------- |
+      | ODAM  | 3.37e-03          |
+      | MEP1A | 1.52e-02          |
+      | AMTN  | 5.02e-02          |
+      | ENAM  | 5.10e-02          |
+      | AMELX | 8.00e-02          |
+      | AMBN  | 9.55e-02          |
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the reference genome ggf of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model. 
 
