@@ -77,6 +77,17 @@ Genes with highest significants SNPs are not directly related to tusk developmen
 
 After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. 
 
+      tables with Best genes with lowest pvalues and gene description/functions. 
+
+Then, I retrieved the candidates genes from Campbell et al., 2021 in the reference genome ggf of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model. 
+
+      Tables des candidates genes avec positions et pvalues.
+
+I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M. 
+
+A SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 is returned significant from GEMMA GWAS mixed-model (p = 1.59 x 10^-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a locale association.
+Further analysis have to be realized, notably about LD. 
+
 ## 4. GEMMA only-males GWAS mixed-model
 
 The only-male GWAS is similar to the previous mixed-model GWAS. 
