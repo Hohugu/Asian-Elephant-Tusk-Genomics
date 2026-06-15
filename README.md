@@ -88,13 +88,8 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 | C5H4orf19 | PGCKA1 | NC_064823.1 | CM044024.1 | 123449792 | 123553816 | CM044024.1:123473250:A:G | PDCD10 and GCKIII kinases associated 1 | 1.200328e-14 |
 | LOC126087709 | MYZAP | NC_064831.1 | CM044032.1 | 47712552 | 47805874 | CM044032.1:47769846:A:G | myocardial zonula adherens protein | 8.652342e-13 |
 | LOC126067331 | CNBD2 | NC_064843.1 | CM044044.1 | 33506136 | 33548234 | CM044044.1:33525949:A:C | cyclic nucleotide binding domain containing 2 | 8.542653e-13 |
-| LOC126070942 | LOC126070942 | NC_064821.1 | CM044022.1 | 17357210 | 17815040 | CM044022.1:17533772:C:T | olfactory receptor 7G2-like | 8.542653e-13 |
 | LOC126067332 | LOC126067332 | NC_064843.1 | CM044044.1 | 33549010 | 33578813 | CM044044.1:33549161:A:C | uncharacterized | 8.542653e-13 |
 | LOC126064930 | CALB2 | NC_064839.1 | CM044040.1 | 39119360 | 39147775 | CM044040.1:39127397:C:T | calbindin 2 | 5.851082e-13 |
-| LOC126066272 | EDIL3 | NC_064820.1 | CM044021.1 | 89441686 | 89973518 | CM044021.1:89746872:A:T | EGF like and discoidin domains 3 | 1.238987e-12 |
-| LOC126071946 | GTPBP8 | NC_064819.1 | CM044020.1 | 1702397 | 1725352 | CM044020.1:1710266:A:G | GTP binding protein 8 (putative) | 1.296276e-12 |
-| LOC126079052 | LOC126079052 | NC_064825.1 | CM044026.1 | 117237266 | 117238198 | CM044026.1:117237421:A:G | olfactory receptor 5M3-like | 1.314175e-12 |
-| LOC126080471 | LOC126080471 | NC_064825.1 | CM044026.1 | 115144203 | 115163744 | CM044026.1:115160186:A:G | olfactory receptor 10AG1-like | 1.314175e-12 |
 | LOC126073164 | LOC126073164 | NC_064819.1 | CM044020.1 | 90003377 | 90377483 | CM044020.1:90108700:A:C | patr class I histocompatibility antigen A126 | 1.292884e-13 |
 
 You can find the rest of the table in **Table of Bonferroni-significant genes**. I noticed that some genes are uncharacterized while they are significant.
