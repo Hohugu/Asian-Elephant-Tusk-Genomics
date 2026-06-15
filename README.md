@@ -113,7 +113,11 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 | AMBN  | AMBN_LOC126076719 | NC_064823.1 | 87354290-87366652 | ameloblastin | 9.55e-02 |
 
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
-For the 500kb window, despite the non-significant association with tusk morphology, a **suggestif signal** is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. These suggestif signals are identified, by taking the id of SNPs to extract the exact position and then used the distance from the candidate genes to verify the position and the gene related. The distance is calculated compared to candidat gene coordonates. 
+
+Suggestive signals are identified close to the candidates genes. Suggestive signals mean that the Bonferroni threshold is not reached but the signals still strong. These signals were extracted by taking the id of SNPs to have the exact position and then used the distance from the candidate genes to verify the position and the related gene name. The distance is calculated compared to candidat gene coordonates. 
+For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal located ~171 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis have to be made to detect LD between ENAM gene and the suggestive association**.
+
+**Table of Closest suggestive SNP to candidat genes in Asian elephants.**
 
 | Candidate Gene | Closest suggestive SNP   |      p-value |                  Distance from candidate gene | SNP chromosome           | Gene containing SNP | Gene coordinates        | Annotation                           |
 | -------------- | ------------------------ | -----------: | --------------------------------------------: | ------------------------ | ------------------- | ----------------------- | ------------------------------------ |
@@ -125,13 +129,15 @@ For the 500kb window, despite the non-significant association with tusk morpholo
 | MEP1A          | CM044020.1:111267040:C:T | 1.321988e-05 | 412,908 bp upstream (inside neighboring gene) | NC_064819.1 / CM044020.1 | LOC126081574        | 110,947,996–111,303,545 | Regulator of calcineurin 2           |
 
 
-Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56e-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
+Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56E-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
+
+**Table of Closest Bonferroni SNP to AMELX candidat genes in Asian elephants.**
 
 | Candidate Gene |   Closest Bonferroni SNP |      p-value | Distance from candidate gene | SNP chromosome           | Gene containing SNP | Gene coordinates        | Annotation             |
 | -------------- | -----------------------: | -----------: | ---------------------------: | ------------------------ | ------------------- | ----------------------- | ---------------------- |
 | AMELX          | CM044047.1:170145312:G:T | 1.563143e-10 |      1,415,894 bp downstream | NC_064846.1 / CM044047.1 | LOC126069593        | 170,107,747–170,332,119 | uncharacterized lncRNA |
 
-A functional annotation on this SNP and a LD analysis are needed to asses its potential link with AMELX region.
+**A functional annotation on this SNP and a LD analysis are needed to asses its potential link with AMELX region**.
 
 ## 4. GEMMA only-males GWAS mixed-model
 
