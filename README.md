@@ -113,7 +113,7 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 | AMBN  | AMBN_LOC126076719 | NC_064823.1 | 87354290-87366652 | ameloblastin | 9.55e-02 |
 
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
-For the 500kb window, despite the non-significant association with tusk morphology, a suggestif signal is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
+For the 500kb window, despite the non-significant association with tusk morphology, a **suggestif signal** is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
 
 | Candidate Gene | Closest suggestive SNP | p-value | Distance from candidate gene | SNP chromosome | Gene containing SNP | Gene coordinates | Annotation |
 |---|---:|---:|---:|---|---|---|---|
