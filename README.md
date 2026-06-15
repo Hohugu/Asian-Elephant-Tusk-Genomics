@@ -124,7 +124,7 @@ For the 500kb window, no Bonferroni-significant association overlapped the Campb
 | MEP1A          | CM044020.1:111267040:C:T | 1.321988e-05 | 412,908 bp upstream (inside neighboring gene) | NC_064819.1 / CM044020.1 | LOC126081574        | 110,947,996–111,303,545 | Regulator of calcineurin 2           |
 
 
-Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56E-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
+Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56E-10). This region is detected 1.42Mb downstream of AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
 
 **Table of Closest Bonferroni SNP to AMELX candidat genes in Asian elephants.**
 
