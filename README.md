@@ -115,13 +115,14 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
 For the 500kb window, despite the non-significant association with tusk morphology, a suggestif signal is observed near to ENAM/AMBN/AMTN cluster. This signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes.
 
-IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL POUR LNCRNA POUR AMELX
-
-| Candidat Gene | Closest & Best SNP | p-value  |
-| ---- | ----------------------- | -------- |
-| ENAM | CM044024.1:87145701:G:T | 1.85e-08 |
-| AMBN | CM044024.1:87145701:G:T | 1.85e-08 |
-| AMTN | CM044024.1:87145701:G:T | 1.85e-08 |
+| Candidate Gene | Closest suggestive SNP | p-value | Distance from candidate gene | SNP chromosome | Gene containing SNP | Gene coordinates | Annotation |
+|---|---:|---:|---:|---|---|---|---|
+| ENAM | CM044024.1:87145701:G:T | 1.846930e-08 | 171,183 bp | NC_064823.1 / CM044024.1 | Intergenic | NA | Upstream of ENAM/AMBN/AMTN enamel gene cluster |
+| AMBN | CM044024.1:87145701:G:T | 1.846930e-08 | 208,589 bp | NC_064823.1 / CM044024.1 | Intergenic | NA | Upstream of AMBN, within ENAM/AMBN/AMTN enamel gene cluster region |
+| AMTN | CM044024.1:87145701:G:T | 1.846930e-08 | 271,084 bp | NC_064823.1 / CM044024.1 | Intergenic | NA | Upstream of AMTN, within ENAM/AMBN/AMTN enamel gene cluster region |
+| AMELX | CM044047.1:168377782:C:T | 9.656607e-08 | 347,383 bp | NC_064846.1 / CM044047.1 | Intergenic | NA | Upstream of AMELX |
+| ODAM | CM044024.1:88318180:A:G | 1.639486e-06 | 476,845 bp | NC_064823.1 / CM044024.1 | Intergenic | NA | Downstream of ODAM, near ENAM/AMBN/AMTN/ODAM enamel gene region |
+| MEP1A | CM044020.1:111267040:C:T | 1.321988e-05 | 412,907 bp | NC_064819.1 / CM044020.1 | Intergenic | NA | Upstream of MEP1A |
 
 Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56e-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
 
