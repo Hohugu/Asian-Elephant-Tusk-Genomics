@@ -124,6 +124,11 @@ IL FAUT RAJOUTER LE NOM DES GENES DANS CES POSITIONS ET LEUR FONCTIONS, PAREIL P
 | AMTN | CM044024.1:87145701:G:T | 1.85e-08 |
 
 Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56e-10). This region is at 1.42Mb from AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
+
+| Candidate gene | Closest Bonferroni SNP   |      p-value | Distance from candidate gene | SNP chromosome | Gene containing SNP | Gene coordinates    | Annotation      |
+| -------------- | ------------------------ | -----------: | ---------------------------: | -------------- | ------------------- | ------------------- | --------------- |
+| AMELX          | CM044047.1:170145312:G:T | 1.563143E-10 |                 1,415,894 bp | NC_064846.1    | LOC126069593        | 170107747–170332119 | uncharacterized |
+
 A functional annotation on this SNP and a LD analysis are needed to asses its potential link with AMELX region.
 
 ## 4. GEMMA only-males GWAS mixed-model
