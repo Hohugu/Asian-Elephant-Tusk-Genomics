@@ -148,6 +148,8 @@ The lambda GC is equal to 0.93, meaning that the model is slightly conservative 
 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_pwald.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
+The Q-Q plot show a good calibration pattern, following the expected line at the beginning and then a strong deviation at the tail. The majority of the SNPs follows the expected but a small fraction presents a strong signal. For the Manhattan plot, a main signal is detected with a SNP (CM044020.1:85883031:A:T) with a pvalue at 1.25E-16 and a -log10(P) = 15.90. 
+
 ### _4.2 Bonferroni SNPs_
 
 For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*** : 
@@ -161,7 +163,7 @@ For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*
 So all SNPs with -log10(P) superior to 8.61 are genome-wide significants. **31 significants SNPs are superior to 8.61**. 
 Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1 and X/Y. 
 
-From 262 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
+From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
 
 ### _4.3 Annotation & Candidate genes_
 
