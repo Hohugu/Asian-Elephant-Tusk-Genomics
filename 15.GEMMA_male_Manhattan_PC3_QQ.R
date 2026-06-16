@@ -74,3 +74,4 @@ fwrite(top100, file.path(tab_dir, "Top100_GEMMA_male_PC3.tsv"), sep="\t")
 
 cat("Finished.\n")
 cat("Lambda =", lambda, "\n")
+
