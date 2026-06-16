@@ -141,6 +141,7 @@ The only-male GWAS is similar to the previous mixed-model GWAS. For males I anal
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
 
+<img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_pwald.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
 
 
