@@ -136,7 +136,7 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 ## 4. GEMMA only-males GWAS mixed-model
 
-The only-male GWAS is similar to the previous mixed-model GWAS. 
+The only-male GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs returned significants for GWAS GEMMA only-males. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
 
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
