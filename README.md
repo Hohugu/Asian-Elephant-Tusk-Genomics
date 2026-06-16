@@ -50,10 +50,12 @@ Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups
 The mixed-model GWAS is implemented with GEMMA, which provides standard modern WGS mixed-model GWAS, efficient and well suited for structured populations. The aim is to correct for kinship and small population effects. Mixed models are important here because population-associated SNPs may appear falsely associated with  tusk phenotype. For this, I compute a genomic relationship matrix (GRM) and add covariables as following : 
 
 > ***Tusk ~ SNP + sex + GRM + population + PC1 + PC2 + PC3***
+> 
+The script of this second GWAS model are available [SEE 10.prepare_GEMMA_input.R & 11.GEMMA_mixed_model_PC3.slurm]. 
 
 ### _3.1 Genomic Control Inflation Factor & Plots_
 
-Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. 
+Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. Script for the plots [SEE 12.GEMMA_Manhattan_QQ_PC3.R]
 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan_highlight.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
 
@@ -142,6 +144,7 @@ Model equation :
 
 > **Tusk ~ SNP + GRM + population + PC1 + PC2 + PC3**
 
+The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R & 14.GEMMA_mixed_model_male_PC3.slurm]
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
 The lambda GC is equal to 0.93, meaning that the model is slightly conservative and well calibrated. 
@@ -149,6 +152,8 @@ The lambda GC is equal to 0.93, meaning that the model is slightly conservative 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_highlight.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
 The QQ plot shows a good calibration pattern, following the expected line at the beginning and then a strong deviation at the tail. The majority of the SNPs follow the expected but a small fraction presents a strong signal. For the Manhattan plot, a main signal is detected with a SNP (CM044020.1:85883031:A:T) with a pvalue at 1.25E-16 and a -log10(P) = 15.90. 
+
+Script for the plots [SEE 15.GEMMA_male_Manhattan_PC3_QQ.R]
 
 ### _4.2 Bonferroni SNPs_
 
