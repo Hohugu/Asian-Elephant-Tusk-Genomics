@@ -49,7 +49,7 @@ Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups
 
 The mixed-model GWAS is implemented with GEMMA, which provides standard modern WGS mixed-model GWAS, efficient and well suited for structured populations. The aim is to correct for kinship and small population effects. Mixed models are important here because population-associated SNPs may appear falsely associated with  tusk phenotype. For this, I compute a genomic relationship matrix (GRM) and add covariables as following : 
 
-> ***Tusk ~ SNP + sex + GRM + population + PCs***
+> ***Tusk ~ SNP + sex + GRM + population + PC1 + PC2 + PC3***
 
 ### _3.1 Genomic Control Inflation Factor & Plots_
 
@@ -140,7 +140,7 @@ The only-male GWAS is similar to the previous mixed-model GWAS. For males I anal
 
 Model equation : 
 
-    **Tusk ~ SNP + sex + GRM + population + PCs**
+> **Tusk ~ SNP + GRM + population + PC1 + PC2 + PC3**
 
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
@@ -148,7 +148,22 @@ The lambda GC is equal to 0.93, meaning that the model is slightly conservative 
 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_pwald.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
+### _4.2 Bonferroni SNPs_
 
+For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*** : 
+
+> PBonf = 0.05 / Ntests  with Ntests = number of total variants tested, 20 405 248
+> 
+> PBonf = 2.45E-09
+> 
+> -log10(PBonf) = 8.61
+
+So all SNPs with -log10(P) superior to 8.61 are genome-wide significants. **31 significants SNPs are superior to 8.61**. 
+Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1 and X/Y. 
+
+From 262 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
+
+### _4.3 Annotation & Candidate genes_
 
 
 
