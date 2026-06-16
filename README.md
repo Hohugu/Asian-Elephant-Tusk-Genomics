@@ -148,7 +148,7 @@ The lambda GC is equal to 0.93, meaning that the model is slightly conservative 
 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_pwald.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
-The Q-Q plot show a good calibration pattern, following the expected line at the beginning and then a strong deviation at the tail. The majority of the SNPs follows the expected but a small fraction presents a strong signal. For the Manhattan plot, a main signal is detected with a SNP (CM044020.1:85883031:A:T) with a pvalue at 1.25E-16 and a -log10(P) = 15.90. 
+The QQ plot shows a good calibration pattern, following the expected line at the beginning and then a strong deviation at the tail. The majority of the SNPs follow the expected but a small fraction presents a strong signal. For the Manhattan plot, a main signal is detected with a SNP (CM044020.1:85883031:A:T) with a pvalue at 1.25E-16 and a -log10(P) = 15.90. 
 
 ### _4.2 Bonferroni SNPs_
 
