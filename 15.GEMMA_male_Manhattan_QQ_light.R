@@ -2,7 +2,7 @@
 
 library(data.table)
 
-assoc_file <- "/scratch/project_2000886/Hoedric/GWAS_2025/GWAS/result/GEMMA_male/output/tusk_GEMMA_LMM_male_PC5.assoc.txt"
+assoc_file <- "/scratch/project_2000886/Hoedric/GWAS_2025/GWAS/result/GEMMA_male/output/tusk_GEMMA_LMM_male_PC3.assoc.txt"
 
 fig_dir <- "/scratch/project_2000886/Hoedric/GWAS_2025/GWAS/figures_GEMMA_male"
 tab_dir <- "/scratch/project_2000886/Hoedric/GWAS_2025/GWAS/tables_GEMMA_male"
@@ -28,7 +28,7 @@ gwas[, BPcum := .I]
 
 cat("Rows:", nrow(gwas), "\n")
 
-png(file.path(fig_dir, "GEMMA_male_Manhattan_pwald.png"), width=1800, height=900)
+png(file.path(fig_dir, "GEMMA_male_PC3_Manhattan_pwald.png"), width=1800, height=900)
 
 plot(
   gwas$BPcum,
@@ -48,7 +48,7 @@ dev.off()
 obs <- sort(gwas$p_wald)
 exp <- ppoints(length(obs))
 
-png(file.path(fig_dir, "GEMMA_male_QQ_pwald.png"), width=900, height=900)
+png(file.path(fig_dir, "GEMMA_male_PC3_QQ_pwald.png"), width=900, height=900)
 
 plot(
   -log10(exp),
@@ -67,10 +67,10 @@ dev.off()
 chisq <- qchisq(1 - gwas$p_wald, 1)
 lambda <- median(chisq, na.rm=TRUE) / qchisq(0.5, 1, lower.tail=FALSE)
 
-fwrite(data.table(lambda=lambda), file.path(tab_dir, "lambda_GEMMA_male.tsv"), sep="\t")
+fwrite(data.table(lambda=lambda), file.path(tab_dir, "lambda_GEMMA_male_PC3.tsv"), sep="\t")
 
 top100 <- gwas[order(p_wald)][1:100]
-fwrite(top100, file.path(tab_dir, "Top100_GEMMA_male.tsv"), sep="\t")
+fwrite(top100, file.path(tab_dir, "Top100_GEMMA_male_PC3.tsv"), sep="\t")
 
 cat("Finished.\n")
 cat("Lambda =", lambda, "\n")
