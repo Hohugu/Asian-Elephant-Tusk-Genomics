@@ -138,8 +138,13 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 The only-male GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs returned significants for GWAS GEMMA only-males. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
 
+Model equation : 
+
+    **Tusk ~ SNP + sex + GRM + population + PCs**
+
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
+The lambda GC is equal to 0.93, meaning that the model is slightly conservative and well calibrated. 
 
 <img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_pwald.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
