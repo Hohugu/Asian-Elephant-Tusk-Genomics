@@ -8,7 +8,7 @@ Unlikely African elephants, only males display tusk, however the phenotype witho
 This difference of phenotype still unexplained, and consequently the aim of this project is to identify the genes which are potentially associated with the phenotype tusk in Asian elephants. 
 For that, blood samples have been collected and DNA have been extracted and sequenced from the Myanmar Timber Enterprise (MTE) before 2021. Thanks to the India Institude Science (IISc) collaboration, the study covered 93 individuals. The analysis were based on analysis in [Campbell-Staton et al., 2021](https://www.science.org/doi/full/10.1126/science.abe7389) which have identified two genes involved in the expression and the growth of tusk in African elephants in an anthropogenetic selective pressure (i.e poaching and loss of tusk in African elephants). Theses genes are AMELX and MEP1A, which can also be find in mices. In this study, females were also taken into account for the analysis. In this study on Asian elephants, we will also take females into analysis of gene identification given they is a dimorphism context. 
 
-This project is separated into three sections : **WGS Variant Calling**, **Pre-GWAS** and **GWAS**. 
+This project is separated into four sections : **WGS Variant Calling**, **Pre-GWAS**, **GWAS** and **Genetic analyses**. Each section form one branch of the github. You can then navigate between branches by clicking on the dropdown menu. 
 
 ## Project Part
 
