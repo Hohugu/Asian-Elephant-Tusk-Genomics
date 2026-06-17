@@ -174,7 +174,7 @@ For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*
 > -log10(PBonf) = 8.61
 
 So all SNPs with -log10(P) superior to 8.61 are genome-wide significants. **31 significants SNPs are superior to 8.61**. 
-Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1 and X/Y. 
+Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1. 
 
 From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
 
