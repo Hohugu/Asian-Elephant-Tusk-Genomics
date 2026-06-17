@@ -140,9 +140,13 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 The only-male GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs returned significants for GWAS GEMMA only-males. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
 
-Model equation : 
+Population structure is taken into account and 3 PCs are kept as before. Kinship is also corrected. The equation of GEMMA GWAS model for male is :
 
-> **Tusk ~ SNP + GRM + population + PC1 + PC2 + PC3**
+> y=Wα+xβ+u+ϵ
+>W = covariables (ici population + PC1 + PC2 + PC3)
+>x = SNP testé
+>u∼N(0,Kσ²g) = effet de parenté via la GRM
+>K = matrice de kinship
 
 The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R & 14.GEMMA_mixed_model_male_PC3.slurm]
 ### _4.1 Genomic Control Inflation Factor & Plots_
