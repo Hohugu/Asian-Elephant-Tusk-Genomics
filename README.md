@@ -142,11 +142,15 @@ The only-male GWAS is similar to the previous mixed-model GWAS. For males I anal
 
 Population structure is taken into account and 3 PCs are kept as before. Kinship is also corrected. The equation of GEMMA GWAS model for male is :
 
-> y=Wα+xβ+u+ϵ
->W = covariables (ici population + PC1 + PC2 + PC3)
->x = SNP testé
->u∼N(0,Kσ²g) = effet de parenté via la GRM
->K = matrice de kinship
+>y=Wα+xβ+u+ϵ
+>
+>W = covariables (population + PC1 + PC2 + PC3)
+>
+>x = SNP tested
+>
+>u∼N(0,Kσ²g) = GRM
+>
+>K = kinship matrix
 
 The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R & 14.GEMMA_mixed_model_male_PC3.slurm]
 ### _4.1 Genomic Control Inflation Factor & Plots_
