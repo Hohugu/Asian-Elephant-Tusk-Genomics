@@ -182,7 +182,7 @@ From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene descriptio
 
 ### _4.3 Annotation & Candidate genes_
 
-For each Campbell candidate gene (i.e. AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP1B and PLA2G7), the pipeline [SEE ] searches for the best GWAS SNP inside the gene and within ±500 kb, ±1 Mb and ±2 Mb windows. It also extracts all Bonferroni-significant SNPs falling in these regions.
+For each Campbell candidate gene (i.e. AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP1B and PLA2G7), the pipeline [SEE 17.Campbell_candidates_v2_all_and_male.sh] searches for the best GWAS SNP inside the gene and within ±500 kb, ±1 Mb and ±2 Mb windows. It also extracts all Bonferroni-significant SNPs falling in these regions.
 
 Results reproduced the original mixed-model findings. In the male-only GWAS, the enamel-cluster signal persisted but was substantially weaker (best p = 8.1E-05). No Bonferroni-significant SNPs were detected within 2 Mb of any Campbell candidate gene opposite to AMELX associated SNP (CM044047.1:170145312:G:T; p = 1.56E-10) from GEMMA GWAS mixed-model. These results indicate that the Campbell candidate loci do not overlap the strongest male-only GWAS signals and suggest that the AMELX-associated signal observed in the mixed GWAS is not driven by males alone.
 
