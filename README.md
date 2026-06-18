@@ -57,7 +57,7 @@ The script of this second GWAS model are available [SEE 10.prepare_GEMMA_input.R
 
 Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. Script for the plots [SEE 12.GEMMA_Manhattan_QQ_PC3.R]
 
-<img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan_highlight.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
+<img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
 
 ### _3.2 Bonferroni SNPs_
 
@@ -180,6 +180,7 @@ From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene descriptio
 
 ### _4.3 Annotation & Candidate genes_
 
+I rebuilt the Campbell candidate gene comparison using a unified v2 pipeline for both GEMMA PC3 mixed-model GWAS and GEMMA male-only PC3 GWAS. The candidate gene list now includes AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP1B and PLA2G7. For each gene, the pipeline searches for the best GWAS SNP inside the gene and within ±500 kb, ±1 Mb and ±2 Mb windows. It also extracts all Bonferroni-significant SNPs falling in these regions. Separate output directories were created for the all-sex GEMMA PC3 and male-only GEMMA PC3 analyses to avoid overwriting previous results [SEE ].
 
 
 
