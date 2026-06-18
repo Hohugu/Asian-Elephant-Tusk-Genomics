@@ -178,7 +178,7 @@ For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*
 So all SNPs with -log10(P) superior to 8.61 are genome-wide significants. **31 significants SNPs are superior to 8.61**. 
 Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1. 
 
-From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. Bonferroni-significant SNPs from the male-only GEMMA GWAS were clustered into independent loci using a conservative 50 kb physical distance threshold. Thirty-one significant SNPs collapsed into 26 putatively independent loci. Most loci were represented by a single lead SNP, while five loci contained two highly proximal significant SNPs (<50 kb apart), suggesting local LD or the same underlying association signal.
+From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. Bonferroni-significant SNPs from the male-only GEMMA GWAS were clustered into independent loci using a conservative 50 kb physical distance threshold. Thirty-one significant SNPs collapsed into 26 putatively independent loci. Most loci were represented by a single lead SNP, while five loci contained two highly proximal significant SNPs (<50 kb apart), suggesting local LD or the same underlying association signal [SEE TABLE Bonferroni-significant loci identified by male-only GEMMA GWAS].
 
 ### _4.3 Annotation & Candidate genes_
 
