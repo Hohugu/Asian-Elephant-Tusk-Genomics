@@ -112,7 +112,7 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
 
 Suggestive signals are identified close to the candidates genes. Suggestive signals mean that the Bonferroni threshold is not reached but the signals still strong. These signals were extracted by taking the id of SNPs to have the exact position and then used the distance from the candidate genes to verify the position and the related gene name. The distance is calculated compared to candidat gene coordonates. 
-For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal located ~171 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis have to be made to detect LD between ENAM gene and the suggestive association**.
+For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. ODAM showed a weaker local signal (best p = 1.64E-06 within 500 kb). However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal approximately 171–271 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis have to be made to detect LD between ENAM gene and the suggestive association**.
 
 **Table of Closest suggestive SNP to candidat genes in Asian elephants.**
 
@@ -125,7 +125,6 @@ For the 500kb window, no Bonferroni-significant association overlapped the Campb
 | AMELX          | CM044047.1:168377782:C:T | 9.656607e-08 | 347,384 bp upstream (inside neighboring gene) | NC_064846.1 / CM044047.1 | LOC126069583        | 168,359,757–168,861,890 | Rho GTPase activating protein 6      |
 | MEP1A          | CM044020.1:111267040:C:T | 1.321988e-05 | 412,908 bp upstream (inside neighboring gene) | NC_064819.1 / CM044020.1 | LOC126081574        | 110,947,996–111,303,545 | Regulator of calcineurin 2           |
 
-
 Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56E-10). This region is detected 1.42Mb downstream of AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
 
 **Table of Closest Bonferroni SNP to AMELX candidat genes in Asian elephants.**
@@ -135,6 +134,8 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 | AMELX          | CM044047.1:170145312:G:T | 1.563143e-10 |      1,415,894 bp downstream | NC_064846.1 / CM044047.1 | LOC126069593        | 170,107,747–170,332,119 | uncharacterized lncRNA |
 
 **A functional annotation on this SNP and a LD analysis are needed to asses its potential link with AMELX region**.
+
+The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. Among the candidate genes, MEP1B emerged as one of the strongest local signals. In the mixed GWAS, MEP1B showed a stronger within-gene association than MEP1A (p = 5.34E-03 versus p = 1.52E-02) and comparable suggestive associations within larger windows.
 
 ## 4. GEMMA only-males GWAS mixed-model
 
@@ -153,6 +154,7 @@ Population structure is taken into account and 3 PCs are kept as before. Kinship
 >K = kinship matrix
 
 The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R & 14.GEMMA_mixed_model_male_PC3.slurm]
+
 ### _4.1 Genomic Control Inflation Factor & Plots_
 
 The lambda GC is equal to 0.93, meaning that the model is slightly conservative and well calibrated. 
@@ -180,8 +182,11 @@ From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene descriptio
 
 ### _4.3 Annotation & Candidate genes_
 
-I rebuilt the Campbell candidate gene comparison using a unified v2 pipeline for both GEMMA PC3 mixed-model GWAS and GEMMA male-only PC3 GWAS. The candidate gene list now includes AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP1B and PLA2G7. For each gene, the pipeline searches for the best GWAS SNP inside the gene and within ±500 kb, ±1 Mb and ±2 Mb windows. It also extracts all Bonferroni-significant SNPs falling in these regions. Separate output directories were created for the all-sex GEMMA PC3 and male-only GEMMA PC3 analyses to avoid overwriting previous results [SEE ].
+For each Campbell candidate gene (i.e. AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP1B and PLA2G7), the pipeline [SEE ] searches for the best GWAS SNP inside the gene and within ±500 kb, ±1 Mb and ±2 Mb windows. It also extracts all Bonferroni-significant SNPs falling in these regions.
 
+Results reproduced the original mixed-model findings. In the male-only GWAS, the enamel-cluster signal persisted but was substantially weaker (best p = 8.1E-05). No Bonferroni-significant SNPs were detected within 2 Mb of any Campbell candidate gene opposite to AMELX associated SNP (CM044047.1:170145312:G:T; p = 1.56E-10) from GEMMA GWAS mixed-model. These results indicate that the Campbell candidate loci do not overlap the strongest male-only GWAS signals and suggest that the AMELX-associated signal observed in the mixed GWAS is not driven by males alone.
+
+In the male-only GWAS, the strongest local association among the Campbell candidates was detected near MEP1B (p = 1.76E-05, approximately 53 kb from the gene). These results indicate that MEP1B deserves to be considered alongside MEP1A as a biologically relevant candidate locus for tusk variation in Asian elephants. **Overall, none of the Campbell candidate genes directly overlap the strongest male-only GWAS peaks, but several loci—particularly MEP1B and AMELX—remain promising targets for downstream LD, population genetic, and regulatory analyses**.
 
 
 
