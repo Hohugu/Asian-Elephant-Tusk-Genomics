@@ -57,7 +57,7 @@ The script of this second GWAS model are available [SEE 10.prepare_GEMMA_input.R
 
 Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. Script for the plots [SEE 12.GEMMA_Manhattan_QQ_PC3.R]
 
-<img width="615" height="715" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="300" height="355" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
+<img width="515" height="615" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="200" height="255" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
 
 ### _3.2 Bonferroni SNPs_
 
@@ -159,7 +159,7 @@ The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R &
 
 The lambda GC is equal to 0.93, meaning that the model is slightly conservative and well calibrated. 
 
-<img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_publication.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
+<img width="515" height="615" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_Manhattan_publication.png" /> <img width="200" height="255" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_male_PC3_QQ_pwald.png" />
 
 The QQ plot shows a good calibration pattern, following the expected line at the beginning and then a strong deviation at the tail. The majority of the SNPs follow the expected but a small fraction presents a strong signal. For the Manhattan plot, a main signal is detected with a SNP (CM044020.1:85883031:A:T) with a pvalue at 1.25E-16 and a -log10(P) = 15.90. 
 
