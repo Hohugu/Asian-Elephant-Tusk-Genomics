@@ -72,7 +72,7 @@ All the previous metrics are then integrated into a final candidate-region table
 
 After integration of all the metrics together, I retained three candidate regions : 
 
-
+[SEE 42.make_final_selection_candidate_regions.R]
 
 
 All three final regions showed:
