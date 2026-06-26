@@ -79,10 +79,8 @@ XY top-region annotation tables
 
 All the previous metrics are then integrated into a final candidate-region table. If one region is supported by multiple statistics, this region is prioritized and should be consider as a strong region.
 
-After integration of all the metrics together, I retained three candidate regions : 
-
-[SEE 42.make_final_selection_candidate_regions.R]
-
+After integration of all the metrics together, I retained three candidate regions [SEE 42.make_final_selection_candidate_regions.R] : 
+The three final selection/differentiation regions are not located on the main X/Y-associated peak. **The sex-linked signal was analyzed separately as an XY selection layer and later integrated with GWAS and rare-variant results.**
 
 All three final regions showed:
 
