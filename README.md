@@ -55,7 +55,7 @@ For this part, I combined FST, nucleotide diversity and Tajima's D candidate reg
 
 ## 7. Local LD and allele-frequency refinement
 
-This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions. [30-38]
+This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions. [30-38] The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
 
 Main output:
 local LD summary tables
