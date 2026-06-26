@@ -71,6 +71,8 @@ XY selection signals were retained as an additional selection/differentiation ev
 
 [39-41]
 
+[regional plot](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot)
+
 XY selection signal tables
 XY top-region annotation tables
 
