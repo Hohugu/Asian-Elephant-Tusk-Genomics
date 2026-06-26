@@ -42,9 +42,18 @@ The Tajima's D is calculated in genomic windows for each phenotype group [SEE 19
 
 ## 6. Convergent candidate regions and Campbell candidate genes
 
-For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes. 
+For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes. [22-29]
 
 ## 7. Local LD and allele-frequency refinement
+
+This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions. [30-38]
+
+Main output:
+local LD summary tables
+50 kb LD window tables
+priority-region variant tables
+delta allele-frequency ranked variants
+annotated top delta-AF variants
 
 ## 8. XY selection signal annotation
 
