@@ -57,6 +57,14 @@ annotated top delta-AF variants
 
 ## 8. XY selection signal annotation
 
+These scripts extracted and summarized XY-linked or XY-enriched selection signals and annotated top candidate regions.
+XY selection signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration.
+
+[39-41]
+
+XY selection signal tables
+XY top-region annotation tables
+
 
 ## 9. Final selection//differentiation candidate regions
 
