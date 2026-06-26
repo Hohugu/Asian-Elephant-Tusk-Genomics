@@ -1,4 +1,4 @@
-# Genomic Wide Association Study (GWAS)
+# Genome-wide association study (GWAS)
 
 ## 1. Introduction
 GWAS is commonly used to test the association between a phenotype and genotypes. For that several models are proposed. The GWAS protocol is based on **cloudfiel.github.io/GWASTutorial**. As we can see on the _following picture_, GWAS requires initialisation, filtering, QC and PCA steps. 
@@ -7,7 +7,7 @@ GWAS is commonly used to test the association between a phenotype and genotypes.
 
 For the study, 3 GWAS models are realized with ***a standard baseline GWAS (PLINK logistic)***, ***a mixed-model GWAS (GEMMA)*** corrected for kinship and small population effects, and ***a mixed-model GWAS (GEMMA) for males only*** to compare between tuskless and tusked type males.
 
-Similar as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389), I focused the analyses on the whole genome and not only chromosome 1 and X, to identify the regions 
+Similar as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389), I focused the analyses on the whole genome and not only chromosome 1 and X, to identify the regions.
 
 ## 2. Standard baseline GWAS
 
@@ -47,10 +47,20 @@ Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups
 
 ## 3. GEMMA GWAS mixed-model
 
-The mixed-model GWAS is implemented with GEMMA, which provides standard modern WGS mixed-model GWAS, efficient and well suited for structured populations. The aim is to correct for kinship and small population effects. Mixed models are important here because population-associated SNPs may appear falsely associated with  tusk phenotype. For this, I compute a genomic relationship matrix (GRM) and add covariables as following : 
+The mixed-model GWAS is implemented with GEMMA, which provides standard modern WGS mixed-model GWAS, efficient and well suited for structured populations. The aim is to correct for kinship and small population effects. Mixed models are important here because population-associated SNPs may appear falsely associated with tusk phenotype. The kinship matrix was computed from LD-pruned variants, whereas the association test was run on the full QC genotype set. For this, I compute a genomic relationship matrix (GRM) and add covariables as following : 
 
+>y=Wα+xβ+u+ϵ
+>
+>W = covariables (population + PC1 + PC2 + PC3)
+>
+>x = SNP tested
+>
+>u∼N(0,Kσ²g) = GRM
+>
+>K = kinship matrix
+>
 > ***Tusk ~ SNP + sex + GRM + population + PC1 + PC2 + PC3***
-> 
+
 The script of this second GWAS model are available [SEE 10.prepare_GEMMA_input.R & 11.GEMMA_mixed_model_PC3.slurm]. 
 
 ### _3.1 Genomic Control Inflation Factor & Plots_
@@ -69,11 +79,11 @@ To identify significant SNP which may associated to phenotype, I used the ***Bon
 > 
 > -log10(PBonf) = 8.63
 
-So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. **262 significants SNPs are superior to 8.63**. 
+So all SNPs with -log10(P) superior to 8.63 are genome-wide significants. **261 significants SNPs are superior to 8.63**. 
 Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1, knowing that MEP1a is also present in chromosome 1. 
 
-From 262 SNPs, only 121 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
-Genes with highest significants SNPs are not directly related to tusk development as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389) found for African elephants with AMELX and MEP1a genes. These genes are involved in enamel and dentin expression and development. Further analyses will be made following Campbell et al protocol. I detected real loci associated to tusk morphology. However, with 93 individuals and an unbalanced binary phenotype, some signals may reflected a family or geographic structure. Nethertheless, Lambda GC (0.858) suggests that GEMMA would over corrected than inflate statistics, which lead main signals very likely. 
+From 261 SNPs, only 121 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. 
+Genes with highest significants SNPs are not directly related to tusk development as [Campbell et al. (2021)](https://www.science.org/doi/full/10.1126/science.abe7389) found for African elephants with AMELX and MEP1a genes. These genes are involved in enamel and dentin expression and development. Further analyses will be made following Campbell et al protocol. I detected candidate loci associate with tusk phenotype variation. However, with 93 individuals and an unbalanced binary phenotype, some signals may reflected a family or geographic structure. Nethertheless, Lambda GC (0.858) suggests that GEMMA would over corrected than inflate statistics, which lead main signals very likely. 
 
 ### _3.3 Annotation & Candidate genes_
 
@@ -112,7 +122,7 @@ Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.f
 I checked the closest Bonferroni hits from the candidates genes in a window of 500k, 1M and 2M [SEE 12.ter_Annotate_nearby_Bonferroni_hits.sh]. 
 
 Suggestive signals are identified close to the candidates genes. Suggestive signals mean that the Bonferroni threshold is not reached but the signals still strong. These signals were extracted by taking the id of SNPs to have the exact position and then used the distance from the candidate genes to verify the position and the related gene name. The distance is calculated compared to candidat gene coordonates. 
-For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. ODAM (odontogenic ameloblast) associated showed a weaker local signal (best p = 1.64E-06 within 500 kb downtream, and best p = 1.85E-08 within 1Mb upstream). However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal approximately 171–271 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis have to be made to detect LD between ENAM gene and the suggestive association**.
+For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. ODAM (odontogenic ameloblast) associated showed a weaker local signal (best p = 1.64E-06 within 500 kb downtream, and best p = 1.85E-08 within 1Mb upstream). However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal approximately 171–271 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis are required to detect LD between ENAM gene and the suggestive association**.
 
 **Table of Closest suggestive SNP to candidat genes in Asian elephants.**
 
@@ -137,21 +147,13 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. Among the candidate genes, MEP1B emerged as one of the strongest local signals. In the mixed GWAS, MEP1B showed a stronger within-gene association than MEP1A (p = 5.34E-03 versus p = 1.52E-02) and comparable suggestive associations within larger windows.
 
-## 4. GEMMA only-males GWAS mixed-model
+## 4. GEMMA males-only GWAS mixed-model
 
-The only-male GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs returned significants for GWAS GEMMA only-males. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
+The male-only GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs appeared associated with tusk phenotype variation for male-only GWAS GEMMA. However, in final analyses, 23 SNPs are kept after standardization. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
 
-Population structure is taken into account and 3 PCs are kept as before. Kinship is also corrected. The equation of GEMMA GWAS model for male is :
+Population structure is taken into account and 3 PCs are kept as before. Kinship is also corrected. The equation of male-only GEMMA GWAS model is :
 
->y=Wα+xβ+u+ϵ
->
->W = covariables (population + PC1 + PC2 + PC3)
->
->x = SNP tested
->
->u∼N(0,Kσ²g) = GRM
->
->K = kinship matrix
+> ***Tusk ~ SNP + GRM + population + PC1 + PC2 + PC3***
 
 The script for the third Gemma model : [SEE 13.Prepare_GEMMA_male_PC3_inputs.R & 14.GEMMA_mixed_model_male_PC3.slurm]
 
@@ -167,7 +169,7 @@ Script for the plots [SEE 15.GEMMA_male_Manhattan_PC3_QQ.R]
 
 ### _4.2 Bonferroni SNPs_
 
-For the GEMMA mixed-model with only males and 3PCs, the ***Bonferroni threshold*** : 
+For the GEMMA mixed-model with males only and 3PCs, the ***Bonferroni threshold*** : 
 
 > PBonf = 0.05 / Ntests  with Ntests = number of total variants tested, 20 405 248
 > 
