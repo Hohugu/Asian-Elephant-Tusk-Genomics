@@ -43,7 +43,7 @@ Visually Q-Q plots inform that models are lightly conservative with correcte cal
 
 <img width="315" height="410" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/Manhattan_PC2.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/Manhattan_PC3.png" />
 
-Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups (P = 4.3x10^-198 and 3.2x10^-45), which is after verification a modelisation's artefact. The disappearance of these signals on the 3PCs plot supports the hypothesis that the PC2's model is distorted by artificial SNP. **GWAS model with 3 PCs remains the most likely model**.
+Manhattan plot pour 2 PCs shows a SNP very strongly differentiate between groups (P = 4.3E-198 and 3.2E-45), which is after verification a modelisation's artefact. The disappearance of these signals on the 3PCs plot supports the hypothesis that the PC2's model is distorted by artificial SNP. **GWAS model with 3 PCs remains the most likely model**.
 
 ## 3. GEMMA GWAS mixed-model
 
@@ -57,7 +57,7 @@ The script of this second GWAS model are available [SEE 10.prepare_GEMMA_input.R
 
 Le lambda GC is equal to 0.858, indicating a slightly conservative model and without extreme artefact of Plink PC2 as observing in Manhattan plot. The GEMMA QQ plot shows a strong deviation. This deviation would come from that some rare variants with strong effect are present or that artefacts remain. Script for the plots [SEE 12.GEMMA_Manhattan_QQ_PC3.R]
 
-<img width="630" height="730" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="315" height="370" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
+<img width="615" height="715" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_Manhattan.png" /> <img width="300" height="355" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/03.GWAS/GEMMA_PC3_QQ.png" />
 
 ### _3.2 Bonferroni SNPs_
 
