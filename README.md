@@ -89,7 +89,7 @@ Genes with highest significants SNPs are not directly related to tusk developmen
 
 After identification of Bonferroni significant SNPs, I have searched for genes names and functions related to the significant SNPs. A total of 47 unique genes overlapped Bonferroni-significant GEMMA associations.
 
-**Table of Bonferroni-significant genes identified by GEMMA mixed-model GWAS (PC1–PC3)**
+**<ins>Table of Bonferroni-significant genes identified by GEMMA mixed-model GWAS (PC1–PC3)<ins>**
 
 | Gene name | Gene symbol | NC chr | CM chr | Start | End | Best SNP | Description | Best p-value |
 |------------|--------|------------|------------|------------|------------|------------|------------------|------------|
@@ -108,7 +108,7 @@ You can find the rest of the table in **Table of Bonferroni-significant genes**.
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
-**Table of orthologue candidat genes in Asian elephants.** 
+**<ins>Table of orthologue candidat genes in Asian elephants.<ins>** 
 
 | Candidat Gene  | Gene symbol | CHR | Position | Description | Best p-value |
 | ----- | ------ | ------ | ------| --------------- | ------- |
@@ -124,7 +124,7 @@ I checked the closest Bonferroni hits from the candidates genes in a window of 5
 Suggestive signals are identified close to the candidates genes. Suggestive signals mean that the Bonferroni threshold is not reached but the signals still strong. These signals were extracted by taking the id of SNPs to have the exact position and then used the distance from the candidate genes to verify the position and the related gene name. The distance is calculated compared to candidat gene coordonates. 
 For the 500kb window, no Bonferroni-significant association overlapped the Campbell et al. candidate genes. ODAM (odontogenic ameloblast) associated showed a weaker local signal (best p = 1.64E-06 within 500 kb downtream, and best p = 1.85E-08 within 1Mb upstream). However, suggestive associations (p < 1E-05) were detected within 500 kb of all six candidate loci, with the strongest signal approximately 171–271 kb upstream of the ENAM/AMBN/AMTN enamel gene cluster (p = 1.85E-08). This latter signal remains stronger than the majority of the genomic background below Bonferroni threshold and than genes located in the region containing enamel or teeth genes. **Further analysis are required to detect LD between ENAM gene and the suggestive association**.
 
-**Table of Closest suggestive SNP to candidat genes in Asian elephants.**
+**<ins>Table of Closest suggestive SNP to candidat genes in Asian elephants.<ins>**
 
 | Candidate Gene | Closest suggestive SNP   |      p-value |                  Distance from candidate gene | SNP chromosome           | Gene containing SNP | Gene coordinates        | Annotation                           |
 | -------------- | ------------------------ | -----------: | --------------------------------------------: | ------------------------ | ------------------- | ----------------------- | ------------------------------------ |
@@ -137,7 +137,7 @@ For the 500kb window, no Bonferroni-significant association overlapped the Campb
 
 Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (CM044047.1:170145312:G:T) is returned significant from GEMMA GWAS mixed-model (p = 1.56E-10). This region is detected 1.42Mb downstream of AMELX (amelogenin X-linked) candidate gene, on the same chromosome, previously involved in tusk morphology in African elephants (Campbell et al., 2021). No Bonferroni-significant SNP has been found directly in AMELX, but GEMMA GWAS signal is detected inside the same chromosomic bloc and might reflect a local association.
 
-**Table of Closest Bonferroni SNP to AMELX candidat genes in Asian elephants.**
+**<ins>Table of Closest Bonferroni SNP to AMELX candidat genes in Asian elephants.<ins>**
 
 | Candidate Gene |   Closest Bonferroni SNP |      p-value | Distance from candidate gene | SNP chromosome           | Gene containing SNP | Gene coordinates        | Annotation             |
 | -------------- | -----------------------: | -----------: | ---------------------------: | ------------------------ | ------------------- | ----------------------- | ---------------------- |
