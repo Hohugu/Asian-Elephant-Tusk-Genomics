@@ -82,6 +82,15 @@ delta_TajimaD < 0
 TX lower heterozygosity
 Evidence_score_with_Het = 4
 
+**<ins>Resume table of the 3 identified regions from Genome-wide FST<ins>**
+
+| Region        | Coordinates                    | Top SNP                  |  Max FST |    delta pi | delta TajimaD | Ho direction | Score | Genes                      |
+| ------------- | ------------------------------ | ------------------------ | -------: | ----------: | ------------: | ------------ | ----: | -------------------------- |
+| FST_region_18 | CM044020.1:77800001-77850000   | CM044020.1:77845197:C:T  | 0.162061 | -0.00195076 |     -2.422898 | TX lower     |     4 | LOC126077071; LOC126077054 |
+| FST_region_9  | CM044022.1:120700001-120750000 | CM044022.1:120714630:A:T | 0.139687 | -0.00145871 |     -2.511417 | TX lower     |     4 | none clear                 |
+| FST_region_56 | CM044021.1:137050001-137100000 | CM044021.1:137060324:A:G | 0.137149 | -0.00138704 |     -1.731080 | TX lower     |     4 | none clear                 |
+
+
 These regions are compatible with selection or haplotypic differentiation between tusked and tuskless elephants. However, they do not prove selection. Genetic drift, residual population structure and technical artifacts cannot be fully excluded.
 
 ## 10. Conclusion
