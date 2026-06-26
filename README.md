@@ -6,11 +6,11 @@ This part investigates genomic differentiation between tusked and tuskless Asian
 The analyses focused on 4 complementary signals : 
 
 - FST, to detect allele-frequency differentiation between tusked and tuskless males.
-- 
+  
 - Nucleotide diversity used to compare local genetic diversity between tusk types.
-- 
+  
 - Tajima's D, to identify shifts in the allele-frequency spectrum
-- 
+  
 - Observed heterozygosity to detect regions with reduced within-group heterozygosity. 
 
 These analyses are used to define candidate selection or reveal differentiation regions. 
