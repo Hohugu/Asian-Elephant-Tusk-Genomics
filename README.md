@@ -3,7 +3,7 @@
 ## 1. Introduction
 This part investigates genomic differentiation between tusked and tuskless Asian elephants using population-genomic summary statistics. The aim is to identify genomic regions showing consistent differentiation between phenotype groups, independently of the GWAS association tests. 
 
-The analyses focused on 4 complementary signals : 
+The analyses focused on differents complementary signals : 
 
 - Genome-wide FST scans.
   
