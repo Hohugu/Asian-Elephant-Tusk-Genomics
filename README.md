@@ -34,6 +34,8 @@ Observed heterozygosity is estimated across candidate regions to test whether di
 heterozygosity_TT_TX.sh - 13.windowed_observed_heterozygosity.R]. 
 Observed heterozygosity is used as an additional evidence layer. The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
 
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
+
 ## 4. Nucleotide diversity scan
 
 Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compare_pi_TT_TX.R]. The difference Δπ is then used to identify regions with one group showing a reduced local diversity [SEE 17.compare_pi_FST_GWAS.R and 18.annotate_reduced_pi_FST_overlap.R]. 
@@ -43,6 +45,8 @@ Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compa
 ## 5. Tajima's D scan
 
 The Tajima's D is calculated in genomic windows for each phenotype group [SEE 19.TajimaD_TT_TX.sh]. Differences in Tajima's D is used to detect regions where the allele-frequency spectrum differed between tusked and tuskless elephants. I have intersected Tajima’s D differences with FST and pi signals to be able to compare with other metrics [SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]. Tajima’s D differences were used as a third population-genomic evidence layer.
+
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_TajimaD_50kb_genomewide.png"/>
 
 ## 6. Convergent candidate regions and Campbell candidate genes
 
