@@ -43,7 +43,7 @@ Observed heterozygosity is used as an additional evidence layer [SEE 14.add_Het_
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
 Here, I computed the heterozygosity delta (ΔHo = Ho_TX - Ho_TT). If ΔHo < 0, meaning that tuskless individuals display lower heterozygoty than tusked individuals, and if ΔHo < 0, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity. For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity. 
-Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 3, 11 and among sexual chromosomes. 
+Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 22, 32 and among sexual chromosomes. 
 
 The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants.
 
@@ -54,7 +54,7 @@ Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compa
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_pi_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig3_delta_pi_50kb_GEMMA_Campbell_annotated.png" />
 
-Here I can observed that four regions are negatif for the three last metrics : chr 22, 26 and 32 and chrX. 
+Here I can observed that four regions are negatif for the three last metrics : chr 22, 26 and 32 and among sexual chromosomes. 
 
 ## 5. Tajima's D scan
 
@@ -69,11 +69,13 @@ About the Tajima's D, this metric compare two diversity forms : average diversit
 
 ## 6. Convergent candidate regions and Campbell candidate genes
 
-For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes. [22-29]
+For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes [SEE 22-29 scripts]. The script 25bis was computed during this step.
+
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Candidate_gene.png"/>
 
 ## 7. Local LD and allele-frequency refinement
 
-This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions. [30-38] The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
+This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions [SEE 30-38 scripts]. The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
 
 Main output:
 local LD summary tables
