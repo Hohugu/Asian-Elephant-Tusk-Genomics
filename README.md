@@ -54,7 +54,7 @@ Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compa
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_pi_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig3_delta_pi_50kb_GEMMA_Campbell_annotated.png" />
 
-Here I can observed that 
+Here I can observed that three regions are negatif for the three last metrics : chr 22, 26 and 32.
 
 ## 5. Tajima's D scan
 
