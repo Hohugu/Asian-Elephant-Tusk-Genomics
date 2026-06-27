@@ -38,7 +38,7 @@ heterozygosity_TT_TX.sh - 13.windowed_observed_heterozygosity.R].
 Observed heterozygosity is used as an additional evidence layer. The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annototed.png" />
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
 Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 3, 11 and among sexual chromosomes. 
 
