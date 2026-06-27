@@ -73,6 +73,9 @@ XY selection signals were retained as an additional selection/differentiation ev
 
 [regional plot](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot)
 
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD.png"/>
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA_like_XY_peak_regional_GWAS_LD.png"/>
+
 XY selection signal tables
 XY top-region annotation tables
 
