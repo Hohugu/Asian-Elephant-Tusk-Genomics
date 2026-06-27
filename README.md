@@ -29,7 +29,7 @@ FST candidate regions are then compared with GWAS signals, to test whether diffe
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Genomewide_FST_1Mb_annotated.png" />
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig1_FST_50kb_GEMMA_Campbell_annotated.png" />
 
-SNPs with the higher FST values are located in chromosome 1, 3, 11 and among sexual chromosomes. No GEMMA SNPs returned with high/significant FST value. 
+SNPs with the higher FST values are located in chromosome 1, 3, 16 and among sexual chromosomes. No GEMMA SNPs returned with high/significant FST value. 
 A high FST value usually means that allelic frequencies between tusked and tuskless individuals are differents. Thereby, if a GWAS GEMMA SNPs have a high FST value, then this GWAS SNPs is located inside a region where tusked and tuskless individuals are differents. Morevoer, a Bonferroni SNPs near to Campbell candidate gene and inside a high FST window, would suggest spatial concordance between GWAS association, TT/TX differentiation and prior tooth/tusk candidate genes.
 
 ## 3. Heterozygosity scan 
