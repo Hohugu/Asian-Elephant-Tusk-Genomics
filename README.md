@@ -91,10 +91,16 @@ annotated top delta-AF variants
 These scripts extracted and summarized XY-linked or XY-enriched selection signals and annotated top candidate regions.
 The sex-linked signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration [SEE 39-41].
 
-Regional plots were computed following the explanation of [GWASTutorial](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot).
+Regional plots on X chromosome were computed following the explanation of [GWASTutorial](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot).
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
+
+Regional plots on Y chromosome : 
+
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
+
 
 XY selection signal tables
 XY top-region annotation tables
