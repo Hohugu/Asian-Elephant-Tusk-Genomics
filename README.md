@@ -73,6 +73,8 @@ For this part, I combined FST, nucleotide diversity and Tajima's D candidate reg
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Candidate_gene.png"/>
 
+The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics and strenghten its potential association with tusk phenotype. 
+
 ## 7. Local LD and allele-frequency refinement
 
 This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions [SEE 30-38 scripts]. The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
