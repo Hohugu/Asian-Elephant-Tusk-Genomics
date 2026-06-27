@@ -29,6 +29,8 @@ FST candidate regions are then compared with GWAS signals, to test whether diffe
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Genomewide_FST_1Mb_annotated.png" />
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_vs_TX_FST_50kb_genomewide_highlight.png" />
 
+SNPs with the higher FST values are located in chromosome 1, 3 and among sexual chromosomes. No GEMMA SNPs returned with high/significant FST value. 
+
 ## 3. Heterozygosity scan 
 
 Observed heterozygosity is estimated across candidate regions to test whether differentiated windows also showed reduced heterozygosity in one tusk type [SEE 10
@@ -36,6 +38,8 @@ heterozygosity_TT_TX.sh - 13.windowed_observed_heterozygosity.R].
 Observed heterozygosity is used as an additional evidence layer. The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
+
+Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 3, 11 and among sexual chromosomes. 
 
 ## 4. Nucleotide diversity scan
 
@@ -67,11 +71,9 @@ annotated top delta-AF variants
 ## 8. XY selection signal annotation
 
 These scripts extracted and summarized XY-linked or XY-enriched selection signals and annotated top candidate regions.
-XY selection signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration.
+The sex-linked signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration [SEE 39-41].
 
-[39-41]
-
-[regional plot](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot)
+The regional plots were computed following the explanation of [GWASTutorial](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot).
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
@@ -85,7 +87,7 @@ XY top-region annotation tables
 All the previous metrics are then integrated into a final candidate-region table. If one region is supported by multiple statistics, this region is prioritized and should be consider as a strong region.
 
 After integration of all the metrics together, I retained three candidate regions [SEE 42.make_final_selection_candidate_regions.R] : 
-The three final selection/differentiation regions are not located on the main X/Y-associated peak. **The sex-linked signal was analyzed separately as an XY selection layer and later integrated with GWAS and rare-variant results.**
+The three final selection/differentiation regions are not located on the main X/Y-associated peak.
 
 All three final regions showed:
 
