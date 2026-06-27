@@ -73,7 +73,7 @@ For this part, I combined FST, nucleotide diversity and Tajima's D candidate reg
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Candidate_gene.png"/>
 
-The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics with under 0 values for Heterozygosity, nucleotide diversity and Tajima's D metrics and strenghten thereby its potential association with tusk phenotype, in addition to be relatively close with AMELX. 
+The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics with under 0 values for Heterozygosity, nucleotide diversity and Tajima's D metrics and strenghten thereby its potential association with tusk phenotype, in addition to be relatively close with AMELX. Moreover, this SNP is over the Bonferroni threshold in GEMMA mixed-GWAS (female and male included). The same for male-only do not return the same SNP, suggesting that this SNPs is only supported by females, and eventually ledding to the hypothesis that female would carry the "mutation" of tusklessness. 
 
 ## 7. Local LD and allele-frequency refinement
 
