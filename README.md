@@ -18,6 +18,7 @@ The analyses focused on differents complementary signals :
 - Candidate-region annotation
 
 These analyses are used to define candidate selection or reveal differentiation regions. 
+**TX means tuskless and TT means tusked.** 
 
 ## 2. FST scan and FST candidate regions
 
@@ -36,28 +37,33 @@ A high FST value usually means that allelic frequencies between tusked and tuskl
 
 Observed heterozygosity is estimated across candidate regions to test whether differentiated windows also showed reduced heterozygosity in one tusk type [SEE 10
 heterozygosity_TT_TX.sh - 13.windowed_observed_heterozygosity.R]. 
-Observed heterozygosity is used as an additional evidence layer. The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
+Observed heterozygosity is used as an additional evidence layer [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
+Here, I computed the heterozygosity delta (ΔHo = Ho_TX - Ho_TT). If ΔHo < 0, meaning that tuskless individuals display lower heterozygoty than tusked individuals, and if ΔHo < 0, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity. For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity. 
 Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 3, 11 and among sexual chromosomes. 
+
+The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants.
 
 ## 4. Nucleotide diversity scan
 
-Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compare_pi_TT_TX.R]. The difference Δπ is then used to identify regions with one group showing a reduced local diversity [SEE 17.compare_pi_FST_GWAS.R and 18.annotate_reduced_pi_FST_overlap.R]. 
+Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compare_pi_TT_TX.R]. The difference Δπ (π_TX - π_TT) is then used to identify regions with one group showing a reduced local diversity [SEE 17.compare_pi_FST_GWAS.R and 18.annotate_reduced_pi_FST_overlap.R]. If Δπ <0, tuskless individuals have a lower nucleotidic diversity, while Δπ >0 means that tusked individuals have a lower nucleotidic diversity. For a recent selection in TX, high FST, negatif Δπ and ΔHo are expected and would suggest that tuskless individuals carry a more homogeneous haplotype in the associated region. For a selection in tusked individuals, high FST and positif Δπ and ΔHo are wanted meaning that diversity is lesser in tusked than tuskless individuals. 
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_pi_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig3_delta_pi_50kb_GEMMA_Campbell_annotated.png" />
 
+Here I can observed that 
 
 ## 5. Tajima's D scan
 
 The Tajima's D is calculated in genomic windows for each phenotype group [SEE 19.TajimaD_TT_TX.sh]. Differences in Tajima's D is used to detect regions where the allele-frequency spectrum differed between tusked and tuskless elephants. I have intersected Tajima’s D differences with FST and pi signals to be able to compare with other metrics [SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]. Tajima’s D differences were used as a third population-genomic evidence layer.
 
+About the Tajima's D, this metric compare two diversity forms : average diversity between sequences and the number of variants. A negatif Tajima's D means that there are an excess of rare variants which can be suitable with recent or sweep selection, demographic expansion or purify selection. A positif Tajima's D means that there is an excess of variants with intermediate frequency, and can be associated with balancing selection, population structure, bottleneck event or population mixature. In the following plots, ΔTajimaD (TajimaD_TX - TajimaD_TT) is displayed. Consequently, ΔTajimaD < 0 means that tuskless individuals have a lower Tajima's D than tusked ones and for a ΔTajimaD > 0, tusked individuals have a lower Tajima's D than tuskless individuals. 
+
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_TajimaD_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig4_delta_TajimaD_50kb_GEMMA_Campbell_annotated.png" />
-
 
 ## 6. Convergent candidate regions and Campbell candidate genes
 
