@@ -96,11 +96,25 @@ Regional plots on X chromosome were computed following the explanation of [GWAST
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
 
+A whole Y chromosome regional GWAS/LD plot was generated for CM044048.1 (chromosome Y) to visualize whether the LOC126069858/GLRA3-like signal is isolated or part of a broader sex-linked association pattern.
+
 Regional plots on Y chromosome : 
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
 
+lead FST = CM044048.1:14022478:C:T
+position = 14.022 Mb
+
+This signal is sex-linked / Y-like scaffold CM044048.1.
+
+top GWAS = CM044048.1:14979125:G:T
+position = 14.979 Mb
+
+distance ≈ 0.96 Mb
+LD between GWAS and FST peak = r² = 0.050
+
+A chromosome-scale GWAS/LD plot was generated across CM044048.1 to inspect the major sex-linked differentiation signal. The strongest FST window on this scaffold was located at 14.00–14.05 Mb, whereas the strongest GWAS signal was located ~0.96 Mb away near LOC126069858. The weak LD between both lead SNPs suggests that the FST and GWAS peaks are distinct local signals rather than a single shared LD peak.
 
 XY selection signal tables
 XY top-region annotation tables
