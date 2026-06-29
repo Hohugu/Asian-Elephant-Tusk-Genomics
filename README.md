@@ -52,7 +52,7 @@ However, 87 rare differentiated variants were located within XY score 3 regions,
 
 ## 5. Functional annotation of rare variants
 
-Rare differentiated variants were annotated using gene and regulatory features derived from the reference GFF [SEE 57.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
+Rare differentiated variants were annotated using gene and regulatory features derived from the reference GFF [SEE 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
 
 This step classified rare variants according to their genomic context, including coding regions, intronic regions, promoter-proximal regions and intergenic regions.
 
@@ -62,7 +62,7 @@ However, GFF-based annotation alone cannot identify enhancers, transcription-fac
 
 ## 6. Rare coding variants and predicted effects
 
-Rare variants overlapping coding sequences were further analyzed to predict their potential effect on protein sequences [SEE 58.predict_rawVCF_rare_CDS_variant_effects.py and 59.make_rare_CDS_missense_unique_priority_table.R].
+Rare variants overlapping coding sequences were further analyzed to predict their potential effect on protein sequences [SEE 50.predict_rawVCF_rare_CDS_variant_effects.py and 51.make_rare_CDS_missense_unique_priority_table.R].
 
 The coding-variant analysis found:
 
@@ -91,7 +91,7 @@ These variants are interesting functional candidates, but none of the rare misse
 
 ## 7. Rare variants near GWAS priority genes
 
-Rare differentiated variants were also searched near GWAS-prioritized genes [SEE 60.summarize_rare_variants_near_GWAS_priority_genes.R].
+Rare differentiated variants were also searched near GWAS-prioritized genes [SEE 52.summarize_rare_variants_near_GWAS_priority_genes.R].
 
 This step identified rare variants located near candidate GWAS loci, including the LOC126069858 / GLRA3-like region. Several rare variants near this region were located in promoter-proximal, intragenic non-exonic or nearby intergenic positions.
 
