@@ -30,7 +30,7 @@ FST candidate regions are then compared with GWAS signals, to test whether diffe
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Genomewide_FST_1Mb_annotated.png" />
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig1_FST_50kb_GEMMA_Campbell_annotated.png" />
 
-SNPs with the higher FST values are located in chromosome 1, 3, 16 and among sexual chromosomes. No GEMMA SNPs returned with high/significant FST value. 
+SNPs with the higher FST values are located in chromosome 1, 3, 16 and among sexual chromosomes. Most GEMMA Bonferroni SNPs did not fall within the strongest FST windows, but some GWAS signals were located near Campbell candidate genes and close to differentiated regions.
 A high FST value usually means that allelic frequencies between tusked and tuskless individuals are differents. Thereby, if a GWAS GEMMA SNPs have a high FST value, then this GWAS SNPs is located inside a region where tusked and tuskless individuals are differents. Morevoer, a Bonferroni SNPs near to Campbell candidate gene and inside a high FST window, would suggest spatial concordance between GWAS association, TT/TX differentiation and prior tooth/tusk candidate genes.
 
 ## 3. Heterozygosity scan 
@@ -42,7 +42,7 @@ Observed heterozygosity is used as an additional evidence layer [SEE 14.add_Het_
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
-Here, I computed the heterozygosity delta (ΔHo = Ho_TX - Ho_TT). If ΔHo < 0, meaning that tuskless individuals display lower heterozygoty than tusked individuals, and if ΔHo < 0, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity. For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity. 
+Here, I computed the heterozygosity delta (ΔHo = Ho_TX - Ho_TT). If ΔHo < 0, meaning that tuskless individuals display lower heterozygoty than tusked individuals, and if ΔHo > 0, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity. For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity. 
 Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 22, 32 and among sexual chromosomes. 
 
 The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants.
@@ -73,7 +73,7 @@ For this part, I combined FST, nucleotide diversity and Tajima's D candidate reg
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Candidate_gene.png"/>
 
-The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics with under 0 values for Heterozygosity, nucleotide diversity and Tajima's D metrics and strenghten thereby its potential association with tusk phenotype, in addition to be relatively close with AMELX. Moreover, this SNP is over the Bonferroni threshold in GEMMA mixed-GWAS (female and male included). The same for male-only do not return the same SNP, suggesting that this SNPs is only supported by females, and eventually ledding to the hypothesis that female would carry the "mutation" of tusklessness. 
+The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics with under 0 values for Heterozygosity, nucleotide diversity and Tajima's D metrics and strenghten thereby its potential association with tusk phenotype, in addition to be relatively close with AMELX. Moreover, this SNP is over the Bonferroni threshold in GEMMA mixed-GWAS (female and male included). Because this SNP is significant in the all-sample GEMMA model but not recovered as the same lead SNP in the male-only analysis, this signal may be influenced by sex composition or sex-linked genetic structure. It should therefore be interpreted cautiously and not as direct evidence for a female-carried causal mutation.
 
 ## 7. Local LD and allele-frequency refinement
 
@@ -96,7 +96,7 @@ Regional plots on X chromosome were computed following the explanation of [GWAST
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
 
-A whole Y chromosome regional GWAS/LD plot was generated for CM044048.1 (chromosome Y) to visualize whether the LOC126069858/GLRA3-like signal is isolated or part of a broader sex-linked association pattern.
+A whole sex-linked/Y-like scaffold GWAS/LD plot was generated for CM044048.1 sex-linked / Y-like scaffold to inspect the major differentiation signal on this scaffold.
 
 Regional plots on Y chromosome : 
 
