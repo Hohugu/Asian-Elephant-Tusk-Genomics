@@ -50,15 +50,25 @@ No rare differentiated variant was identical to a GEMMA Bonferroni SNP. This ind
 
 However, 87 rare differentiated variants were located within XY score 3 regions, suggesting that some rare variants occur in sex-linked or sex-enriched candidate regions.
 
-## 5. Functional annotation of rare variants
+## 5. Regulatory and gene-context annotation of rare variants
 
-Rare differentiated variants were annotated using gene and regulatory features derived from the reference GFF [SEE 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
+Rare differentiated variants were annotated according to their genomic context using GFF-derived genomic features [SEE 52.make_promoter_exon_CDS_beds_from_GFF.sh, 52b.convert_regulatory_beds_NC_to_CM.sh and 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
 
-This step classified rare variants according to their genomic context, including coding regions, intronic regions, promoter-proximal regions and intergenic regions.
+The annotation classified rare variants into several categories:
 
-This annotation was used to prioritize rare variants located near candidate genes, within regulatory-proximal regions or inside protein-coding genes.
+- CDS variants.
+- Exon non-CDS variants.
+- Intragenic non-exonic variants.
+- Promoter-proximal variants, defined as variants located within 2 kb of a gene transcription start site.
+- Intergenic variants.
 
-However, GFF-based annotation alone cannot identify enhancers, transcription-factor binding sites or tissue-specific regulatory elements. Therefore, non-coding rare variants should be interpreted as candidate regulatory variants only, not as proven regulatory mutations.
+This step was used to identify rare variants that may have functional or regulatory relevance, especially variants located near GWAS-prioritized genes or within sex-linked candidate regions.
+
+A subset of rare variants near the LOC126069858 / GLRA3-like region was particularly interesting. Among the high-priority rare variants in this region, several were located in promoter-proximal or intragenic non-exonic contexts. For example, rare variants close to the LOC126069858 transcription start site included promoter-proximal variants located approximately 832 bp and 1,524 bp from the TSS, as well as intragenic non-exonic variants located less than 2 kb from the TSS.
+
+These rare non-coding variants may indicate a regulatory or haplotypic signal around LOC126069858. However, this interpretation remains cautious. GFF-based annotation can identify genes, exons, CDS and promoter-proximal regions, but it cannot directly identify enhancers, transcription-factor binding sites, chromatin accessibility or tissue-specific regulatory elements.
+
+Therefore, these variants should be interpreted as candidate regulatory or non-coding variants, not as proven regulatory mutations.
 
 ## 6. Rare coding variants and predicted effects
 
@@ -93,11 +103,9 @@ These variants are interesting functional candidates, but none of the rare misse
 
 Rare differentiated variants were also searched near GWAS-prioritized genes [SEE 52.summarize_rare_variants_near_GWAS_priority_genes.R].
 
-This step identified rare variants located near candidate GWAS loci, including the LOC126069858 / GLRA3-like region. Several rare variants near this region were located in promoter-proximal, intragenic non-exonic or nearby intergenic positions.
+Several rare variants near GWAS-prioritized genes were non-coding but located in regulatory-relevant contexts, including promoter-proximal or intragenic non-exonic regions. This was particularly clear around the LOC126069858 / GLRA3-like locus, where rare TT-enriched variants were found near the gene body and close to the predicted transcription start site.
 
-These results suggested that LOC126069858 may carry both common-variant GWAS evidence and rare-variant enrichment in the surrounding region.
-
-However, this step was only a candidate-region screening. Formal burden and haplotype-like analyses of LOC126069858 were performed later in a separate section.
+This supports the hypothesis that rare-variant contribution at this locus may be non-coding, regulatory or haplotypic rather than protein-coding. However, this remains a candidate interpretation because no experimental regulatory data such as ATAC-seq, ChIP-seq or enhancer annotation were available.
 
 ## 8. Interpretation
 
@@ -119,6 +127,6 @@ In particular, the raw VCF analysis is useful for detecting rare variants that m
 
 ## 10. Conclusion
 
-This part identified a set of rare differentiated variants between tusked and tuskless elephants. Most rare differentiated variants were enriched in tusked individuals, and no rare differentiated variant directly overlapped a GEMMA Bonferroni SNP.
+This part identified a set of rare differentiated variants between tusked and tuskless elephants. Most rare differentiated variants were enriched in tusked individuals, and no rare differentiated variant directly overlapped a GEMMA Bonferroni SNP. The rare-variant results provided an additional candidate layer for downstream integration with GWAS, selection/differentiation scans and functional annotation. In particular, the presence of rare promoter-proximal and intragenic non-coding variants near LOC126069858 motivated further regional burden and haplotype-like analyses.
 
 The rare-variant results provided an additional candidate layer for downstream integration with GWAS, selection/differentiation scans and functional annotation. The strongest rare-variant regional follow-up was later focused on the LOC126069858 / GLRA3-like locus.
