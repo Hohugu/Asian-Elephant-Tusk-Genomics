@@ -100,8 +100,8 @@ A whole Y chromosome regional GWAS/LD plot was generated for CM044048.1 (chromos
 
 Regional plots on Y chromosome : 
 
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/"/>
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/CM044048.1_Y_peak_whole_chr_GWAS_LD.png"/>
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/CM044048.1_Y_peak_zoom_GWAS_LD.png"/>
 
 lead FST = CM044048.1:14022478:C:T
 position = 14.022 Mb
