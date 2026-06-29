@@ -127,6 +127,5 @@ In particular, the raw VCF analysis is useful for detecting rare variants that m
 
 ## 10. Conclusion
 
-This part identified a set of rare differentiated variants between tusked and tuskless elephants. Most rare differentiated variants were enriched in tusked individuals, and no rare differentiated variant directly overlapped a GEMMA Bonferroni SNP. The rare-variant results provided an additional candidate layer for downstream integration with GWAS, selection/differentiation scans and functional annotation. In particular, the presence of rare promoter-proximal and intragenic non-coding variants near LOC126069858 motivated further regional burden and haplotype-like analyses.
-
-The rare-variant results provided an additional candidate layer for downstream integration with GWAS, selection/differentiation scans and functional annotation. The strongest rare-variant regional follow-up was later focused on the LOC126069858 / GLRA3-like locus.
+This part identified a set of rare differentiated variants between tusked and tuskless elephants. Most rare differentiated variants were enriched in tusked individuals, and no rare differentiated variant directly overlapped a GEMMA Bonferroni SNP. 
+The rare-variant results provided an additional candidate layer for downstream integration with GWAS, selection/differentiation scans and functional annotation. In particular, the presence of rare promoter-proximal and intragenic non-coding variants near LOC126069858 motivated further regional burden and haplotype-like analyses.
