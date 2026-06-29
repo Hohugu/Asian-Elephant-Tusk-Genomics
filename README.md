@@ -20,7 +20,7 @@ This result suggests that the rare-variant signal is not randomly distributed be
 
 ## 3. Raw VCF rare-variant scan
 
-To avoid missing rare variants removed during GWAS QC filtering, I repeated the rare-variant scan using the raw genotyped VCF [SEE 50.rawVCF_rare_variant_AF_scan_TT_TX.sh and 51.summarize_rawVCF_rare_variants_TT_TX.R].
+To avoid missing rare variants removed during GWAS QC filtering, I repeated the rare-variant scan using the raw genotyped VCF [SEE 45.rawVCF_rare_variant_AF_scan_TT_TX.sh and 46.summarize_rawVCF_rare_variants_TT_TX.R].
 
 The raw VCF analysis included:
 
