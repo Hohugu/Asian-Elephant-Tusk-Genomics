@@ -26,8 +26,8 @@ The raw VCF analysis included:
 
 * 40 tusked elephants.
 * 53 tuskless elephants.
-* 26,423,639 merged biallelic variants.
-* 8,008 rare differentiated variants.
+* 26 423 639 merged biallelic variants.
+* 8 008 rare differentiated variants.
 
 Similar to the QC-based scan, all rare differentiated variants detected from the raw VCF were TT-enriched rare variants.
 
@@ -41,7 +41,7 @@ Main results from the raw VCF rare-variant scan:
 
 | Category                                       | Count |
 | ---------------------------------------------- | ----: |
-| Rare differentiated variants                   | 8,008 |
+| Rare differentiated variants                   | 8 008 |
 | In convergent selection/differentiation region |     1 |
 | In XY score 3 region                           |    87 |
 | Directly overlapping a GWAS Bonferroni SNP     |     0 |
