@@ -35,7 +35,7 @@ The raw VCF scan therefore confirmed the same global pattern observed in the QC 
 
 ## 4. Intersection with GWAS and selection signals
 
-Rare differentiated variants were intersected with GWAS Bonferroni SNPs, convergent selection/differentiation regions and XY-linked candidate regions [SEE 49.intersect_rare_variants_with_selection_regions.R and 50b.intersect_rawVCF_rare_variants_with_selection_regions.R].
+Rare differentiated variants were intersected with GWAS Bonferroni SNPs, convergent selection/differentiation regions and XY-linked candidate regions [SEE 47.intersect_rare_variants_with_selection_regions.R and 48.intersect_rawVCF_rare_variants_with_selection_regions.R].
 
 Main results from the raw VCF rare-variant scan:
 
