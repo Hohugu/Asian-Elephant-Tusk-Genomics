@@ -10,7 +10,7 @@ Rare variants were analyzed as an additional layer of evidence, complementary to
 
 ## 2. Rare-variant allele-frequency scan
 
-Rare variants were first extracted from the QC genotype dataset and compared between TT and TX elephants [SEE 47.rare_variant_AF_scan_TT_TX.sh and 48.summarize_rare_variants_TT_TX.R].
+Rare variants were first extracted from the QC genotype dataset and compared between TT and TX elephants [SEE 43.rare_variant_AF_scan_TT_TX.sh and 44.summarize_rare_variants_TT_TX.R].
 
 This scan identified rare variants showing strong allele-frequency differences between tusked and tuskless elephants. In the QC dataset, 7,635 rare differentiated variants were detected.
 
