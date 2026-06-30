@@ -1,48 +1,173 @@
-# Genomic project on tusk genes identification in Asian elephants (Elephas maximus)
+# Functional and regulatory-proximal annotation
 
-## Introduction
+## 1. Introduction
 
-In Asian elephants, it has been observed by Evans in the 1900s that Asian elephants display a strong sexual dimorphism by the only presence of tusk in males.
-Unlikely African elephants, only males display tusk, however the phenotype without tusk can also be found in males as well as females. 
+This part annotates GWAS Bonferroni SNPs according to their genomic and functional context. The goal was to determine whether associated SNPs were located in coding regions, exons, promoter-proximal regions, intragenic non-coding regions, or intergenic regions.
 
-This difference of phenotype still unexplained, and consequently the aim of this project is to identify the genes which are potentially associated with the phenotype tusk in Asian elephants. 
-For that, blood samples have been collected and DNA have been extracted and sequenced from the Myanmar Timber Enterprise (MTE) before 2021. Thanks to the India Institude Science (IISc) collaboration, the study covered 93 individuals. The analysis were based on analysis in [Campbell-Staton et al., 2021](https://www.science.org/doi/full/10.1126/science.abe7389) which have identified two genes involved in the expression and the growth of tusk in African elephants in an anthropogenetic selective pressure (i.e poaching and loss of tusk in African elephants). Theses genes are AMELX and MEP1A, which can also be find in mices. In this study, females were also taken into account for the analysis. In this study on Asian elephants, we will also take females into analysis of gene identification given they is a sexual dimorphism context. 
+This analysis was performed after the GWAS and population-differentiation scans. It provides a functional and regulatory-proximal interpretation of GWAS signals, but it does not prove causality or regulatory mechanism.
 
-This project is separated into four sections : **WGS Variant Calling**, **Pre-GWAS**, **GWAS** and **Genetic analyses**. Each section form one branch of the github. You can then navigate between branches by clicking on the dropdown menu. 
+The annotation was based on the reference genome FASTA and GFF files. Therefore, this analysis can identify genes, exons, CDS, transcript structure and promoter-proximal regions, but it cannot directly identify enhancers, transcription-factor binding sites, chromatin accessibility or tissue-specific regulatory elements.
 
-## Project Part
+## 2. GFF-derived annotation resources
 
-### WGS Variant Calling
-The first part **WGS Variant Calling** is a workflow intitled "*Variant Calling Pipeline : GATK Best practise Germline short variant discovery (SNPs+Indels) workflow*" from these sources :
- - > https://www.youtube.com/watch?v=iHkiQvxyr5c&t=1803s
- - > https://www.cog-genomics.org/plink/1.9/strat
- - > https://vcftools.sourceforge.net/man_latest.html 
- - > https://gatk.broadinstitute.org/hc/en-us/articles/360035890471-Hard-filtering-germline-short-variants
+Gene, exon, CDS and promoter-proximal annotation files were generated from the reference GFF [SEE 01.make_promoter_exon_CDS_beds_from_GFF.sh and 02.convert_regulatory_beds_NC_to_CM.sh].
 
-The aim of this part is to start with sequencing reads and perform a series of steps to determine a set of genetic variants. We start with data preprocesssing, then variant discovery and finally filtering and annotation, to end with a clean VCF file, Analysis-ready. 
+The resulting annotation resources included:
 
- 
-  <img width="834" height="452" alt="image" src="https://github.com/user-attachments/assets/60897ab0-24cc-4cd1-8974-b2775ab4661b" />
+| Feature class                   |   Count |
+| ------------------------------- | ------: |
+| Genes                           |  27,210 |
+| Promoter-proximal regions, 2 kb |  27,210 |
+| Exons                           | 729,282 |
+| CDS intervals                   | 637,957 |
 
+Promoter-proximal regions were defined as regions located within 2 kb of a predicted gene transcription start site.
 
-For this part, I used ***.sra*** files from NCBI collaborator project to download all the individual files on **Puhti** server from CSC, in order to convert them into **.fastq** and **.fastq.gz** files and then into **.bam** files to combine them to those for Myanmar. Before the recalibrate base quality scores and the conversion into .bam files, I used ***boostrapping***, because no known set of variants were available before this study to respect the bio-informatic protocol of variant calling. 
+These files were used to classify GWAS Bonferroni SNPs into functional or genomic-context categories.
 
-All the script are numeroted and explicitly intitled to make the protocol easier to follow. 
+## 3. Full GFF annotation of GWAS Bonferroni SNPs
 
-### Pre-GWAS
-For this step, I based all the steps on the manual from Physalia, called "introduction_to_GWAS", but also on other format like GWAS tutorial available on https://cloufield.github.io/GWASTutorial/01_Dataset/
-This step concerns data pre-processing with initial and explonatory data analysis (IDA & EDA). Then, a quality control is effectuated, followed by the imputation step. I require different software and packages to compute the pipeline for data pre-processing but also for GWAS later : RStudio (R) using the R package rrBLUP, PLINK 1.9 (PLINK is a very powerful open-source genome analysis toolset, with a lot of computationally efficient functions for data pre-processing, filtering, formatting, and analysis), [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html). A R script is also provided to prepare and explore the phenotype and genomic data. 
+All GEMMA Bonferroni SNPs were annotated against the full GFF gene annotation [SEE 03.annotate_GWAS_Bonferroni_fullGFF.R].
 
-(From the introduction GWAS manual :) "
-**Initial data analysis (IDA)** mainly focuses on data cleaning, a first screening, and transformation (if necessary) to ensure data quality and confirm that our data set meets the relevant distributional and model assumptions. Data cleaning may include steps such as elimination of duplicate records, handling of missing values, identification of systematic errors, or correction of coding inconsistencies.
+The annotation included both:
 
-**Exploratory data analysis (EDA)** is used to examine data sets and summarize their main characteristics. EDA helps to discover patterns in the data, spot anomalies and outliers, test a hypothesis and check our assumptions. EDA tells us what data can reveal beyond the formal modeling or hypothesis testing and provides a better understanding of data set variables and their interactions. It can also help determine if the statistical techniques you are considering for
-data analysis are appropriate. IDA and EDA often employ data visualization methods to check distributional characteristics, identify relationships between variables, identify potential cofactors, and spot inconsistencies. 
+* GEMMA all-sample PC3 GWAS.
+* GEMMA male-only PC3 GWAS.
 
-We will run an IDA and EDA for both our phenotypic data and the genotypic data."
+The all-sample model contained 261 Bonferroni-significant SNPs, whereas the curated male-only model contained 23 Bonferroni-significant SNPs.
 
-In PreGWAS step, I will also conduct the Genotype filtering and then the Imputation. No imputation is required here. 
+The full GFF annotation showed that many GWAS SNPs were located inside or near annotated genes, but a large fraction remained intergenic or non-coding.
 
-### GWAS, Selection analyses and Functional annotation
+| GWAS model     | Inside gene | Outside gene | Not annotated |
+| -------------- | ----------: | -----------: | ------------: |
+| GEMMA all PC3  |         117 |          137 |             7 |
+| GEMMA male PC3 |           8 |           15 |             0 |
 
-Each analyses is declined by branches. Inside these branches, the detail of the analyses are provided. The aim is to identified SNPs that show strong association with the phenotype. For that different models are tested to find the fittest model. Selection analyses, including FST, nucleotide diversity, Tajima's D, LD, heterozygosity, are realized in a whole-genome scan approach, reproducting Campbell et al. protocol. Regions with significant and redondant results are considered as candidate genes and selected for functional annotation. The latter analysis allow to describe the content enrichment, location (codent or non-codent), and potential gene description. 
+This result suggests that the GWAS architecture is not dominated by protein-coding substitutions. Instead, many significant SNPs are located in non-coding, intragenic or intergenic contexts.
+
+## 4. Regulatory-proximal and gene-context classes
+
+GWAS Bonferroni SNPs were classified into functional and regulatory-proximal categories [SEE 04.annotate_GWAS_Bonferroni_regulatory_classes.R].
+
+The categories were:
+
+* CDS.
+* Exon non-CDS.
+* Promoter-proximal, within 2 kb of a TSS.
+* Intragenic non-exonic.
+* Intergenic.
+
+### GEMMA all-sample PC3
+
+| Class                 | Count |
+| --------------------- | ----: |
+| Intergenic            |   142 |
+| Intragenic non-exonic |   109 |
+| Exon non-CDS          |     6 |
+| Promoter-proximal     |     2 |
+| CDS                   |     2 |
+
+### GEMMA male-only PC3
+
+| Class                 | Count |
+| --------------------- | ----: |
+| Intergenic            |    15 |
+| Intragenic non-exonic |     7 |
+| CDS                   |     1 |
+
+Most Bonferroni SNPs were therefore non-CDS variants. This is compatible with a predominantly non-coding, regulatory-proximal or haplotypic architecture, but this should not be interpreted as proof of regulatory function.
+
+## 5. Coding SNP effect prediction
+
+GWAS Bonferroni SNPs overlapping CDS regions were analyzed to predict their possible coding effects [SEE 05.predict_GWAS_Bonferroni_CDS_SNP_effects.py].
+
+Two GWAS CDS SNPs were retained:
+
+| SNP                      | Gene                       | GWAS model | Effect     | Amino-acid change |
+| ------------------------ | -------------------------- | ---------- | ---------- | ----------------- |
+| CM044025.1:127341274:C:T | DOCK10-like / LOC126078159 | all + male | synonymous | P → P             |
+| CM044026.1:117237421:A:G | OR5M3-like / LOC126079052  | all        | missense   | R260C             |
+
+No stop-gained or stop-lost GWAS Bonferroni SNP was detected.
+
+The OR5M3-like SNP is the strongest coding functional candidate because it is a predicted missense variant. The DOCK10-like SNP is present in both all-sample and male-only GWAS models, but its predicted coding effect is synonymous.
+
+## 6. Promoter-proximal GWAS candidates
+
+Two Bonferroni SNPs were located in promoter-proximal regions within 2 kb of a predicted transcription start site.
+
+| SNP                     | Nearby gene                | Class             | Interpretation                               |
+| ----------------------- | -------------------------- | ----------------- | -------------------------------------------- |
+| CM044020.1:2362860:C:G  | SID1-like / LOC126072020   | promoter-proximal | candidate non-coding regulatory-proximal SNP |
+| CM044020.1:14019031:A:G | SEC22A-like / LOC126072714 | promoter-proximal | candidate non-coding regulatory-proximal SNP |
+
+These SNPs are interesting because promoter-proximal variants may influence gene expression. However, without experimental regulatory data, they should be interpreted only as candidate regulatory-proximal variants.
+
+## 7. GWAS-selection overlap annotation
+
+GWAS Bonferroni SNPs were also compared with population-differentiation and selection candidate regions [SEE 06.integrate_GWAS_Bonferroni_vs_selection.R and 07.annotate_GWAS_selection_overlap_SNPs_fullGFF.R].
+
+Main result:
+
+| GWAS model     | Bonferroni SNPs | SNPs overlapping selection/differentiation signals | Percentage |
+| -------------- | --------------: | -------------------------------------------------: | ---------: |
+| GEMMA all PC3  |             261 |                                                  8 |      3.07% |
+| GEMMA male PC3 |              23 |                                                  0 |         0% |
+
+The overlap was limited and occurred only in the all-sample GWAS model.
+
+Notable annotated overlap SNPs included:
+
+| SNP                        | Gene or region            | Annotation                               |
+| -------------------------- | ------------------------- | ---------------------------------------- |
+| CM044048.1:14979125:G:T    | LOC126069858 / GLRA3-like | intragenic non-exonic                    |
+| CM044047.1:154448329:G:T   | LOC126068977 / PDK3       | intragenic                               |
+| CM044033.1:6293379/6293387 | LOC126058128              | lncRNA region, approximately 311 kb away |
+| JAMZQU010000039.1 variants | no clear gene             | no gene found on contig                  |
+
+The LOC126069858 / GLRA3-like SNP is particularly important because it combines GWAS evidence, sex-linked differentiation evidence and later rare-variant support. However, this does not prove that this SNP is causal.
+
+## 8. Functional priority candidates
+
+The annotation results were integrated into a GWAS functional priority table [SEE 08.make_GWAS_Bonferroni_priority_table.R].
+
+The highest-priority candidates included:
+
+| SNP                      | Gene                       | Class                 | Main reason for priority                              |
+| ------------------------ | -------------------------- | --------------------- | ----------------------------------------------------- |
+| CM044026.1:117237421:A:G | OR5M3-like / LOC126079052  | CDS                   | missense variant                                      |
+| CM044025.1:127341274:C:T | DOCK10-like / LOC126078159 | CDS                   | found in all-sample and male-only GWAS                |
+| CM044020.1:2362860:C:G   | SID1-like / LOC126072020   | promoter-proximal     | near TSS                                              |
+| CM044020.1:14019031:A:G  | SEC22A-like / LOC126072714 | promoter-proximal     | near TSS                                              |
+| CM044047.1:154448329:G:T | PDK3 / LOC126068977        | intragenic            | GWAS-selection overlap                                |
+| CM044048.1:14979125:G:T  | LOC126069858 / GLRA3-like  | intragenic non-exonic | GWAS-selection overlap and later rare-variant support |
+
+These loci were retained for downstream candidate-locus integration.
+
+## 9. Interpretation
+
+The functional annotation showed that most GWAS Bonferroni SNPs were not located in CDS regions. Only a small number of GWAS SNPs were coding, and no stop-gained or stop-lost coding SNP was detected.
+
+Several important GWAS SNPs were located in intragenic non-exonic, promoter-proximal or intergenic regions. This pattern is compatible with a non-coding, regulatory-proximal or haplotypic genetic architecture for tusk phenotype variation.
+
+The strongest coding candidate was the OR5M3-like missense SNP. The strongest male-supported coding candidate was the DOCK10-like synonymous SNP. The LOC126069858 / GLRA3-like locus was not a coding-effect candidate, but it remained highly important because of its GWAS signal, selection overlap and later rare-variant evidence.
+
+## 10. Caution
+
+This analysis is based on GFF-derived annotation. Therefore, promoter-proximal and intragenic non-coding SNPs should not be interpreted as proven regulatory mutations.
+
+The GFF annotation cannot identify:
+
+* Enhancers.
+* Transcription-factor binding sites.
+* ATAC-seq peaks.
+* ChIP-seq peaks.
+* Tissue-specific regulatory activity.
+
+Therefore, the correct interpretation is that many GWAS SNPs are candidate non-coding or regulatory-proximal variants. Functional validation would be required to demonstrate a true regulatory mechanism.
+
+## 11. Conclusion
+
+This part showed that the GWAS Bonferroni SNPs are mostly non-CDS variants, with only a small number of coding candidates. The results support a candidate architecture involving non-coding, regulatory-proximal and haplotypic signals rather than a simple coding loss-of-function mechanism.
+
+The functional annotation prioritized several candidate loci, including OR5M3-like, DOCK10-like, SID1-like, SEC22A-like, PDK3 and LOC126069858 / GLRA3-like. These candidates were later integrated with GWAS, selection/differentiation, rare-variant and regional burden evidence.
