@@ -105,7 +105,7 @@ These SNPs are interesting because promoter-proximal variants may influence gene
 
 ## 7. GWAS-selection overlap annotation
 
-GWAS Bonferroni SNPs were also compared with population-differentiation and selection candidate regions [SEE 06.integrate_GWAS_Bonferroni_vs_selection.R and 07.annotate_GWAS_selection_overlap_SNPs_fullGFF.R].
+GWAS Bonferroni SNPs were also compared with population-differentiation and selection candidate regions [SEE 57.integrate_GWAS_Bonferroni_vs_selection.R and 59.annotate_GWAS_selection_overlap_SNPs_fullGFF.R].
 
 Main result:
 
@@ -129,7 +129,7 @@ The LOC126069858 / GLRA3-like SNP is particularly important because it combines 
 
 ## 8. Functional priority candidates
 
-The annotation results were integrated into a GWAS functional priority table [SEE 08.make_GWAS_Bonferroni_priority_table.R].
+The annotation results were integrated into a GWAS functional priority table [SEE 60.make_GWAS_Bonferroni_priority_table.R].
 
 The highest-priority candidates included:
 
