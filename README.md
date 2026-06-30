@@ -1,10 +1,10 @@
-# Rare-variant and regulatory annotation analysis
+# # Rare-variant discovery and annotation
 
 ## 1. Introduction
 
 This part investigates rare variants differing in allele frequency between tusked and tuskless Asian elephants. The goal was to identify rare alleles enriched in one phenotype group and to test whether these variants overlap with GWAS signals, selection/differentiation regions, sex-linked candidate regions or functional genomic annotations.
 
-Rare variants were analyzed as an additional layer of evidence, complementary to GWAS and population-genomic scans. These analyses do not aim to prove causality, but to identify candidate rare variants or rare-variant regions that may contribute to tusk phenotype variation. This section does not perform genome-wide SKAT, SKAT-O or formal rare-variant burden testing. Given the limited sample size and only genome wide sequencing, rare variants were analyzed through allele-frequency enrichment, genomic-context annotation and candidate-region prioritization.https://cloufield.github.io/GWASTutorial/34_rare_variant/#variant-selection-and-annotation
+Rare variants were analyzed as an additional layer of evidence, complementary to GWAS and population-genomic scans. These analyses do not aim to prove causality, but to identify candidate rare variants or rare-variant regions that may contribute to tusk phenotype variation. This section does not perform genome-wide SKAT, SKAT-O or formal rare-variant burden testing. Although whole-genome sequencing is suitable for rare-variant discovery, the limited sample size makes formal genome-wide rare-variant association testing underpowered. Rare variants were therefore analyzed through allele-frequency enrichment, gene-context annotation and candidate-region prioritization. https://cloufield.github.io/GWASTutorial/34_rare_variant/#variant-selection-and-annotation
 
 **TX means tuskless and TT means tusked.**
 
@@ -112,6 +112,8 @@ This supports the hypothesis that rare-variant contribution at this locus may be
 | CM044048.1:15116231 | promoter-proximal | 832 bp | 0.1000 | 0.0094 | near LOC126069858 TSS |
 | CM044048.1:15116923 | promoter-proximal | 1,524 bp | NA | NA | indel near LOC126069858 TSS |
 | CM044048.1:15113612 | intragenic non-exonic | 1,787 bp | 0.1125 | 0 | TT-enriched, 9 TT carriers, 0 TX |
+
+These variants were retained as candidate non-coding rare variants near LOC126069858. Their regional burden and haplotype-like structure are analyzed in a later section.
 
 ## 8. Interpretation
 
