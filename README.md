@@ -52,7 +52,7 @@ However, 87 rare differentiated variants were located within XY score 3 regions,
 
 ## 5. Gene-context annotation of rare variants
 
-Rare differentiated variants were annotated according to their genomic context using GFF-derived genomic features [SEE 52.make_promoter_exon_CDS_beds_from_GFF.sh, 52b.convert_regulatory_beds_NC_to_CM.sh and 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
+Rare differentiated variants were annotated according to their genomic context using GFF-derived genomic features [SEE 50.make_promoter_exon_CDS_beds_from_GFF.sh, 50b.convert_regulatory_beds_NC_to_CM.sh and 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
 
 The annotation classified rare variants into several categories:
 
@@ -72,7 +72,7 @@ Therefore, these variants should be interpreted as candidate regulatory or non-c
 
 ## 6. Rare coding variants and predicted effects
 
-Rare variants overlapping coding sequences were further analyzed to predict their potential effect on protein sequences [SEE 50.predict_rawVCF_rare_CDS_variant_effects.py and 51.make_rare_CDS_missense_unique_priority_table.R].
+Rare variants overlapping coding sequences were further analyzed to predict their potential effect on protein sequences [SEE 51.predict_rawVCF_rare_CDS_variant_effects.py and 52.make_rare_CDS_missense_unique_priority_table.R].
 
 The coding-variant analysis found:
 
@@ -101,7 +101,7 @@ These variants are interesting functional candidates, but none of the rare misse
 
 ## 7. Rare variants near GWAS priority genes
 
-Rare differentiated variants were also searched near GWAS-prioritized genes [SEE 52.summarize_rare_variants_near_GWAS_priority_genes.R].
+Rare differentiated variants were also searched near GWAS-prioritized genes [SEE 53.summarize_rare_variants_near_GWAS_priority_genes.R].
 
 Several rare variants near GWAS-prioritized genes were non-coding but located in regulatory-relevant contexts, including promoter-proximal or intragenic non-exonic regions. This was particularly clear around the LOC126069858 / GLRA3-like locus, where rare TT-enriched variants were found near the gene body and close to the predicted transcription start site.
 
