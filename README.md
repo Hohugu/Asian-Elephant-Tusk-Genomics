@@ -27,7 +27,7 @@ These files were used to classify GWAS Bonferroni SNPs into functional or genomi
 
 ## 3. Full GFF annotation of GWAS Bonferroni SNPs
 
-All GEMMA Bonferroni SNPs were annotated against the full GFF gene annotation [SEE 03.annotate_GWAS_Bonferroni_fullGFF.R].
+All GEMMA Bonferroni SNPs were annotated against the full GFF gene annotation [SEE 54.annotate_ALL_GWAS_Bonferroni_SNPs_fullGFF.R].
 
 The annotation included both:
 
