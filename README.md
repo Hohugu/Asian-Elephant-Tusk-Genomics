@@ -170,4 +170,4 @@ Therefore, the correct interpretation is that many GWAS SNPs are candidate non-c
 
 This part showed that the GWAS Bonferroni SNPs are mostly non-CDS variants, with only a small number of coding candidates. The results support a candidate architecture involving non-coding, regulatory-proximal and haplotypic signals rather than a simple coding loss-of-function mechanism.
 
-The functional annotation prioritized several candidate loci, including OR5M3-like, DOCK10-like, SID1-like, SEC22A-like, PDK3 and LOC126069858 / GLRA3-like. These candidates were later integrated with GWAS, selection/differentiation, rare-variant and regional burden evidence.
+The functional annotation prioritized several candidate loci, including OR5M3-like, DOCK10-like, SID1-like, SEC22A-like, PDK3 and LOC126069858 / GLRA3-like.
