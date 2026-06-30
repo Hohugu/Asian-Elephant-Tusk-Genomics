@@ -10,7 +10,7 @@ The annotation was based on the reference genome FASTA and GFF files. Therefore,
 
 ## 2. GFF-derived annotation resources
 
-Gene, exon, CDS and promoter-proximal annotation files were generated from the reference GFF [SEE 01.make_promoter_exon_CDS_beds_from_GFF.sh and 02.convert_regulatory_beds_NC_to_CM.sh].
+Gene, exon, CDS and promoter-proximal annotation files were generated from the reference GFF [SEE 50.make_promoter_exon_CDS_beds_from_GFF.sh and 50b.convert_regulatory_beds_NC_to_CM.sh].
 
 The resulting annotation resources included:
 
@@ -47,7 +47,7 @@ This result suggests that the GWAS architecture is not dominated by protein-codi
 
 ## 4. Regulatory-proximal and gene-context classes
 
-GWAS Bonferroni SNPs were classified into functional and regulatory-proximal categories [SEE 04.annotate_GWAS_Bonferroni_regulatory_classes.R].
+GWAS Bonferroni SNPs were classified into functional and regulatory-proximal categories [SEE 55.annotate_GWAS_Bonferroni_regulatory_classes.R].
 
 The categories were:
 
@@ -79,7 +79,7 @@ Most Bonferroni SNPs were therefore non-CDS variants. This is compatible with a 
 
 ## 5. Coding SNP effect prediction
 
-GWAS Bonferroni SNPs overlapping CDS regions were analyzed to predict their possible coding effects [SEE 05.predict_GWAS_Bonferroni_CDS_SNP_effects.py].
+GWAS Bonferroni SNPs overlapping CDS regions were analyzed to predict their possible coding effects.
 
 Two GWAS CDS SNPs were retained:
 
