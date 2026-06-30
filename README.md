@@ -1,10 +1,10 @@
-# Rare-variant analysis
+# Rare-variant and regulatory annotation analysis
 
 ## 1. Introduction
 
 This part investigates rare variants differing in allele frequency between tusked and tuskless Asian elephants. The goal was to identify rare alleles enriched in one phenotype group and to test whether these variants overlap with GWAS signals, selection/differentiation regions, sex-linked candidate regions or functional genomic annotations.
 
-Rare variants were analyzed as an additional layer of evidence, complementary to GWAS and population-genomic scans. These analyses do not aim to prove causality, but to identify candidate rare variants or rare-variant regions that may contribute to tusk phenotype variation. https://cloufield.github.io/GWASTutorial/34_rare_variant/#variant-selection-and-annotation
+Rare variants were analyzed as an additional layer of evidence, complementary to GWAS and population-genomic scans. These analyses do not aim to prove causality, but to identify candidate rare variants or rare-variant regions that may contribute to tusk phenotype variation. This section does not perform genome-wide SKAT, SKAT-O or formal rare-variant burden testing. Given the limited sample size and only genome wide sequencing, rare variants were analyzed through allele-frequency enrichment, genomic-context annotation and candidate-region prioritization.https://cloufield.github.io/GWASTutorial/34_rare_variant/#variant-selection-and-annotation
 
 **TX means tuskless and TT means tusked.**
 
@@ -50,7 +50,7 @@ No rare differentiated variant was identical to a GEMMA Bonferroni SNP. This ind
 
 However, 87 rare differentiated variants were located within XY score 3 regions, suggesting that some rare variants occur in sex-linked or sex-enriched candidate regions.
 
-## 5. Regulatory and gene-context annotation of rare variants
+## 5. Gene-context annotation of rare variants
 
 Rare differentiated variants were annotated according to their genomic context using GFF-derived genomic features [SEE 52.make_promoter_exon_CDS_beds_from_GFF.sh, 52b.convert_regulatory_beds_NC_to_CM.sh and 49.annotate_rawVCF_rare_variants_regulatory_and_priority_genes.R].
 
@@ -106,6 +106,12 @@ Rare differentiated variants were also searched near GWAS-prioritized genes [SEE
 Several rare variants near GWAS-prioritized genes were non-coding but located in regulatory-relevant contexts, including promoter-proximal or intragenic non-exonic regions. This was particularly clear around the LOC126069858 / GLRA3-like locus, where rare TT-enriched variants were found near the gene body and close to the predicted transcription start site.
 
 This supports the hypothesis that rare-variant contribution at this locus may be non-coding, regulatory or haplotypic rather than protein-coding. However, this remains a candidate interpretation because no experimental regulatory data such as ATAC-seq, ChIP-seq or enhancer annotation were available.
+
+| Variant | Context | Distance to TSS | AF_TT | AF_TX | Comment |
+|---|---|---:|---:|---:|---|
+| CM044048.1:15116231 | promoter-proximal | 832 bp | 0.1000 | 0.0094 | near LOC126069858 TSS |
+| CM044048.1:15116923 | promoter-proximal | 1,524 bp | NA | NA | indel near LOC126069858 TSS |
+| CM044048.1:15113612 | intragenic non-exonic | 1,787 bp | 0.1125 | 0 | TT-enriched, 9 TT carriers, 0 TX |
 
 ## 8. Interpretation
 
