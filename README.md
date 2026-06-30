@@ -6,7 +6,7 @@ This part investigates rare variants differing in allele frequency between tuske
 
 Rare variants were analyzed as an additional layer of evidence, complementary to GWAS and population-genomic scans. These analyses do not aim to prove causality, but to identify candidate rare variants or rare-variant regions that may contribute to tusk phenotype variation. This section does not perform genome-wide SKAT, SKAT-O or formal rare-variant burden testing. Although whole-genome sequencing is suitable for rare-variant discovery, the limited sample size makes formal genome-wide rare-variant association testing underpowered. Rare variants were therefore analyzed through allele-frequency enrichment, gene-context annotation and candidate-region prioritization. https://cloufield.github.io/GWASTutorial/34_rare_variant/#variant-selection-and-annotation
 
-**TX means tuskless and TT means tusked.**
+**TX and TT means tuskless and tusked.**
 
 ## 2. Rare-variant allele-frequency scan
 
