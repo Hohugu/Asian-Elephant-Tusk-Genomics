@@ -41,7 +41,7 @@ data analysis are appropriate. IDA and EDA often employ data visualization metho
 
 We will run an IDA and EDA for both our phenotypic data and the genotypic data."
 
-In [PreGWAS](https://github.com/Hohugu/Asian-Elephant-Tusk-Genomics/blob/02.Pre-GWAS/README.md#pre-genomic-wide-association-study---gwas) steps, I will also conduct the Genotype filtering and then the Imputation. No imputation is required here. 
+In [PreGWAS](https://github.com/Hohugu/Asian-Elephant-Tusk-Genomics/blob/02.Pre-GWAS/README.md#pre-genomic-wide-association-study---gwas) steps, I will also conduct the Genotype filtering. No imputation is required here. 
 
 ### GWAS, Selection analyses and Functional annotation
 
