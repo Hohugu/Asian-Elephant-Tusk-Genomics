@@ -25,7 +25,7 @@ The aim of this part is to start with sequencing reads and perform a series of s
   <img width="834" height="452" alt="image" src="https://github.com/user-attachments/assets/60897ab0-24cc-4cd1-8974-b2775ab4661b" />
 
 
-For this part, I used ***.sra*** files from NCBI collaborator project to download all the individual files on **Puhti** server from CSC, in order to convert them into **.fastq** and **.fastq.gz** files and then into **.bam** files to combine them to those for Myanmar. Before the recalibrate base quality scores and the conversion into .bam files, I used ***boostrapping***, because no known set of variants were available before this study to respect the bio-informatic protocol of variant calling. 
+For this part, I used ***.sra*** files from NCBI collaborator project to download all the individual files on **Puhti** server from CSC, in order to convert them into **.fastq** and **.fastq.gz** files and then into **.bam** files to combine them to those for Myanmar. Before the recalibrate base quality scores and the conversion into .bam files, ***boostrapping*** is usually used, especially when no known set of variants is available. However, no boostrapping is performed before this study. 
 
 All the script are numeroted and explicitly intitled to make the protocol easier to follow. 
 
