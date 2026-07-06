@@ -108,9 +108,9 @@ You can find the rest of the table in **Table of Bonferroni-significant genes**.
 
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
-**<ins>Table of orthologue candidat genes in Asian elephants.<ins>** 
+**<ins>Table of orthologue candidate genes in Asian elephants.<ins>** 
 
-| Candidat Gene  | Gene symbol | CHR | Position | Description | Best p-value |
+| Candidate Gene  | Gene symbol | CHR | Position | Description | Best p-value |
 | ----- | ------ | ------ | ------| --------------- | ------- |
 | ODAM  | ODAM_LOC126077139 | NC_064823.1 | 87832910-87841335 | odontogenic, ameloblast associated | 3.37e-03 |
 | MEP1A | MEP1A_LOC126069657 | NC_064819.1 | 111679947-111709525 | meprin A subunit alpha | 1.52e-02 |
