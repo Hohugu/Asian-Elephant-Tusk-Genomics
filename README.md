@@ -95,6 +95,8 @@ Regional plots on X chromosome were computed following the explanation of [GWAST
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
 
+AMELX gene is located on scaffold CM044047.1 between 168,725,166 and 168,729,418 bp. The best SNP directly located in the gene is CM044047.1:168726231:C:T with a pvalue = 0.10. No Bonferroni SNP was identified in AMELX or within a 100kb window. A suggestif signal exists near to the gene with a pvalue = 9.66E-08, approximately 347bp upstream from AMELX and located in LOC126069583/ARHGAP6-like. However, within 2Mb window around AMELX, only one Bonferroni SNP is returned with a pvalue = 1.56E-10, 1,4Mb (upstream) from AMELX, located in intragenic ncRNA LOC126069593. 
+
 A whole sex-linked/Y-like scaffold GWAS/LD plot was generated for CM044048.1 sex-linked / Y-like scaffold to inspect the major differentiation signal on this scaffold.
 
 Regional plots on Y chromosome : 
