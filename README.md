@@ -94,11 +94,11 @@ The sex-linked signals were retained as an additional selection/differentiation 
 Regional plots on X chromosome were computed following the explanation of [GWASTutorial](https://cloufield.github.io/GWASTutorial/Visualization/#create-regional-plot).
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/AMELX_sex_linked_GWAS_peak_regional_GWAS_LD_peakLine.png"/>
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
 
 A whole sex-linked/Y-like scaffold GWAS/LD plot was generated for CM044048.1 sex-linked / Y-like scaffold to inspect the major differentiation signal on this scaffold.
 
 Regional plots on Y chromosome : 
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/LOC126069858_GLRA3_like_XY_peak_regional_GWAS_LD_peakLine.png"/>
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/CM044048.1_Y_peak_whole_chr_GWAS_LD.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/CM044048.1_Y_peak_zoom_GWAS_LD.png"/>
