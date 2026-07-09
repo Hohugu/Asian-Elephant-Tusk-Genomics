@@ -122,7 +122,7 @@ XY selection signal tables
 XY top-region annotation tables
 
 
-## 9. Final selection//differentiation candidate regions
+## 9. Final selection/differentiation candidate regions
 
 All the previous metrics are then integrated into a final candidate-region table. If one region is supported by multiple statistics, this region is prioritized and should be consider as a strong region.
 
