@@ -18,7 +18,7 @@ The analyses focused on differents complementary signals :
 - Candidate-region annotation
 
 These analyses are used to define candidate selection or reveal differentiation regions. 
-**TX means tuskless and TT means tusked.** 
+**TX and TT represent tuskless and tusked respectively.** 
 
 ## 2. FST scan and FST candidate regions
 
