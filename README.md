@@ -8,13 +8,8 @@ I did not reproduce the full read-mapping, genotype-likelihood, and filtering pi
 
 Here a resume of the protocol for this section : 
 - FST     : fenêtres 10 kb
--
 - DXY     : fenêtres 50 SNPs, step 10 SNPs
--
 - muLD    : RAiSD μLD
--
 - HetDev  : SNPs TX 15–85%, absents chez TT, fenêtres 10 SNPs, step 2
--
 - top 5%  : seuil principal pour le Venn
--
 - top 1%  : seuil strict additionnel
