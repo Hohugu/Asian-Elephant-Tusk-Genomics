@@ -39,8 +39,12 @@ This diagram answer the question : Which genomics regions are common between ana
 __Venn diagram 10kb top 5%__ :
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
+556 bins common FST + DXY + muLD are find. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
+
 __Venn diagram 10kb top 1%__ : 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
+
+For top 1% only 10 bin common FST + DXY + muLD are find.
 
 ## 3. Venn diagram SNP-level
 
