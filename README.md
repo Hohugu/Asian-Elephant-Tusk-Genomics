@@ -21,10 +21,9 @@ FST and DXY were calculated from called genotypes rather than ANGSD genotype lik
 
 For RAiSD μLD, Campbell et al. used RAiSD on high-depth tuskless samples, while I used 53 tuskless. Campbell et al. explain that HetDev 10 SNPs windows corresponded to approximately 10kb. However, some HetDev windows in our dataset are several Mb long due to the rarety of filtering SNPs. I produced a version with span <= 10 kb.
 
-To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD and tuskless heterozygosity deviation (i.e HetDev). Unlike Campbell et al., who used specific high-depth subsets and ANGSD genotype likelihoods for FST/DXY, our analysis was performed
-from the QC-filtered GWAS genotype dataset. Therefore, this analysis is used as a comparative overlap framework rather than an exact reproduction.
+To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD and tuskless heterozygosity deviation (i.e HetDev). Unlike Campbell et al., who used specific high-depth subsets and ANGSD genotype likelihoods for FST/DXY, our analysis was performed from the QC-filtered GWAS genotype dataset. Therefore, this analysis is used as a comparative overlap framework rather than an exact reproduction.
 
-2 differents approaches are done : one to realize a Venn diagram based on 10kb window/bin level and one Venn diagram on SNP-level.
+2 differents approaches are done : one to realize a Venn diagram based on 10kb window/bin level and one Venn diagram on SNP-level. For each metric, all the genomic windows are ordered from the strongest to the weakest signal. For example : I keep 5% windows with the highest Fst and same for the 1%, which makes this latter more restrictive.
 
 ## 2. Venn diagram 10kb window/bin level
 
@@ -37,10 +36,10 @@ HetDev  : windows 10 SNPs top 5% ou top 1%
 
 This diagram answer the question : Which genomics regions are common between analyses ? 
 
-__Venn diagram 10kb on 5pct__ :
+__Venn diagram 10kb top 5%__ :
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
-__Venn diagram 10kb on 1pct__ : 
+__Venn diagram 10kb top 1%__ : 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
 
 ## 3. Venn diagram SNP-level
