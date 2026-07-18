@@ -21,10 +21,37 @@ FST and DXY were calculated from called genotypes rather than ANGSD genotype lik
 
 For RAiSD μLD, Campbell et al. used RAiSD on high-depth tuskless samples, while I used 53 tuskless. Campbell et al. explain that HetDev 10 SNPs windows corresponded to approximately 10kb. However, some HetDev windows in our dataset are several Mb long due to the rarety of filtering SNPs. I produced a version with span <= 10 kb.
 
-To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD and tuskless heterozygosity deviation. Unlike Campbell et al., who used specific high-depth subsets and ANGSD genotype likelihoods for FST/DXY, our analysis was performed
+To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD and tuskless heterozygosity deviation (i.e HetDev). Unlike Campbell et al., who used specific high-depth subsets and ANGSD genotype likelihoods for FST/DXY, our analysis was performed
 from the QC-filtered GWAS genotype dataset. Therefore, this analysis is used as a comparative overlap framework rather than an exact reproduction.
 
-## 2.
+2 differents approaches are done : one to realize a Venn diagram based on 10kb window/bin level and one Venn diagram on SNP-level.
+
+## 2. Venn diagram 10kb window/bin level
+
+This first Venn diagram overlap candidate windows/regions: **Campbell-style window/bin overlap analysis**
+
+FST     : windows 10 kb top 5% ou top 1%
+DXY     : windows 50 SNPs top 5% ou top 1%
+muLD    : windows RAiSD top 5% ou top 1%
+HetDev  : windows 10 SNPs top 5% ou top 1%
+
+This diagram answer the question : Which genomics regions are common between analyses ? 
 
 
+
+## 3. Venn diagram SNP-level
+
+A SNP would be “significant” for an analysis only if the SNP position is located inside a significant window : **SNP-level extraction from the significant Campbell-style windows**
+
+FST SNP       = SNP inside windows FST top 5% / 1%
+DXY SNP       = SNP inside windows DXY top 5% / 1%
+muLD SNP      = SNP inside windows RAiSD μLD top 5% / 1%
+HetDev SNP    = SNP inside windows HetDev top 5% / 1%
+
+This new Venn diagram represents the SNPs overlapping retained for each analyses, and answer the question : Which SNPs are common between Fst, Dxy, muLD and HetDev ? 
+
+- Windows-level : CM044048.1:14920001–14930000 is common to FST+DXY+muLD
+- SNP-level : Which SNPs are common between Fst, Dxy, muLD and HetDev ?
+
+  
   
