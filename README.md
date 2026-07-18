@@ -37,7 +37,7 @@ HetDev  : windows 10 SNPs top 5% ou top 1%
 
 This diagram answer the question : Which genomics regions are common between analyses ? 
 
-
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
 ## 3. Venn diagram SNP-level
 
