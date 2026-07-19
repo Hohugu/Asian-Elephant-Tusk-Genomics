@@ -60,5 +60,29 @@ This new Venn diagram represents the SNPs overlapping retained for each analyses
 - Windows-level : CM044048.1:14920001–14930000 is common to FST+DXY+muLD
 - SNP-level : Which SNPs are common between Fst, Dxy, muLD and HetDev ?
 
-  
+**For 5%** : 
+FST&DXY&muLD              : 11,199 SNPs
+FST&DXY&HetDev_TX         : 20 SNPs
+FST&HetDev_TX             : 87 SNPs
+muLD&HetDev_TX            : 0 SNP
+
+**For 1%** : 
+Total SNPs analysés       : 21,295,223
+SNPs dans ≥1 analyse      : 1,794,892
+
+FST SNPs                  : 288,845
+DXY SNPs                  : 397,710
+muLD SNPs                 : 1,139,206
+HetDev_TX SNPs            : 68
+
+SNPs dans 1 analyse       : 1,764,047
+SNPs dans 2 analyses      : 30,753
+SNPs dans 3 analyses      : 92
+SNPs dans 4 analyses      : 0
+
+92 SNPs are returned within FST&DXY&muLD intersection, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless.
+
+The main common signal is so Fst + Dxy + muLD, while HetDev is very rare and does not joined to muLD in the dataset.
+
+## 4. Annotation
   
