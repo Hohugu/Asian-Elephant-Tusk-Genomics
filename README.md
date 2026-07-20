@@ -63,6 +63,14 @@ At the window level, the interval CM044048.1:14920001–14930000 was shared by F
 
 **At the 5% tail threshold**, 11,199 SNPs were shared by FST, DXY and μLD. Twenty SNPs were shared by FST, DXY and HetDev_TX, while no SNP was shared by all four analyses. **At the stricter 1% tail threshold**, 92 SNPs were shared by FST, DXY and μLD, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless. Thus, the main convergent SNP-level signal is FST+DXY+μLD, whereas HetDev_TX shows limited overlap and does not converge with μLD in this dataset.
 
+**<ins>Venn diagram SNP-level top 5%<ins>** :
+
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_5pct_Campbell.png" />
+
+**<ins>Venn diagram SNP-level top 1%<ins>**: 
+
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_1pct_Campbell_threshold.png" />
+
 ## 4. LOC126069858 & AMELX
 
 This two regions have been extrated and analysed to investigate the signals identified by Campbell et al. but also by the genome-wide scan (i.e. 03.GWAS & 04.Selection-Differentiation-scan).
