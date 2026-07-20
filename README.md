@@ -37,11 +37,13 @@ This first Venn diagram overlap candidate windows/regions: **Campbell-style wind
 This diagram answer the question : Which genomics regions are common between analyses ? 
 
 **<ins>Venn diagram 10kb top 5%<ins>** :
+
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
 556 bins common FST + DXY + muLD are find. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
 
 **<ins>Venn diagram 10kb top 1%<ins>**: 
+
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
 
 For top 1% only 10 bin common FST + DXY + muLD are find.
@@ -74,6 +76,11 @@ The total analysed SNPs is 21,295,223 with 1,794,892 SNPs in at least one analys
 - muLD SNPs                 : 1,139,206
 - HetDev_TX SNPs            : 68
 
+- FST&DXY&muLD	            : 92 SNPs
+- DXY&muLD	                : 3071 SNPs
+- FST&muLD	                : 9922 SNPs
+- FST&DXY	                  : 18036 SNPs
+
 SNPs in 1 analyse       : 1,764,047
 SNPs in 2 analyses      : 30,753
 SNPs in 3 analyses      : 92
@@ -87,23 +94,24 @@ The main common signal is so Fst + Dxy + muLD, while HetDev is very rare and doe
 
 This two regions have been extrated and analysed to investigate the signals identified by Campbell et al. but also by the genome-wide scan (i.e. 03.GWAS & 04.Selection-Differentiation-scan).
 
-For LOC126069858, the FST+DXY+muLD signal is nearby, but not inside the gene body. The bin 10 kb CM044048.1:14920001-14930000 overlap the edge of the gene, but can contain SNPs with the FST+DXY+muLD signal near to the gene.
+**For LOC126069858**, the FST+DXY+muLD signal is nearby, but not inside the gene body. The bin 10 kb CM044048.1:14920001-14930000 overlap the edge of the gene, but can contain SNPs with the FST+DXY+muLD signal near to the gene.
 So no signal is detected directly inside LOC126069858.
 
 Inside the bin 10kb which overlap the beginning of the gene. The bin CM044048.1:14920001–14930000 contain 42 SNPs FST+DXY+muLD at 5%. The window is located between 14,920,064 and 14,922,466 so upstream of LOC126069858, which starts at 14,929,369.
 
-For AMELX, No SNP have been found for signal FST+DXY+muLD in AMELX region. In the large region AMELX CM044047.1:167.5–171.0 Mb, no SNP with FST+DXY+muLD signal is detected. However, simple and double signals qre detected :
+**For AMELX**, No SNP have been found for signal FST+DXY+muLD in AMELX region. In the large region AMELX CM044047.1:167.5–171.0 Mb, no SNP with FST+DXY+muLD signal is detected. However, simple and double signals qre detected :
 
 |**For top 5%** : | **For top 1%** :|
 |-----------------------|----------------------|
-|- 3083 SNPs muLD only  | 647 SNPs muLD seul|
-|- 135 SNPs DXY only  | 92 SNPs FST seul|
-|- 590 SNPs FST only  | 0 SNP DXY|
-|- 307 SNPs FST + muLD  | 0 SNP FST + muLD|
-|- 25 SNPs FST + DXY  | 0 SNP FST + DXY|
-|- 0 SNP FST + DXY + muLD  | 0 SNP FST + DXY + muLD|
-
+|3083 SNPs muLD only  | 647 SNPs muLD seul|
+|135 SNPs DXY only  | 92 SNPs FST seul|
+|590 SNPs FST only  | 0 SNP DXY|
+|307 SNPs FST + muLD  | 0 SNP FST + muLD|
+|25 SNPs FST + DXY  | 0 SNP FST + DXY|
+|0 SNP FST + DXY + muLD  | 0 SNP FST + DXY + muLD|
 
 At the SNP level, no variant within the exact LOC126069858 gene body was shared by FST, DXY and μLD. However, 42 SNPs in the adjacent 10-kb bin immediately upstream of LOC126069858 were shared by FST, DXY and μLD at the 5% tail threshold. Within LOC126069858 itself, SNPs were mainly supported by FST and μLD, without DXY convergence. No FST+DXY+μLD SNP-level convergence was observed in the AMELX regional window.
 
-  
+
+
+
