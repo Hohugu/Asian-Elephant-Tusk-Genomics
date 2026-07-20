@@ -57,7 +57,7 @@ A SNP would be “significant” for an analysis only if the SNP position is loc
 - muLD SNP      = SNP inside windows RAiSD μLD top 5% / 1%
 - HetDev SNP    = SNP inside windows HetDev top 5% / 1%
 
-This new Venn diagram represents the SNPs overlapping retained for each analyses, and answer the question : Which SNPs are common between Fst, Dxy, muLD and HetDev ? 
+This SNP-level Venn diagram represents SNPs falling within the retained top-tail windows for each analysis. It answers the question: which SNPs are located in genomic windows shared by FST, DXY, μLD, and HetDev?
 
 - Windows-level : CM044048.1:14920001–14930000 is common to FST+DXY+muLD
 - SNP-level : Which SNPs are common between Fst, Dxy, muLD and HetDev ?
