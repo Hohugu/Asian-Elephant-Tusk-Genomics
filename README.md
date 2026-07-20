@@ -29,10 +29,10 @@ To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD an
 
 This first Venn diagram overlap candidate windows/regions: **Campbell-style window/bin overlap analysis**
 
-FST     : windows 10 kb top 5% ou top 1%
-DXY     : windows 50 SNPs top 5% ou top 1%
-muLD    : windows RAiSD top 5% ou top 1%
-HetDev  : windows 10 SNPs top 5% ou top 1%
+- FST     : windows 10 kb top 5% ou top 1%
+- DXY     : windows 50 SNPs top 5% ou top 1%
+- muLD    : windows RAiSD top 5% ou top 1%
+- HetDev  : windows 10 SNPs top 5% ou top 1%
 
 This diagram answer the question : Which genomics regions are common between analyses ? 
 
@@ -50,35 +50,34 @@ For top 1% only 10 bin common FST + DXY + muLD are find.
 
 A SNP would be “significant” for an analysis only if the SNP position is located inside a significant window : **SNP-level extraction from the significant Campbell-style windows**
 
-FST SNP       = SNP inside windows FST top 5% / 1%
-DXY SNP       = SNP inside windows DXY top 5% / 1%
-muLD SNP      = SNP inside windows RAiSD μLD top 5% / 1%
-HetDev SNP    = SNP inside windows HetDev top 5% / 1%
+- FST SNP       = SNP inside windows FST top 5% / 1%
+- DXY SNP       = SNP inside windows DXY top 5% / 1%
+- muLD SNP      = SNP inside windows RAiSD μLD top 5% / 1%
+- HetDev SNP    = SNP inside windows HetDev top 5% / 1%
 
 This new Venn diagram represents the SNPs overlapping retained for each analyses, and answer the question : Which SNPs are common between Fst, Dxy, muLD and HetDev ? 
 
 - Windows-level : CM044048.1:14920001–14930000 is common to FST+DXY+muLD
 - SNP-level : Which SNPs are common between Fst, Dxy, muLD and HetDev ?
 
-**For 5%** : 
-FST&DXY&muLD              : 11,199 SNPs
-FST&DXY&HetDev_TX         : 20 SNPs
-FST&HetDev_TX             : 87 SNPs
-muLD&HetDev_TX            : 0 SNP
+**For top 5%** : 
+- FST&DXY&muLD              : 11,199 SNPs
+- FST&DXY&HetDev_TX         : 20 SNPs
+- FST&HetDev_TX             : 87 SNPs
+- muLD&HetDev_TX            : 0 SNP
 
-**For 1%** : 
-Total SNPs analysés       : 21,295,223
-SNPs dans ≥1 analyse      : 1,794,892
+**For top 1%** : 
+The total analysed SNPs is 21,295,223 with 1,794,892 SNPs in at least one analyse. 
 
-FST SNPs                  : 288,845
-DXY SNPs                  : 397,710
-muLD SNPs                 : 1,139,206
-HetDev_TX SNPs            : 68
+- FST SNPs                  : 288,845
+- DXY SNPs                  : 397,710
+- muLD SNPs                 : 1,139,206
+- HetDev_TX SNPs            : 68
 
-SNPs dans 1 analyse       : 1,764,047
-SNPs dans 2 analyses      : 30,753
-SNPs dans 3 analyses      : 92
-SNPs dans 4 analyses      : 0
+SNPs in 1 analyse       : 1,764,047
+SNPs in 2 analyses      : 30,753
+SNPs in 3 analyses      : 92
+SNPs in 4 analyses      : 0
 
 92 SNPs are returned within FST&DXY&muLD intersection, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless.
 
