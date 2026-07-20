@@ -59,36 +59,9 @@ A SNP would be “significant” for an analysis only if the SNP position is loc
 
 This SNP-level Venn diagram represents SNPs falling within the retained top-tail windows for each analysis. It answers the question: which SNPs are located in genomic windows shared by FST, DXY, μLD, and HetDev?
 
-- Windows-level : CM044048.1:14920001–14930000 is common to FST+DXY+muLD
-- SNP-level : Which SNPs are common between Fst, Dxy, muLD and HetDev ?
+At the window level, the interval CM044048.1:14920001–14930000 was shared by FST, DXY and μLD. At the SNP level, we then identified the individual SNPs falling within the retained windows for each statistic and quantified their overlap. Which SNPs are common between Fst, Dxy, muLD and HetDev ?
 
-**For top 5%** : 
-- FST&DXY&muLD              : 11,199 SNPs
-- FST&DXY&HetDev_TX         : 20 SNPs
-- FST&HetDev_TX             : 87 SNPs
-- muLD&HetDev_TX            : 0 SNP
-
-**For top 1%** : 
-The total analysed SNPs is 21,295,223 with 1,794,892 SNPs in at least one analyse. 
-
-- FST SNPs                  : 288,845
-- DXY SNPs                  : 397,710
-- muLD SNPs                 : 1,139,206
-- HetDev_TX SNPs            : 68
-
-- FST&DXY&muLD	            : 92 SNPs
-- DXY&muLD	                : 3071 SNPs
-- FST&muLD	                : 9922 SNPs
-- FST&DXY	                  : 18036 SNPs
-
-SNPs in 1 analyse       : 1,764,047
-SNPs in 2 analyses      : 30,753
-SNPs in 3 analyses      : 92
-SNPs in 4 analyses      : 0
-
-92 SNPs are returned within FST&DXY&muLD intersection, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless.
-
-The main common signal is so Fst + Dxy + muLD, while HetDev is very rare and does not joined to muLD in the dataset.
+**At the 5% tail threshold**, 11,199 SNPs were shared by FST, DXY and μLD. Twenty SNPs were shared by FST, DXY and HetDev_TX, while no SNP was shared by all four analyses. **At the stricter 1% tail threshold**, 92 SNPs were shared by FST, DXY and μLD, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless. Thus, the main convergent SNP-level signal is FST+DXY+μLD, whereas HetDev_TX shows limited overlap and does not converge with μLD in this dataset.
 
 ## 4. LOC126069858 & AMELX
 
