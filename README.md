@@ -133,5 +133,5 @@ At the strict 1% threshold, 92 SNPs were shared by FST, DXY and μLD. These SNPs
 4. CM044020.1:70690001-70700000 - 5 SNPs - intragenic_non_exonic LOC126076420 - uncharacterized LOC126076420
 5. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074938 - ADP ribosylation factor like GTPase 5B
 
-
+SNPs returned from top 1 and 5% after identification from Venn diagram SNP-level, are crossed with the SNPs from mixed models GWAS GEMMA with all individuals and male only. The strict 1% Campbell-style candidate regions did not overlap Bonferroni-significant GWAS hits from either the all-sample PC3 or male-only PC3 GEMMA analyses.
 
