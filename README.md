@@ -93,6 +93,45 @@ Inside the bin 10kb which overlap the beginning of the gene. The bin CM044048.1:
 
 At the SNP level, no variant within the exact LOC126069858 gene body was shared by FST, DXY and μLD. However, 42 SNPs in the adjacent 10-kb bin immediately upstream of LOC126069858 were shared by FST, DXY and μLD at the 5% tail threshold. Within LOC126069858 itself, SNPs were mainly supported by FST and μLD, without DXY convergence. No FST+DXY+μLD SNP-level convergence was observed in the AMELX regional window.
 
+## 5. Annotation
+First here the number of SNPs from the Venn diagram SNP-level for 5 and 1 top %.
+
+5% :
+- 11,219 SNPs ≥3 analyses
+- dont 11,199 FST&DXY&muLD
+- 20 FST&DXY&HetDev_TX
+- classes : 7,991 intergenic ; 2,759 intragenic_non_exonic ; 232 exon_non_CDS ; 163 promoter_2kb ; 74 CDS
+
+1% :
+- 92 SNPs ≥3 analyses
+- tous FST&DXY&muLD
+- classes : 52 intergenic ; 40 intragenic_non_exonic
+
+At 1% threshold, only 92 SNPs ≥3 analyses, all FST&DXY&muLD are shared out 6 bins 10 kb :
+CM044025.1:143590001-143600000   35 SNPs   LOC126078297   intragenic_non_exonic
+CM044047.1:34830001-34840000     25 SNPs   near LOC126069310   intergenic
+CM044022.1:26030001-26040000     18 SNPs   near LOC126072092   intergenic
+CM044020.1:70690001-70700000      5 SNPs   LOC126076420   intragenic_non_exonic
+CM044047.1:34840001-34850000      5 SNPs   near LOC126069310   intergenic
+CM044023.1:37750001-37760000      4 SNPs   near LOC126074938   intergenic
+
+The strongest candidate is : CM044025.1:143590001-143600000 with 35 SNPs FST+DXY+muLD, all in intragenic_non_exonic LOC126078297. Then, the second candidate is located : CM044047.1:34830001-34850000, near LOC126069310.
+
+Here the annotation of the 6 10kb bins for 92 SNPs ≥3 analyses :
+1. CM044025.1:143590001-143600000 - 35 SNPs - intragenic_non_exonic - LOC126078297 - D-2-hydroxyglutarate dehydrogenase
+2. CM044047.1:34830001-34840000 - 25 SNPs - intergenic nearest gene: LOC126069310
+3. CM044022.1:26030001-26040000 - 18 SNPs - intergenic nearest gene: LOC126072092 - olfactory receptor 7G3-like
+4. CM044020.1:70690001-70700000 - 5 SNPs - intragenic_non_exonic - LOC126076420
+5. CM044047.1:34840001-34850000 - 5 SNPs - intergenic nearest gene: LOC126069310
+6. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074938 - ADP ribosylation factor like GTPase 5B
+
+At the strict 1% threshold, 92 SNPs were shared by FST, DXY and μLD. These SNPs were distributed across six 10-kb bins. Because two adjacent bins on CM044047.1 belonged to the same local signal, adjacent bins were merged, resulting in five candidate regions : 
+
+1. CM044025.1:143590001-143600000 - 35 SNPs - intragenic_non_exonic LOC126078297 - D-2-hydroxyglutarate dehydrogenase
+2. CM044047.1:34830001-34850000 - 30 SNPs - intergenic nearest gene: LOC126069310 - uncharacterized LOC126069310
+3. CM044022.1:26030001-26040000 - 18 SNPs - intergenic nearest gene: LOC126072092 - olfactory receptor 7G3-like
+4. CM044020.1:70690001-70700000 - 5 SNPs - intragenic_non_exonic LOC126076420 - uncharacterized LOC126076420
+5. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074938 - ADP ribosylation factor like GTPase 5B
 
 
 
