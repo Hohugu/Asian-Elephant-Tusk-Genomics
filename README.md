@@ -2,11 +2,11 @@
 
 ## 1.Introduction
 
-Campbell et al. have generates a VCF from aligned reads using GATK protocol as I did for this study. Most of the downstream analyses use filtering genotype/variants via vcftools, cyvcf2 or RAiSD. For FST and DXY, they use ANGSD and likelihood genotypes to generate uncertainty related to sequencing depth.
+Campbell et al. generated a VCF from aligned reads using GATK protocol as I did for this study. Most of the downstream analyses use filtering genotype/variants via vcftools, cyvcf2 or RAiSD. For FST and DXY, they use ANGSD and likelihood genotypes to generate uncertainty related to sequencing depth.
 
 I did not reproduce the full read-mapping, genotype-likelihood, and filtering pipeline from Campbell et al. Instead, I performed a Campbell-style analysis from our already QC-filtered GWAS genotype dataset: GWAS_qc_named_pheno.
 
-Here a resume of the protocol for this section : 
+Here is a resume of the protocol for this section : 
 - FST     : windows of 10 kb
 - DXY     : windows of 50 SNPs, step 10 SNPs
 - muLD    : RAiSD μLD
@@ -23,7 +23,7 @@ For RAiSD μLD, Campbell et al. used RAiSD on high-depth tuskless samples, while
 
 To resume : We performed a Campbell-style analysis using FST, DXY, RAiSD μLD and tuskless heterozygosity deviation (i.e HetDev). Unlike Campbell et al., who used specific high-depth subsets and ANGSD genotype likelihoods for FST/DXY, our analysis was performed from the QC-filtered GWAS genotype dataset. Therefore, this analysis is used as a comparative overlap framework rather than an exact reproduction.
 
-2 differents approaches are done : one to realize a Venn diagram based on 10kb window/bin level and one Venn diagram on SNP-level. For each metric, all the genomic windows are ordered from the strongest to the weakest signal. For example : I keep 5% windows with the highest Fst and same for the 1%, which makes this latter more restrictive.
+Two different approaches are done : one to realize a Venn diagram based on 10kb window/bin level and one Venn diagram on SNP-level. For each metric, all the genomic windows are ordered from the strongest to the weakest signal. For example : I keep 5% windows with the highest Fst and same for the 1%, which makes this latter more restrictive.
 
 ## 2. Venn diagram 10kb window/bin level
 
@@ -40,7 +40,7 @@ This diagram answer the question : Which genomics regions are common between ana
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
-556 bins common FST + DXY + muLD are find. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
+556 bins common FST + DXY + muLD were found. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
 
 **<ins> Figure 2. Venn diagram 10kb top 1%<ins>**: 
 
@@ -71,7 +71,7 @@ At the window level, the interval CM044048.1:14920001–14930000 was shared by F
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_1pct_Campbell_threshold.png" />
 
-Additional barplot summaries of the exclusive SNP-level intersections are shown below for readability. They represent the same intersection counts as the SNP-level Venn diagrams, but make the projected versus strictHet comparison easier to inspect.
+Additional barplot summaries of the exclusive SNP-level intersections are available as supplement figures in the section 09. They represent the same intersection counts as the SNP-level Venn diagrams, but make the projected versus strictHet comparison easier to inspect.
 
 ## 4. Regional plots for the HetDev-overlap signal
 
@@ -82,7 +82,11 @@ The projected analysis identifies 20 SNPs in the candidate interval. Dashed line
 
 <img width="1000" alt="Projected FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_22575792_22576805_5pct_projected_4panels_FST_DXY_muLD_Het.png" />
 
-When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Campbell-like heterozygosity criterion, the signal was reduced to two SNPs in the same interval. As shown in Fig. 5, the candidate SNPs fall within a local HetDev_TX signal and near FST/DXY outlier windows, while μLD does not show a coincident peak.
+As shown in Fig. 5, the projected candidate SNPs fall within a local HetDev_TX signal and near FST/DXY outlier windows, while μLD does not show a coincident peak.
+When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Campbell-like heterozygosity criterion, the signal was reduced to two SNPs in the same interval.
+
+**Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.**  
+The strictHet analysis retains two SNPs in the same candidate interval.
 
 **<ins>Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
 The strictHet analysis retains two SNPs in the same candidate interval.
@@ -93,14 +97,14 @@ Additional Campbell-style three-panel plots excluding DXY were also generated fo
 
 ## 5. LOC126069858 & AMELX
 
-This two regions have been extrated and analysed to investigate the signals identified by Campbell et al. but also by the genome-wide scan (i.e. 03.GWAS & 04.Selection-Differentiation-scan).
+These two regions have been extracted and analysed to investigate the signals identified by Campbell et al. but also by the genome-wide scan (i.e. 03.GWAS & 04.Selection-Differentiation-scan).
 
 **For LOC126069858**, the FST+DXY+muLD signal is nearby, but not inside the gene body. The bin 10 kb CM044048.1:14920001-14930000 overlap the edge of the gene, but can contain SNPs with the FST+DXY+muLD signal near to the gene.
 So no signal is detected directly inside LOC126069858.
 
 Inside the bin 10kb which overlap the beginning of the gene. The bin CM044048.1:14920001–14930000 contain 42 SNPs FST+DXY+muLD at 5%. The window is located between 14,920,064 and 14,922,466 so upstream of LOC126069858, which starts at 14,929,369.
 
-**For AMELX**, No SNP have been found for signal FST+DXY+muLD in AMELX region. In the large region AMELX CM044047.1:167.5–171.0 Mb, no SNP with FST+DXY+muLD signal is detected. However, simple and double signals qre detected :
+**For AMELX**, No SNP have been found for signal FST+DXY+muLD in AMELX region. In the large region AMELX CM044047.1:167.5–171.0 Mb, no SNP with FST+DXY+muLD signal is detected. However, simple and double signals are detected :
 
 |**For top 5%** : | **For top 1%** :|
 |-----------------------|----------------------|
