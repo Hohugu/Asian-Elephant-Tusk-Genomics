@@ -36,13 +36,13 @@ This first Venn diagram overlap candidate windows/regions: **Campbell-style wind
 
 This diagram answer the question : Which genomics regions are common between analyses ? 
 
-**<ins>Venn diagram 10kb top 5%<ins>** :
+**<ins>Figure 1. Venn diagram 10kb top 5%<ins>** :
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
 556 bins common FST + DXY + muLD are find. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
 
-**<ins>Venn diagram 10kb top 1%<ins>**: 
+**<ins> Figure 2. Venn diagram 10kb top 1%<ins>**: 
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
 
@@ -63,17 +63,35 @@ At the window level, the interval CM044048.1:14920001–14930000 was shared by F
 
 **At the 5% tail threshold**, 11,199 SNPs were shared by FST, DXY and μLD. Twenty SNPs were shared by FST, DXY and HetDev_TX, while no SNP was shared by all four analyses. **At the stricter 1% tail threshold**, 92 SNPs were shared by FST, DXY and μLD, while none overlapping is detected with Fst, Dxy, muLD and HetDev for tuskless. Thus, the main convergent SNP-level signal is FST+DXY+μLD, whereas HetDev_TX shows limited overlap and does not converge with μLD in this dataset.
 
-**<ins>Venn diagram SNP-level top 5%<ins>** :
+**<ins>Figure 3. Venn diagram SNP-level top 5%<ins>** :
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_5pct_Campbell.png" />
 
-**<ins>Venn diagram SNP-level top 1%<ins>**: 
+**<ins>Figure 4. Venn diagram SNP-level top 1%<ins>**: 
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_1pct_Campbell_threshold.png" />
 
 Additional barplot summaries of the exclusive SNP-level intersections are shown below for readability. They represent the same intersection counts as the SNP-level Venn diagrams, but make the projected versus strictHet comparison easier to inspect.
 
-## 4. LOC126069858 & AMELX
+## 4. Regional plots for the HetDev-overlap signal
+
+At the 5% projected SNP-level threshold, 20 SNPs were shared by FST, DXY and HetDev_TX. These SNPs clustered in a compact 1.0 kb interval on CM044025.1:22,575,792–22,576,805. Because this signal involves HetDev_TX and DXY but not μLD, four-panel regional plots including FST, DXY, μLD and HetDev_TX were generated.
+
+**<ins>Figure 5. Magnified regional plot of the projected FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
+The projected analysis identifies 20 SNPs in the candidate interval. Dashed lines represent the empirical upper 5% threshold and dotted lines the empirical upper 1% threshold. Dark blue points correspond to upper 5% outlier windows, light blue points to non-outlier windows, and vertical ticks to candidate SNPs.
+
+<img width="1000" alt="Projected FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_22575792_22576805_5pct_projected_4panels_FST_DXY_muLD_Het.png" />
+
+When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Campbell-like heterozygosity criterion, the signal was reduced to two SNPs in the same interval. As shown in Fig. 5, the candidate SNPs fall within a local HetDev_TX signal and near FST/DXY outlier windows, while μLD does not show a coincident peak.
+
+**<ins>Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
+The strictHet analysis retains two SNPs in the same candidate interval.
+
+<img width="1000" alt="StrictHet FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_22575792_22576805_5pct_strictHet_4panels_FST_DXY_muLD_Het.png" />
+
+Additional Campbell-style three-panel plots excluding DXY were also generated for visual comparison, but the four-panel plots are retained as the main representation because DXY contributes to this signal.
+
+## 5. LOC126069858 & AMELX
 
 This two regions have been extrated and analysed to investigate the signals identified by Campbell et al. but also by the genome-wide scan (i.e. 03.GWAS & 04.Selection-Differentiation-scan).
 
@@ -95,7 +113,7 @@ Inside the bin 10kb which overlap the beginning of the gene. The bin CM044048.1:
 
 At the SNP level, no variant within the exact LOC126069858 gene body was shared by FST, DXY and μLD. However, 42 SNPs in the adjacent 10-kb bin immediately upstream of LOC126069858 were shared by FST, DXY and μLD at the 5% tail threshold. Within LOC126069858 itself, SNPs were mainly supported by FST and μLD, without DXY convergence. No FST+DXY+μLD SNP-level convergence was observed in the AMELX regional window.
 
-## 5. Annotation
+## 6. Annotation
 First here the number of SNPs from the Venn diagram SNP-level for 5 and 1 top %.
 
 5% :
