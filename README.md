@@ -159,3 +159,17 @@ At the strict 1% threshold, 92 SNPs were shared by FST, DXY and μLD. These SNPs
 
 SNPs returned from top 1 and 5% after identification from Venn diagram SNP-level, are crossed with the SNPs from mixed models GWAS GEMMA with all individuals and male only. The strict 1% Campbell-style candidate regions did not overlap Bonferroni-significant GWAS hits from either the all-sample PC3 or male-only PC3 GEMMA analyses.
 
+## 7. Final Campbell-style candidate regions summary
+
+At the strict 1% threshold, the main Campbell-style SNP-level signal was composed of SNPs shared by FST, DXY and μLD. These SNPs were distributed across five candidate regions after merging two adjacent bins on CM044047.1. A secondary HetDev-overlap signal was detected at the 5% threshold on CM044025.1.
+
+| Region | Signal | Threshold | n SNPs | Annotation | GWAS overlap | Interpretation |
+|---|---|---:|---:|---|---|---|
+| CM044025.1:143590001-143600000 | FST+DXY+μLD | 1% | 35 | overlaps LOC126078297, D-2-hydroxyglutarate dehydrogenase; includes exon/CDS overlap | no Bonferroni overlap | main strict Campbell-like signal |
+| CM044047.1:34830001-34850000 | FST+DXY+μLD | 1% | 30 | no direct overlap; nearest gene-like feature: LOC126068675, E3 ubiquitin-protein ligase Hakai-like pseudogene, 834,938 bp away | no Bonferroni overlap | main strict Campbell-like signal |
+| CM044022.1:26030001-26040000 | FST+DXY+μLD | 1% | 18 | no direct overlap; nearest gene-like feature: LOC126072092, olfactory receptor 7G3-like protein-coding gene, 1,917 bp away | no Bonferroni overlap | main strict Campbell-like signal |
+| CM044020.1:70690001-70700000 | FST+DXY+μLD | 1% | 5 | overlaps LOC126076420, uncharacterized lncRNA | no Bonferroni overlap | main strict Campbell-like signal |
+| CM044023.1:37750001-37760000 | FST+DXY+μLD | 1% | 4 | no direct overlap; nearest gene-like feature: LOC126074841, heterogeneous nuclear ribonucleoprotein A/B-like pseudogene, 170,226 bp away | no Bonferroni overlap | main strict Campbell-like signal |
+| CM044025.1:22575792-22576805 | FST+DXY+HetDev_TX | 5% projected / strictHet | 20 projected / 2 strictHet | no direct overlap; nearest gene-like feature: LOC126078138, 60S ribosomal protein L23a-like pseudogene, 357,379 bp away | not part of strict 1% FST+DXY+μLD candidate set | HetDev-overlap sensitivity signal |
+
+The HetDev-overlap interval on CM044025.1 did not directly overlap any annotated gene, exon or CDS in the current RefSeq GFF annotation after CM-to-NC chromosome name conversion. It should therefore be interpreted as a non-coding or currently unannotated regional signal rather than as direct evidence for a coding-gene candidate.
