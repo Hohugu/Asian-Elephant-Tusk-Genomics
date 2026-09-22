@@ -171,7 +171,7 @@ At the strict 1% threshold, the main Campbell-style SNP-level signal was compose
 
 The HetDev-overlap interval on CM044025.1 did not directly overlap any annotated gene, exon or CDS in the current RefSeq GFF annotation after CM-to-NC chromosome name conversion. It should therefore be interpreted as a non-coding or currently unannotated regional signal rather than as direct evidence for a coding-gene candidate.
 
-</details>
+<details>
 <summary>Show regional plots for strict 1% FST+DXY+μLD candidate regions</summary>
 **CM044025.1:143590001–143600000 — 35 SNPs**
 
