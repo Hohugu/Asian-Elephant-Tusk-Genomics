@@ -173,3 +173,27 @@ At the strict 1% threshold, the main Campbell-style SNP-level signal was compose
 | CM044025.1:22575792-22576805 | FST+DXY+HetDev_TX | 5% projected / strictHet | 20 projected / 2 strictHet | no direct overlap; nearest gene-like feature: LOC126078138, 60S ribosomal protein L23a-like pseudogene, 357,379 bp away | not part of strict 1% FST+DXY+μLD candidate set | HetDev-overlap sensitivity signal |
 
 The HetDev-overlap interval on CM044025.1 did not directly overlap any annotated gene, exon or CDS in the current RefSeq GFF annotation after CM-to-NC chromosome name conversion. It should therefore be interpreted as a non-coding or currently unannotated regional signal rather than as direct evidence for a coding-gene candidate.
+
+</details>
+<summary>Show regional plots for strict 1% FST+DXY+μLD candidate regions</summary>
+**CM044025.1:143590001–143600000 — 35 SNPs**
+
+<img width="1000" alt="Regional FST DXY muLD plot CM044025.1 143590001 143600000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_143590001_143600000_regional_FST_DXY_muLD.png" />
+
+**CM044047.1:34830001–34850000 — 30 SNPs**
+
+<img width="1000" alt="Regional FST DXY muLD plot CM044047.1 34830001 34850000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044047.1_34830001_34850000_regional_FST_DXY_muLD.png" />
+
+**CM044022.1:26030001–26040000 — 18 SNPs**
+
+<img width="1000" alt="Regional FST DXY muLD plot CM044022.1 26030001 26040000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044022.1_26030001_26040000_regional_FST_DXY_muLD.png" />
+
+**CM044020.1:70690001–70700000 — 5 SNPs**
+
+<img width="1000" alt="Regional FST DXY muLD plot CM044020.1 70690001 70700000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044020.1_70690001_70700000_regional_FST_DXY_muLD.png" />
+
+**CM044023.1:37750001–37760000 — 4 SNPs**
+
+<img width="1000" alt="Regional FST DXY muLD plot CM044023.1 37750001 37760000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044023.1_37750001_37760000_regional_FST_DXY_muLD.png" />
+
+</details>
