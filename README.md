@@ -38,13 +38,13 @@ This diagram answer the question : Which genomics regions are common between ana
 
 **<ins>Figure 1. Venn diagram 10kb top 5%<ins>** :
 
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/Campbell_corrected_Venn_10kb_bins_5pct_Campbell.png" />
 
 556 bins common FST + DXY + muLD were found. But 0 common bins are returned between all metrics contrary to 305 found in Campbell et al. 2021.
 
 **<ins> Figure 2. Venn diagram 10kb top 1%<ins>**: 
 
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/Campbell_corrected_Venn_10kb_bins_1pct_Campbell_threshold.png" />
 
 For top 1% only 10 bin common FST + DXY + muLD are find.
 
@@ -65,11 +65,11 @@ At the window level, the interval CM044048.1:14920001–14930000 was shared by F
 
 **<ins>Figure 3. Venn diagram SNP-level top 5%<ins>** :
 
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_5pct_Campbell.png" />
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/Campbell_SNP_level_Venn_5pct_Campbell.png" />
 
 **<ins>Figure 4. Venn diagram SNP-level top 1%<ins>**: 
 
-<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Campbell_SNP_level_Venn_1pct_Campbell_threshold.png" />
+<img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/Campbell_SNP_level_Venn_1pct_Campbell_threshold.png" />
 
 Additional barplot summaries of the exclusive SNP-level intersections are available as supplement figures in the section 09. They represent the same intersection counts as the SNP-level Venn diagrams, but make the projected versus strictHet comparison easier to inspect.
 
@@ -80,7 +80,7 @@ At the 5% projected SNP-level threshold, 20 SNPs were shared by FST, DXY and Het
 **<ins>Figure 5. Magnified regional plot of the projected FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
 The projected analysis identifies 20 SNPs in the candidate interval. Dashed lines represent the empirical upper 5% threshold and dotted lines the empirical upper 1% threshold. Dark blue points correspond to upper 5% outlier windows, light blue points to non-outlier windows, and vertical ticks to candidate SNPs.
 
-<img width="1000" alt="Projected FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_22575792_22576805_5pct_projected_4panels_FST_DXY_muLD_Het.png" />
+<img width="1000" alt="Projected FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044025.1_22575792_22576805_5pct_projected_4panels_FST_DXY_muLD_Het.png" />
 
 As shown in Fig. 5, the projected candidate SNPs fall within a local HetDev_TX signal and near FST/DXY outlier windows, while μLD does not show a coincident peak.
 When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Campbell-like heterozygosity criterion, the signal was reduced to two SNPs in the same interval.
@@ -88,7 +88,7 @@ When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Ca
 **<ins>Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
 The strictHet analysis retains two SNPs in the same candidate interval.
 
-<img width="1000" alt="StrictHet FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_22575792_22576805_5pct_strictHet_4panels_FST_DXY_muLD_Het.png" />
+<img width="1000" alt="StrictHet FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044025.1_22575792_22576805_5pct_strictHet_4panels_FST_DXY_muLD_Het.png" />
 
 Additional Campbell-style three-panel plots excluding DXY were also generated for visual comparison, but the four-panel plots are retained as the main representation because DXY contributes to this signal.
 
@@ -175,19 +175,19 @@ The HetDev-overlap interval on CM044025.1 did not directly overlap any annotated
 <summary>Show regional plots for strict 1% FST+DXY+μLD candidate regions</summary>
 **CM044025.1:143590001–143600000 — 35 SNPs**
 
-<img width="1000" alt="Regional FST DXY muLD plot CM044025.1 143590001 143600000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044025.1_143590001_143600000_regional_FST_DXY_muLD.png" />
+<img width="1000" alt="Regional FST DXY muLD plot CM044025.1 143590001 143600000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044025.1_143590001_143600000_regional_FST_DXY_muLD.png" />
 
 **CM044047.1:34830001–34850000 — 30 SNPs**
 
-<img width="1000" alt="Regional FST DXY muLD plot CM044047.1 34830001 34850000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044047.1_34830001_34850000_regional_FST_DXY_muLD.png" />
+<img width="1000" alt="Regional FST DXY muLD plot CM044047.1 34830001 34850000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044047.1_34830001_34850000_regional_FST_DXY_muLD.png" />
 
 **CM044022.1:26030001–26040000 — 18 SNPs**
 
-<img width="1000" alt="Regional FST DXY muLD plot CM044022.1 26030001 26040000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044022.1_26030001_26040000_regional_FST_DXY_muLD.png" />
+<img width="1000" alt="Regional FST DXY muLD plot CM044022.1 26030001 26040000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044022.1_26030001_26040000_regional_FST_DXY_muLD.png" />
 
 **CM044020.1:70690001–70700000 — 5 SNPs**
 
-<img width="1000" alt="Regional FST DXY muLD plot CM044020.1 70690001 70700000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/CM044020.1_70690001_70700000_regional_FST_DXY_muLD.png" />
+<img width="1000" alt="Regional FST DXY muLD plot CM044020.1 70690001 70700000" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044020.1_70690001_70700000_regional_FST_DXY_muLD.png" />
 
 **CM044023.1:37750001–37760000 — 4 SNPs**
 
