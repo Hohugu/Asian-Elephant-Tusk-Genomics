@@ -85,9 +85,6 @@ The projected analysis identifies 20 SNPs in the candidate interval. Dashed line
 As shown in Fig. 5, the projected candidate SNPs fall within a local HetDev_TX signal and near FST/DXY outlier windows, while μLD does not show a coincident peak.
 When HetDev_TX was defined more strictly by requiring each SNP to satisfy the Campbell-like heterozygosity criterion, the signal was reduced to two SNPs in the same interval.
 
-**Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.**  
-The strictHet analysis retains two SNPs in the same candidate interval.
-
 **<ins>Figure 6. Magnified regional plot of the strictHet FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
 The strictHet analysis retains two SNPs in the same candidate interval.
 
