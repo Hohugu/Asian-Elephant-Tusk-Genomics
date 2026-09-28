@@ -75,7 +75,9 @@ Additional barplot summaries of the exclusive SNP-level intersections are availa
 
 ## 4. Regional plots for the HetDev-overlap signal
 
-At the 5% projected SNP-level threshold, 20 SNPs were shared by FST, DXY and HetDev_TX. These SNPs clustered in a compact 1.0 kb interval on CM044025.1:22,575,792–22,576,805. Because this signal involves HetDev_TX and DXY but not μLD, four-panel regional plots including FST, DXY, μLD and HetDev_TX were generated.
+At the 5% projected SNP-level threshold, 20 SNPs were shared by FST, DXY and HetDev_TX. These SNPs clustered in a compact 1.0 kb interval on CM044025.1:22,575,792–22,576,805. Importantly, these SNPs were not shared with μLD, and no SNP was shared by all four Campbell-style metrics at the SNP level.
+
+The four-panel regional plot therefore includes μLD only as a contextual comparison with the other Campbell-style metrics. Vertical ticks correspond to the 20 projected FST+DXY+HetDev_TX SNPs, not to FST+DXY+μLD+HetDev_TX SNPs. Thus, any local μLD outlier window visible in the plot should not be interpreted as support for the 20 projected HetDev-overlap SNPs.
 
 **<ins>Figure 5. Magnified regional plot of the projected FST+DXY+HetDev_TX signal on CM044025.1.<ins>**  
 The projected analysis identifies 20 SNPs in the candidate interval. Dashed lines represent the empirical upper 5% threshold and dotted lines the empirical upper 1% threshold. Dark blue points correspond to upper 5% outlier windows, light blue points to non-outlier windows, and vertical ticks to candidate SNPs.
@@ -90,7 +92,7 @@ The strictHet analysis retains two SNPs in the same candidate interval.
 
 <img width="1000" alt="StrictHet FST DXY HetDev candidate region on CM044025.1" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/09.Campbell-style-Analyses/Plots/CM044025.1_22575792_22576805_5pct_strictHet_4panels_FST_DXY_muLD_Het.png" />
 
-Additional Campbell-style three-panel plots excluding DXY were also generated for visual comparison, but the four-panel plots are retained as the main representation because DXY contributes to this signal.
+Additional Campbell-style three-panel plots excluding DXY were also generated for visual comparison, but the four-panel plots are retained as the main representation because DXY contributes to this signal. The 20 projected SNPs and the two strictHet SNPs fall within the same compact interval. This interval did not directly overlap any annotated gene, exon or CDS in the current RefSeq GFF annotation after CM-to-NC chromosome name conversion. The nearest gene-like feature was LOC126078138, annotated as a 60S ribosomal protein L23a-like pseudogene, located 357,379 bp away. This region is therefore retained as a HetDev-overlap sensitivity signal rather than as direct evidence for a coding-gene candidate.
 
 ## 5. LOC126069858 & AMELX
 
@@ -119,13 +121,13 @@ First here the number of SNPs from the Venn diagram SNP-level for 5 and 1 top %.
 
 5% :
 - 11,219 SNPs ≥3 analyses
-- dont 11,199 FST&DXY&muLD
+- including 11,199 FST&DXY&muLD
 - 20 FST&DXY&HetDev_TX
 - classes : 7,991 intergenic ; 2,759 intragenic_non_exonic ; 232 exon_non_CDS ; 163 promoter_2kb ; 74 CDS
 
 1% :
 - 92 SNPs ≥3 analyses
-- tous FST&DXY&muLD
+- 92 SNPs FST&DXY&muLD
 - classes : 52 intergenic ; 40 intragenic_non_exonic
 
 At 1% threshold, only 92 SNPs ≥3 analyses, all FST&DXY&muLD are shared out 6 bins 10 kb :
