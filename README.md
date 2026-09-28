@@ -132,29 +132,29 @@ First here the number of SNPs from the Venn diagram SNP-level for 5 and 1 top %.
 
 At 1% threshold, only 92 SNPs ≥3 analyses, all FST&DXY&muLD are shared out 6 bins 10 kb :
 - CM044025.1:143590001-143600000   35 SNPs   LOC126078297   intragenic_non_exonic
-- CM044047.1:34830001-34840000     25 SNPs   near LOC126069310   intergenic
+- CM044047.1:34830001-34840000     25 SNPs   near LOC126068675   intergenic
 - CM044022.1:26030001-26040000     18 SNPs   near LOC126072092   intergenic
 - CM044020.1:70690001-70700000      5 SNPs   LOC126076420   intragenic_non_exonic
-- CM044047.1:34840001-34850000      5 SNPs   near LOC126069310   intergenic
+- CM044047.1:34840001-34850000      5 SNPs   near LOC126068675   intergenic
 - CM044023.1:37750001-37760000      4 SNPs   near LOC126074938   intergenic
 
-The strongest candidate is : CM044025.1:143590001-143600000 with 35 SNPs FST+DXY+muLD, all in intragenic_non_exonic LOC126078297. Then, the second candidate is located : CM044047.1:34830001-34850000, near LOC126069310.
+The strongest candidate is : CM044025.1:143590001-143600000 with 35 SNPs FST+DXY+muLD, all in intragenic_non_exonic LOC126078297. Then, the second candidate is located : CM044047.1:34830001-34850000, near LOC126068675.
 
 Here the annotation of the 6 10kb bins for 92 SNPs ≥3 analyses :
 - 1. CM044025.1:143590001-143600000 - 35 SNPs - intragenic_non_exonic - LOC126078297 - D-2-hydroxyglutarate dehydrogenase
-- 2. CM044047.1:34830001-34840000 - 25 SNPs - intergenic nearest gene: LOC126069310
+- 2. CM044047.1:34830001-34840000 - 25 SNPs - intergenic nearest gene: LOC126068675 - E3 ubiquitin-protein ligase Hakai-like pseudogene, 834,938 bp away
 - 3. CM044022.1:26030001-26040000 - 18 SNPs - intergenic nearest gene: LOC126072092 - olfactory receptor 7G3-like
 - 4. CM044020.1:70690001-70700000 - 5 SNPs - intragenic_non_exonic - LOC126076420
-- 5. CM044047.1:34840001-34850000 - 5 SNPs - intergenic nearest gene: LOC126069310
-- 6. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074938 - ADP ribosylation factor like GTPase 5B
+- 5. CM044047.1:34840001-34850000 - 5 SNPs - intergenic nearest gene: LOC126068675 - E3 ubiquitin-protein ligase Hakai-like pseudogene, 834,938 bp away
+- 6. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074841 - heterogeneous nuclear ribonucleoprotein A/B-like pseudogene, 170,226 bp away
 
 At the strict 1% threshold, 92 SNPs were shared by FST, DXY and μLD. These SNPs were distributed across six 10-kb bins. Because two adjacent bins on CM044047.1 belonged to the same local signal, adjacent bins were merged, resulting in five candidate regions : 
 
 - 1. CM044025.1:143590001-143600000 - 35 SNPs - intragenic_non_exonic LOC126078297 - D-2-hydroxyglutarate dehydrogenase
-- 2. CM044047.1:34830001-34850000 - 30 SNPs - intergenic nearest gene: LOC126069310 - uncharacterized LOC126069310
+- 2. CM044047.1:34830001-34850000 - 30 SNPs - intergenic nearest gene: LOC126068675 - E3 ubiquitin-protein ligase Hakai-like pseudogene, 834,938 bp away
 - 3. CM044022.1:26030001-26040000 - 18 SNPs - intergenic nearest gene: LOC126072092 - olfactory receptor 7G3-like
 - 4. CM044020.1:70690001-70700000 - 5 SNPs - intragenic_non_exonic LOC126076420 - uncharacterized LOC126076420
-- 5. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074938 - ADP ribosylation factor like GTPase 5B
+- 5. CM044023.1:37750001-37760000 - 4 SNPs - intergenic nearest gene: LOC126074841 - heterogeneous nuclear ribonucleoprotein A/B-like pseudogene, 170,226 bp away
 
 SNPs returned from top 1 and 5% after identification from Venn diagram SNP-level, are crossed with the SNPs from mixed models GWAS GEMMA with all individuals and male only. The strict 1% Campbell-style candidate regions did not overlap Bonferroni-significant GWAS hits from either the all-sample PC3 or male-only PC3 GEMMA analyses.
 
