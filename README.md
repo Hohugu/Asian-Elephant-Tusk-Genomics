@@ -149,7 +149,7 @@ The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. A
 
 ## 4. GEMMA males-only GWAS mixed-model
 
-The male-only GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 31 SNPs appeared associated with tusk phenotype variation for male-only GWAS GEMMA. However, in final analyses, 23 SNPs are kept after standardization. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
+The male-only GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 34 SNPs appeared associated with tusk phenotype variation for male-only GWAS GEMMA. However, in final analyses, 23 SNPs are kept after standardization. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
 
 Population structure is taken into account and 3 PCs are kept as before. Kinship is also corrected. The equation of male-only GEMMA GWAS model is :
 
@@ -180,7 +180,7 @@ For the GEMMA mixed-model with males only and 3PCs, the ***Bonferroni threshold*
 So all SNPs with -log10(P) superior to 8.61 are genome-wide significants. **31 significants SNPs are superior to 8.61**. 
 Each SNPs seem to be part of LD blocs by chromosomes. I am particularly interested by SNPs in chromosome 1. 
 
-From 31 SNPs, 26 SNPs are inside coding genes and therefore have gene description and functions available from the gff annotation file. Bonferroni-significant SNPs from the male-only GEMMA GWAS were clustered into independent loci using a conservative 50 kb physical distance threshold. Thirty-one significant SNPs collapsed into 26 putatively independent loci. Most loci were represented by a single lead SNP, while five loci contained two highly proximal significant SNPs (<50 kb apart), suggesting local LD or the same underlying association signal [SEE TABLE Bonferroni-significant loci identified by male-only GEMMA GWAS].
+From 34 SNPs, 11 SNPs are inside coding genes but non exonic while 1 SNP is inside a CDS and therefore have gene description and functions available from the gff annotation file. Bonferroni-significant SNPs from the male-only GEMMA GWAS were clustered into independent loci using a conservative 50 kb physical distance threshold. Thirty-one significant SNPs collapsed into 26 putatively independent loci. Most loci were represented by a single lead SNP, while five loci contained two highly proximal significant SNPs (<50 kb apart), suggesting local LD or the same underlying association signal [SEE TABLE Bonferroni-significant loci identified by male-only GEMMA GWAS].
 
 ### _4.3 Annotation & Candidate genes_
 
@@ -189,6 +189,8 @@ For each Campbell candidate gene (i.e. AMBN, AMTN, ENAM, ODAM, AMELX, MEP1A, MEP
 Results reproduced the original mixed-model findings. In the male-only GWAS, the enamel-cluster signal persisted but was substantially weaker (best p = 8.1E-05 upstream for 500kb). No Bonferroni-significant SNPs were detected within 2 Mb of any Campbell candidate gene opposite to AMELX associated SNP (CM044047.1:170145312:G:T; p = 1.56E-10) from GEMMA GWAS mixed-model. These results indicate that the Campbell candidate loci do not overlap the strongest male-only GWAS signals and suggest that the AMELX-associated signal observed in the mixed GWAS is not driven by males alone.
 
 In the male-only GWAS, a local association among the Campbell candidates was detected near MEP1B (p = 1.76E-05, approximately 53 kb from the gene) and a SNP is also detected for MEP1a (p = 3.45E-05, approximately 412kb kb and p = 3.52E-07, 1,86Mb from the gene). MEP1A as a biologically relevant candidate locus for tusk variation in Asian elephants. **Overall, none of the Campbell candidate genes directly overlap the strongest male-only GWAS peaks, but several loci—particularly MEP1B and AMELX—remain promising targets for downstream LD, population genetic, and regulatory analyses**.
+
+Among the 34 Bonferroni-significant SNPs from the GEMMA male-only GWAS, 22 were intergenic, 11 were intragenic non-exonic, and 1 overlapped a RefSeq CDS feature. Thus, 33 of the 34 SNPs did not overlap an exon/CDS feature and were classified as non-exonic or intergenic by genomic position. Also the only CDS SNP is located in CM44025.1:127341274:C:T - LOC126078159 - dedicator of cytokinesis 10, which is not related to teeth development in human nor tusk elephant. 
 
 **<ins>Resume Table of the Bonferroni SNPs of GWAS GEMMA only-males<ins>**
 
