@@ -190,5 +190,40 @@ Results reproduced the original mixed-model findings. In the male-only GWAS, the
 
 In the male-only GWAS, a local association among the Campbell candidates was detected near MEP1B (p = 1.76E-05, approximately 53 kb from the gene) and a SNP is also detected for MEP1a (p = 3.45E-05, approximately 412kb kb and p = 3.52E-07, 1,86Mb from the gene). MEP1A as a biologically relevant candidate locus for tusk variation in Asian elephants. **Overall, none of the Campbell candidate genes directly overlap the strongest male-only GWAS peaks, but several loci—particularly MEP1B and AMELX—remain promising targets for downstream LD, population genetic, and regulatory analyses**.
 
-
+| SNP | GeneID | category | description | biotype | pvalue |
+|---|---|---|---|---|---:|
+| CM044020.1:85883031:A:T | LOC126062481 | intergenic_nearest_gene | olfactory receptor 2W1-like | protein_coding | 5.40E-17|
+| CM044020.1:93012634:A:G | LOC126067278 | intergenic_nearest_gene | mitochondrial coiled-coil domain 1 | protein_coding | 4.76E-10|
+| CM044021.1:21575470:C:T | LOC126063229 | intergenic_nearest_gene | brain abundant membrane attached signal protein 1 | protein_coding | 4.85E-10|
+| CM044021.1:105383248:C:T | LOC126068367 | intergenic_nearest_gene | uncharacterized LOC126068367 | lncRNA | 1.63E-10|
+| CM044022.1:10027209:A:T | LOC126072015 | intergenic_nearest_gene | G protein-coupled receptor 108 | protein_coding | 4.07E-10|
+| CM044024.1:10946684:A:G | LOC126076707 | intergenic_nearest_gene | poly(A) binding protein cytoplasmic 4 like | protein_coding | 2.08E-09|
+| CM044024.1:160776260:C:G | LOC126077355 | intergenic_nearest_gene | DNA polymerase nu-like | protein_coding | 4.76E-11 |
+| CM044025.1:1173816:A:G | LOC126077920 | intergenic_nearest_gene | olfactory receptor 10AG1-like | protein_coding | 9.72E-11 |
+| CM044026.1:2708301:A:G | LOC126078669 | intergenic_nearest_gene | 6-pyruvoyltetrahydropterin synthase | protein_coding |2.73E-10|
+| CM044026.1:2708459:C:G | LOC126078669 | intergenic_nearest_gene | 6-pyruvoyltetrahydropterin synthase | protein_coding |2.39E-11|
+| CM044026.1:50526301:A:G | LOC126079001 | intergenic_nearest_gene | protein PIP-1-like | protein_coding | 1.68E-12 |
+| CM044028.1:98108670:C:T | LOC126083468 | intergenic_nearest_gene | U6 spliceosomal RNA | snRNA | 4.85E-010|
+| CM044028.1:98108684:A:G | LOC126083468 | intergenic_nearest_gene | U6 spliceosomal RNA | snRNA | 4.85E-10|
+| CM044031.1:64720145:C:T | LOC126086896 | intergenic_nearest_gene | RNA binding fox-1 homolog 1 | protein_coding | 9.72E-11|
+| CM044031.1:107299091:A:G | LOC126087608 | intergenic_nearest_gene | U6 spliceosomal RNA | snRNA | 2.32E-12|
+| CM044037.1:56887515:C:G | LOC126061864 | intergenic_nearest_gene | U6atac minor spliceosomal RNA | snRNA | 3.04E-10|
+| CM044038.1:18635378:C:G | LOC126062997 | intergenic_nearest_gene | olfactory receptor 1D2 | protein_coding | 5.04E-10|
+| CM044038.1:18635411:A:G | LOC126062997 | intergenic_nearest_gene | olfactory receptor 1D2 | protein_coding | 5.04E-10|
+| CM044039.1:68139014:A:T | LOC126063497 | intergenic_nearest_gene | calcium dependent secretion activator | protein_coding | 8.2E-11|
+| CM044039.1:80561491:A:G | LOC126063811 | intergenic_nearest_gene | olfactory receptor 4P4-like | protein_coding | 3.8E-11|
+| CM044043.1:65143836:G:T | LOC126066814 | intergenic_nearest_gene | olfactory receptor 5D18-like | protein_coding | 3.04E-10|
+| CM044045.1:22027474:C:T | LOC126068202 | intergenic_nearest_gene | U6 spliceosomal RNA | snRNA | 4.68E-10|
+| CM044025.1:127341274:C:T | LOC126078159 | intragenic_exonic_CDS | dedicator of cytokinesis 10 | protein_coding | 4.68E-10|
+| CM044020.1:92793650:A:G | LOC126078111 | noncoding_intragenic_non_exonic | HLA class I histocompatibility antigen, A alpha chain-like | protein_coding | 4.68E-10|
+| CM044022.1:7179843:A:G | LOC126071937 | noncoding_intragenic_non_exonic | mitogen-activated protein kinase kinase 2 | protein_coding | 1.08E-09|
+| CM044022.1:8146748:C:T | LOC126071966 | noncoding_intragenic_non_exonic | lysine demethylase 4B | protein_coding | 9.72E-11 |
+| CM044022.1:192234281:C:G | LOC126073692 | noncoding_intragenic_non_exonic | interleukin 6 receptor | protein_coding | 1.95E-10 |
+| CM044022.1:192234282:C:G | LOC126073692 | noncoding_intragenic_non_exonic | interleukin 6 receptor | protein_coding | 2.89E-10|
+| CM044024.1:123473250:A:G | C5H4orf19 | noncoding_intragenic_non_exonic | chromosome 5 C4orf19 homolog | protein_coding | 2.73E-10|
+| CM044026.1:37271227:C:T | LOC126079775 | noncoding_intragenic_non_exonic | discs large MAGUK scaffold protein 2 | protein_coding | 9.72E-11|
+| CM044026.1:50391301:A:G | LOC126079001 | noncoding_intragenic_non_exonic | protein PIP-1-like | protein_coding | 4.76E-10|
+| CM044026.1:106837590:A:G | LOC126080233 | noncoding_intragenic_non_exonic | olfactory receptor 8K3-like | protein_coding | 2.34E-10|
+| CM044040.1:51337015:A:G | LOC126064907 | noncoding_intragenic_non_exonic | Gse1 coiled-coil protein | protein_coding | 4.85E-10|
+| CM044040.1:51337915:C:T | LOC126064907 | noncoding_intragenic_non_exonic | Gse1 coiled-coil protein | protein_coding | 4.85E-10|
 
