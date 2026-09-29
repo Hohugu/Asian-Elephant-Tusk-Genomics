@@ -190,6 +190,8 @@ Results reproduced the original mixed-model findings. In the male-only GWAS, the
 
 In the male-only GWAS, a local association among the Campbell candidates was detected near MEP1B (p = 1.76E-05, approximately 53 kb from the gene) and a SNP is also detected for MEP1a (p = 3.45E-05, approximately 412kb kb and p = 3.52E-07, 1,86Mb from the gene). MEP1A as a biologically relevant candidate locus for tusk variation in Asian elephants. **Overall, none of the Campbell candidate genes directly overlap the strongest male-only GWAS peaks, but several loci—particularly MEP1B and AMELX—remain promising targets for downstream LD, population genetic, and regulatory analyses**.
 
+**<ins>Resume Table of the Bonferroni SNPs of GWAS GEMMA only-males<ins>**
+
 | SNP | GeneID | category | description | biotype | pvalue |
 |---|---|---|---|---|---:|
 | CM044020.1:85883031:A:T | LOC126062481 | intergenic_nearest_gene | olfactory receptor 2W1-like | protein_coding | 5.40E-17|
