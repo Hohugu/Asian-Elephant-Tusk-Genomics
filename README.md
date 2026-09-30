@@ -151,6 +151,19 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. Among the candidate genes, MEP1B emerged as one of the strongest local signals. In the mixed GWAS, MEP1B showed a stronger within-gene association than MEP1A (p = 5.34E-03 versus p = 1.52E-02) and comparable suggestive associations within larger windows.
 
+<details>
+<summary>Show Gene related to SNPs with description and litterature</summary>
+PDGFC : PMID 22417879 - Gene expression profiling of oral epithelium during tooth development (2012); PMID 37779880 - Identification of a Novel Variant of PDGFC Associated with Nonsyndromic Cleft Lip and Palate in a Chinese family (2023). 
+
+RELN : 
+
+CALB2 : 
+
+PDK3 : 
+
+TNMD : 
+
+</details>
 ## 4. GEMMA males-only GWAS mixed-model
 
 The male-only GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 34 SNPs appeared associated with tusk phenotype variation for male-only GWAS GEMMA. However, in final analyses, 23 SNPs are kept after standardization. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
