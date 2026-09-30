@@ -106,6 +106,10 @@ After identification of Bonferroni significant SNPs, I have searched for genes n
 
 You can find the rest of the table in **Table of Bonferroni-significant genes**. I noticed that some genes are uncharacterized while they are significant.
 
+Several genes or nearest-gene annotations among the GEMMA all-individuals Bonferroni SNPs have documented links to tooth development or odontogenesis-related pathways. The strongest developmental candidates include GLI family zinc finger 2, involved in Sonic Hedgehog signalling during tooth development; platelet derived growth factor C, related to PDGF signalling in tooth germ growth and cusp morphogenesis; and activin A receptor type 2A, part of activin/BMP signalling involved in early tooth patterning. Additional genes such as ERBB4, NCAM1, CALB2, RELN and heparan-sulfate-related enzymes have reported expression or pathway-level relevance during odontogenesis, but should be considered indirect or supportive candidates rather than established tusk-specific genes.
+
+None of these annotations should be interpreted as direct evidence of a causal role in tusklessness. They identify biologically plausible loci or nearby genes based on known roles in mammalian tooth development, whereas direct tusk-development evidence remains limited.
+
 Then, I retrieved the candidates genes from Campbell et al., 2021 in the **GGF.file** reference genome of Asian elephants to find their positions and their associated p-values from the GEMMA mixed-model (i.e. GWAS GEMMA-PC3). None of the candidat genes do not return significants and so not directly associated to tusk phenotype from the GWAS GEMMA-PC3 (< 2.35e-09) [SEE 12.bis_Campbell_candidates_GEMMA_PC3.sh]. 
 
 **<ins>Table of orthologue candidate genes in Asian elephants.<ins>** 
