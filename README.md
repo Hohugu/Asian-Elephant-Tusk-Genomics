@@ -152,6 +152,7 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. Among the candidate genes, MEP1B emerged as one of the strongest local signals. In the mixed GWAS, MEP1B showed a stronger within-gene association than MEP1A (p = 5.34E-03 versus p = 1.52E-02) and comparable suggestive associations within larger windows.
 
 <details>
+  
 <summary>Show Gene related to SNPs with description and litterature</summary>
 PDGFC : PMID 22417879 - Gene expression profiling of oral epithelium during tooth development (2012); PMID 37779880 - Identification of a Novel Variant of PDGFC Associated with Nonsyndromic Cleft Lip and Palate in a Chinese family (2023). 
 
