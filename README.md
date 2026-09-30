@@ -155,15 +155,15 @@ The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. A
 <summary>Show Gene related to SNPs with description and litterature</summary>
 PDGFC : PMID 22417879 - Gene expression profiling of oral epithelium during tooth development (2012); PMID 37779880 - Identification of a Novel Variant of PDGFC Associated with Nonsyndromic Cleft Lip and Palate in a Chinese family (2023). 
 
-RELN : 
+RELN : PMID 15464360 — Expression and localization of reelin in human odontoblasts (2004) ; PMID 12640735 — New genes involved in odontoblast differentiation (2001) ; PMID 11472853 — Dynamic expression patterns of the new protocadherin families CNRs and Pcdh-gamma during mouse odontogenesis: comparison with reelin expression (2001) ; PMID 10980418 — A substractive PCR-based cDNA library from human odontoblast cells: identification of novel genes expressed in tooth forming cells (2000) ; PMID 21630058 — Controversies in RELN/reelin expression in otosclerosis (2012)
 
-CALB2 : 
+CALB2 : PMID 39881289 — Comparative evaluation of calretinin immunohistochemical expression in calcifying odontogenic cyst and ameloblastoma (2025) ; PMID 16270201 — Calcium transport in human salivary glands: a proposed model of calcium secretion into saliva (2006)
 
-PDK3 : 
+PDK3 : PMID 34586189 — Odontogenic gene expression profile of human dental pulp-derived cells under high glucose influence: a microarray analysis (2021)
 
-TNMD : 
-
+TNMD : PMID 27811845 — Dental pulp stem cells express tendon markers under mechanical loading and are a potential cell source for tissue engineering of tendon-like tissue (2016) ; PMID 24079397 — GDFs promote tenogenic characteristics on human periodontal ligament-derived cells in culture at late passages (2013) ; PMID 34476994 — Mesenchymal Stem Cell Sheets for Engineering of the Tendon-Bone Interface (2022) ; PMID 25978185 — Expression of DMP1 in the developing mouse tongue embryo (2015) ; PMID 21627568 — Effect of in vitro passaging on the stem cell-related properties of tendon-derived stem cells-implications in tissue engineering (2012)
 </details>
+
 ## 4. GEMMA males-only GWAS mixed-model
 
 The male-only GWAS is similar to the previous mixed-model GWAS. For males I analyzed 46 males with 20,405,248 SNPs, and a pve estimate of 0.99, meaning that the model explained almost all the observed variance. 34 SNPs appeared associated with tusk phenotype variation for male-only GWAS GEMMA. However, in final analyses, 23 SNPs are kept after standardization. This result is statistically consistent given that the sample size is reduced to 46 males while the previous GWAS was with 93 individuals. There is less statistic power, less observed recombination and a higher variance of the estimates. But it may also mean that these signals are robusts especially whether the same SNPs as the previous GWAS are returned. 
