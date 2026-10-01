@@ -154,15 +154,30 @@ The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. A
 <details>
   
 <summary>Show Gene related to SNPs with description and litterature</summary>
-PDGFC : PMID 22417879 - Gene expression profiling of oral epithelium during tooth development (2012); PMID 37779880 - Identification of a Novel Variant of PDGFC Associated with Nonsyndromic Cleft Lip and Palate in a Chinese family (2023). 
 
-RELN : PMID 15464360 — Expression and localization of reelin in human odontoblasts (2004) ; PMID 12640735 — New genes involved in odontoblast differentiation (2001) ; PMID 11472853 — Dynamic expression patterns of the new protocadherin families CNRs and Pcdh-gamma during mouse odontogenesis: comparison with reelin expression (2001) ; PMID 10980418 — A substractive PCR-based cDNA library from human odontoblast cells: identification of novel genes expressed in tooth forming cells (2000) ; PMID 21630058 — Controversies in RELN/reelin expression in otosclerosis (2012)
+**PDGFC** : LOC126057365 - INNE& inter - PMID 22417879 - Gene expression profiling of oral epithelium during tooth development (2012); PMID 37779880 - Identification of a Novel Variant of PDGFC Associated with Nonsyndromic Cleft Lip and Palate in a Chinese family (2023). PDGF/PDGFR pathway involved in cupsid morphogenesis and development of the dental germ [Xu et al. 2005]; Results indicate that PDGFs are involved in initial tooth development and regulate tooth size and shape, as well as ameloblast differentiation [Wu et al. 2010]
 
-CALB2 : PMID 39881289 — Comparative evaluation of calretinin immunohistochemical expression in calcifying odontogenic cyst and ameloblastoma (2025) ; PMID 16270201 — Calcium transport in human salivary glands: a proposed model of calcium secretion into saliva (2006)
+**RELN** : LOC12608137 - INNE - PMID 15464360 — Expression and localization of reelin in human odontoblasts (2004) ; PMID 12640735 — New genes involved in odontoblast differentiation (2001) ; PMID 11472853 — Dynamic expression patterns of the new protocadherin families CNRs and Pcdh-gamma during mouse odontogenesis: comparison with reelin expression (2001) ; PMID 10980418 — A substractive PCR-based cDNA library from human odontoblast cells: identification of novel genes expressed in tooth forming cells (2000) ; PMID 21630058 — Controversies in RELN/reelin expression in otosclerosis (2012). RELN is reported in human odontoblasts and the reelin pathway is discussed in non-neuronal tissues including ontogenesis. [Maurin et al 2004]
 
-PDK3 : PMID 34586189 — Odontogenic gene expression profile of human dental pulp-derived cells under high glucose influence: a microarray analysis (2021)
+**CALB2** :  LOC126064930 - INNE -  PMID 39881289 — Comparative evaluation of calretinin immunohistochemical expression in calcifying odontogenic cyst and ameloblastoma (2025) ; PMID 16270201 — Calcium transport in human salivary glands: a proposed model of calcium secretion into saliva (2006). CALB2/calretinin and other calcium-binding proteins are reported from dental epithelial tissues, including the ameolar epithelium. [Korkmaz et al 2010]
 
-TNMD : PMID 27811845 — Dental pulp stem cells express tendon markers under mechanical loading and are a potential cell source for tissue engineering of tendon-like tissue (2016) ; PMID 24079397 — GDFs promote tenogenic characteristics on human periodontal ligament-derived cells in culture at late passages (2013) ; PMID 34476994 — Mesenchymal Stem Cell Sheets for Engineering of the Tendon-Bone Interface (2022) ; PMID 25978185 — Expression of DMP1 in the developing mouse tongue embryo (2015) ; PMID 21627568 — Effect of in vitro passaging on the stem cell-related properties of tendon-derived stem cells-implications in tissue engineering (2012)
+
+**PDK3** : PMID 34586189 — Odontogenic gene expression profile of human dental pulp-derived cells under high glucose influence: a microarray analysis (2021)
+
+**TNMD** : PMID 27811845 — Dental pulp stem cells express tendon markers under mechanical loading and are a potential cell source for tissue engineering of tendon-like tissue (2016) ; PMID 24079397 — GDFs promote tenogenic characteristics on human periodontal ligament-derived cells in culture at late passages (2013) ; PMID 34476994 — Mesenchymal Stem Cell Sheets for Engineering of the Tendon-Bone Interface (2022) ; PMID 25978185 — Expression of DMP1 in the developing mouse tongue embryo (2015) ; PMID 21627568 — Effect of in vitro passaging on the stem cell-related properties of tendon-derived stem cells-implications in tissue engineering (2012)
+
+**GLI family zinc finger 2** : LOC126078537 - intergenic - SHH/GLI pathway directly involved in teeth develpm; gli2/gli3 mutation on incisives. [Hardcastle 1998; Kim et al. 2012]. Genetic variants in tooth agenesis–related genes (such as FGF3, FGF10, FGF13, GLI2, GLI3, and TGFα) are significantly associated with variations in permanent tooth size in non-syndromic individual [Cunhan et al. 2020]. See hypodontia
+
+**Activin A receptor 2** : LOC126077674 - intergenic -Activin signaling is an early mesenchymal signal required for dentition patterning; Activin receptors IIA/IIB and Smad2 were studied in dental development. [Ferguson et al 2001]
+
+**Erb-b2 receptor k4** : LOC126078417 - INNE - ErbB4 is expressed during odontegenesis; the expression patterns of ErbB3/ErbB4 and neuregulin-1 were studied during dental development. [Fried et al 2002]
+
+**Neural cell adhesion** : LOC126060715 - intergenic -NCAM was described during the pre- and postnatal development of mouse incisors [Obara &  Takeda 1997]
+
+**Heparan** : LOC126077301 -intergenic - Heparan sulfate sulfations are involved in dentinogenesis and signaling interactions during dental development. [Hayano et al. 2012] Indirect link with SULT1E.
+
+**Cadherin 20 & 7** : LOC126085826 - INNE& inter - Cadherins are involved in cell organization during odontogenesis, but dental references mainly concern E-cadherin and N-cadherin. [Heymann et al 2002]
+
 </details>
 
 ## 4. GEMMA males-only GWAS mixed-model
