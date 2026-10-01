@@ -178,6 +178,13 @@ The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. A
 
 **Cadherin 20 & 7** : LOC126085826 - INNE& inter - Cadherins are involved in cell organization during odontogenesis, but dental references mainly concern E-cadherin and N-cadherin. [Heymann et al 2002]
 
+**Rho GTPase activating protein 6** : LOC126069583 - INNE - The amelogenin proteins regulate enamel mineral formation in the developing tooth. The human AMELX gene, which encodes the amelogenin proteins, is located within an intron of the Arhgap 6 gene. ARHGAP 6 encodes a Rho GAP, which regulates activity of Rho A, a small G protein involved in intracellular signal transduction. [Prakash et al. 2005]
+
+**Regulator of calcineurin 2** : LOC126081574 - INNE - RCANs function as potent physiological inhibitors of calcineurin. Overexpression of RCANs in osteoclast precursor cells attenuated osteoclast differentiation, while their overexpression in osteoblasts enhanced osteoblast differentiation and function. Intriguingly, opposing effects of RCANs in both cell types were shown by blocking activation of the calcineurin-NFATc1 pathway. Moreover, the disruption of RCAN1 or RCAN2 in mice resulted in reduced bone mass [Kim et al. 2016] . Other genes in the Plac8 co-expression gene set included Gchfr, Lrrc15,Sgms2,Cdkn1a,Creb3l1, and Rcan2 (Fig. 5f, red box), which have similar expression patterns to Plac8 (Fig.5g), indicating their molecular roles in incisor odontogenesis. [Wang et al. 2022]
+
+**Sulfotransferase 1E1-like** : LOC126077138 - intergenic - SULT1E protein is directly involved in estrogen inactivation by sulfatation [Wang et al. 2023]. Estrogen deficiency directly act on cytokin genetic expressionTNF-α, IL-1β, IL-6 et IL-10 during dentin development in mice. This estrogenic lack modified the expression of TNF-α et IL-1β in the odontogenic region in hypofonctional state [Domingos dos Anjos et al. 2023]. 
+
+**G-rich RNA sequence binding factor 1** : LOC126077101 - IENC - GRSF1 regulates RNA processing in mitochondrial RNA granules [Jourdain et al. 2013]
 </details>
 
 ## 4. GEMMA males-only GWAS mixed-model
