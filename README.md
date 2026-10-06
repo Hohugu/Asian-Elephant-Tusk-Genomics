@@ -328,7 +328,7 @@ Evidence_score_with_Het = 4
 
 These regions are compatible with selection or haplotypic differentiation between tusked and tuskless elephants. However, they do not prove selection. Genetic drift, residual population structure and technical artifacts cannot be fully excluded.
 
-## 10. Conclusion
+## 9. Conclusion
 
 This part identified three final candidate regions of TT/TX genomic differentiation. These regions were supported by multiple population-genomic signals, including FST, nucleotide diversity, Tajima’s D and observed heterozygosity.
 
