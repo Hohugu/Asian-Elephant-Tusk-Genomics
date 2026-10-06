@@ -143,6 +143,23 @@ Using 50-kb windows and the historical p99.9 threshold:
 All SNPs located in these candidate windows were extracted for annotation.
 The resulting FST-only candidate annotation contained 1,741 SNPs. Most were successfully assigned to an intragenic, exonic or nearest-gene context. A small set of variants located on currently unresolved contigs remains to be checked during the final annotation-completeness audit.
 
+### 4.2 Integrated male-only FST, Ho, π and Tajima's D scan
+
+FST, observed heterozygosity, nucleotide diversity and Tajima's D were also integrated in the male-only dataset.
+Under the exploratory strict 0.1% multi-metric framework, five FST-anchored regions were retained:
+
+| Region | Coordinates | Main supporting metrics | Main local annotation |
+|---|---|---|---|
+| PRIMARY_001 | CM044021.1:23200001-23250000 | FST + π | CDH18 |
+| PRIMARY_002 | CM044021.1:200750001-200850000 | FST + additional diversity signal | ZNF454 / MGAT2-like |
+| PRIMARY_003 | CM044024.1:93500001-93550000 | FST + additional diversity signal | TRNAK-UUU |
+| PRIMARY_004 | CM044024.1:164700001-164750000 | FST + Tajima's D | SORCS2-like |
+| PRIMARY_005 | CM044039.1:42550001-42600000 | FST + Tajima's D | SEC61A1 / RPL9-like |
+
+The five regions contained 2,828 unique SNPs, all of which were extracted and annotated.
+The annotation includes SNP-level FST values, genomic context, gene assignment and distance to the assigned gene. Coding SNPs were present in CDH18 and SEC61A1.
+These regions are useful as exploratory male-only candidates, but the 40 TT vs 6 TX sample-size imbalance can influence both allele-frequency and diversity estimates. This motivated the population-balanced 6v6 sensitivity analysis described below.
+
 ## 5. Population-balanced male-only sensitivity analysis
 
 To evaluate the robustness of the male-only results to the 40 vs 6 imbalance, a repeated balanced design was implemented. All six tuskless males were retained in every replicate. For each replicate, six tusked males were sampled while preserving population representation:
@@ -155,8 +172,78 @@ For each replicate, genome-wide FST, Ho, π and Tajima's D were recalculated. Ca
 - the recurrence of extreme windows across replicates.
 This balanced sensitivity analysis is used to identify candidate regions that are less dependent on the original group-size imbalance.
 
+### 5.1 Resampling design
 
-## 7. Local LD and allele-frequency refinement
+The male-only dataset was reanalysed using 100 balanced 6 TT vs 6 TX replicates/iterations.
+For every replicate:
+- all 6 TX males were retained;
+- 6 TT males were sampled (3 from India and 3 from Myanmar randomly);
+- population composition was balanced between India and Myanmar.
+Genome-wide FST, observed heterozygosity, nucleotide diversity and Tajima's D were recalculated independently in each replicate.
+
+### 5.2 Consensus signal and recurrence
+
+Two complementary quantities were used:
+1. the median value across the 100 replicates, which describes the typical signal;
+2. the proportion of replicates in which a window falls in an extreme tail, which measures recurrence.
+These two quantities should not be conflated: a window can have a strong median signal without being extreme in most individual resamples, and vice versa.
+
+The consensus empirical thresholds were:
+| Metric | 1% threshold | 0.1% threshold |
+|---|---:|---:|
+| FST | 0.1732936880 | 0.2522454709 |
+| ΔHo, lower tail | -0.1353420219 | -0.2152966895 |
+| ΔHo, upper tail | 0.1791663332 | 0.2683106876 |
+| Δπ, lower tail | -0.0009958934 | -0.0026413277 |
+| Δπ, upper tail | 0.0009917412 | 0.0025367984 |
+| ΔTajimaD, lower tail | -1.724626510 | -2.670842656 |
+| ΔTajimaD, upper tail | 1.614918310 | 2.3503501607 |
+
+### 5.3 Integrated candidate windows
+
+Candidate windows were defined using multi-metric convergence at the 0.1% level.
+The final strict set contained:
+- 37 windows supported by at least two extreme metrics;
+- 2 windows supported by at least three extreme metrics;
+- 0 windows supported by all four metrics;
+- 7 FST-anchored windows supported by FST plus at least one additional metric.
+
+A separate recurrence criterion identified 10 windows supported by at least two recurrent extreme metrics in at least 50% of resamples. All 10 were already contained within the 37 strict windows.
+One additional tail-contig window, JAMZQU010000059.1:100001-150000, was retained as an explicitly exploratory extreme-Ho signal.
+The final annotation universe therefore contained 38 windows.
+
+### 5.4 SNP-level extraction and annotation
+
+All SNPs located within the 38 candidate windows were extracted from the full QC dataset. This produced exactly:
+- 32,827 candidate-window SNPs;
+- 32,827 annotated SNPs.
+
+The annotation categories were:
+
+| Annotation category | Number of SNPs |
+|---|---:|
+| Intergenic, nearest gene assigned | 27,751 |
+| Non-coding intragenic, non-exonic | 4,207 |
+| Intragenic exonic CDS | 697 |
+| Intragenic exonic non-CDS | 172 |
+| **Total** | **32,827** |
+
+Among these variants, 869 SNPs were exonic.
+The phrase candidate-window SNPs is important: these 32,827 SNPs are all variants located inside candidate windows. They are not all individually extreme for FST or another statistic.
+
+### 5.5 Priority regional signals
+
+Priority regional plots were generated from the strongest integrated signals.
+Particularly notable regions include:
+
+- CM044026.1:48.60-48.65 Mb: strict three-metric convergence, including FST, Ho and Tajima's D;
+- CM044028.1:116.35-116.40 Mb: strict three-metric convergence involving Ho, π and Tajima's D;
+- CM044020.1:114.70-114.75 Mb: FST-anchored and highly recurrent;
+- several additional FST-anchored or recurrent multi-metric regions;
+- the exploratory JAMZQU tail-contig Ho signal.
+The current regional figures are considered working figures. Before final publication-level use, adjacent candidate windows should be merged consistently and SNP-level regional FST should be recalculated across the full local interval rather than only inside preselected candidate windows.
+
+## 6. Local LD and allele-frequency refinement
 
 This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions [SEE 30-38 scripts]. The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
 
@@ -167,7 +254,7 @@ priority-region variant tables
 delta allele-frequency ranked variants
 annotated top delta-AF variants
 
-## 8. XY selection signal annotation
+## 7. XY selection signal annotation
 
 These scripts extracted and summarized XY-linked or XY-enriched selection signals and annotated top candidate regions.
 The sex-linked signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration [SEE 39-41].
@@ -203,7 +290,20 @@ XY selection signal tables
 XY top-region annotation tables
 
 
-## 9. Final selection/differentiation candidate regions
+## 8. Final selection/differentiation candidate regions
+
+The annotation framework distinguishes:
+- coding CDS variants;
+- exonic non-CDS variants;
+- non-coding intragenic variants;
+- intergenic variants with nearest-gene assignment.
+For the current genome-wide analyses:
+- the male-only integrated scan contains 2,828 annotated candidate-region SNPs;
+- the male-only FST-only p99.9 scan contains 1,741 annotated candidate-region SNPs;
+- the balanced 6v6 scan contains 32,827 annotated candidate-window SNPs.
+The final annotation audit will explicitly verify, for every scan:
+number of SNPs expected → number of unique SNPs extracted → number annotated → number missing → number unresolved
+The goal is to ensure that no SNP returned by a genome-wide scan is lost before cross-analysis integration or biological interpretation.
 
 All the previous metrics are then integrated into a final candidate-region table. If one region is supported by multiple statistics, this region is prioritized and should be consider as a strong region.
 
