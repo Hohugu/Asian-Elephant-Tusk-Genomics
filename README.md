@@ -1,79 +1,160 @@
 # Selection and population differentiation scans
 
 ## 1. Introduction
-This part investigates genomic differentiation between tusked and tuskless Asian elephants using population-genomic summary statistics. The aim is to identify genomic regions showing consistent differentiation between phenotype groups, independently of the GWAS association tests. 
 
-The analyses focused on differents complementary signals : 
+This part investigates genomic differentiation between **tusked (TT)** and **tuskless (TX)** Asian elephants using population-genomic summary statistics. The aim is to identify genomic regions showing consistent differentiation between phenotype groups, independently of the GWAS association tests. 
 
-- Genome-wide FST scans.
+The analyses focused on several complementary signals : 
+
+- Genome-wide FST scans, to identify differences in allele frequencies between TT qnd TX groups.
+
+- Observed heterozygosity (Ho) to detect regions with local reductions in within-group heterozygosity.
+
+- Nucleotide diversity comparisons, to identify local reductions in genetic diversity.
   
-- Nucleotide diversity comparisons.
+- Tajima's D, to identify differences in the allele-frequency spectrum
   
-- Tajima's D, to identify shifts in the allele-frequency spectrum
-  
-- Observed heterozygosity to detect regions with reduced within-group heterozygosity.
+- Local linkage disequilibrium (LD) and allele-frequency differences for regional refinement
 
-- Local LD
+- Candidate-region annotation for SNP and gene-level annotation
 
-- Candidate-region annotation
+The objective is not to demonstrate selection directly, but to identify genomic regions showing convergent differentiation signals that can be prioritized for downstream biological interpretation. 
 
-These analyses are used to define candidate selection or reveal differentiation regions. 
-**TX and TT represent tuskless and tusked respectively.** 
+Three complementary analysis designs are considered : 
+  **(i).** An initial genome-wide TT vs TX scan using the full available sample.
+  **(ii).** A male-only analysis using all available males.
+  **(iii).** A population-balanced male-only sensitivity analysis based on repeated 6 TT vs 6 TX resampling.
 
-## 2. FST scan and FST candidate regions
+The distinction between these designs is important because the original phenotype groups were strongly imbalanced with respect to sex, whereas the male-only analyses remove this major source of confounding.
 
-Genome-wide FST is calculated in genomic windows to identify regions with elevated allele-frequency between tusked and tuskless elephants [SEE 01.FST_genomewide_TT_vs_TX.sh - 03.FST_make_windows.R]. FST scans identified genomic windows showing elevated differentiation between tusked and tuskless individuals [SEE 04.plot_FST_genomewide.R]. Then I summarized FST values in genomic windows, identified candidate FST-enriched regions, and annotated these regions with nearby genes [SEE 05.FST_merge_candidate_regions.R - 07.make_FST_candidate_regions_annotated.R].
+## 3. Initial all-individual genome-wide scan
+
+The first population-genomic scan compared all available tusked and tuskless individuals. This analysis provided the initial genome-wide FST, Ho, pi and Tajima's D candidate regions.
+
+However, the TT and TX groups were not balanced for sex: the tusked group was male, whereas most tuskless individuals were female. Consequently, some differentiation signals could reflect sex-linked structure rather than tusk phenotype alone.
+For this reason, these results are retained as the initial exploratory genome-wide scan, but they are complemented by male-only analyses.
+
+### 3.1 Genome-wide FST
+
+Genome-wide FST was calculated in genomic windows to identify regions with elevated allele-frequency between tusked and tuskless elephants [SEE 01.FST_genomewide_TT_vs_TX.sh - 03.FST_make_windows.R]. FST scans identified genomic windows showing elevated differentiation between tusked and tuskless individuals [SEE 04.plot_FST_genomewide.R]. Then I summarized FST values in genomic windows, identified candidate FST-enriched regions, and annotated these regions with nearby genes [SEE 05.FST_merge_candidate_regions.R - 07.make_FST_candidate_regions_annotated.R].
 These regions were used as the first layer of evidence for selection/differentiation candidate regions.
 
-FST candidate regions are then compared with GWAS signals, to test whether differentiated regions are located near GWAS-associated SNPs or candidate GWAS loci [SEE 08.compare_FST_vs_GWAS.R and 09.compare_FST_vs_GWAS_distance..R]. This step helped to distinct regions supported only by differentiation scans from regions also close to GWAS signals. These comparisons were later used during candidate-locus prioritization, but they are not equivalent to GWAS evidence.
+FST candidate regions were also compared with GWAS signals to test whether differentiated regions are located near GWAS-associated SNPs or candidate GWAS loci [SEE 08.compare_FST_vs_GWAS.R and 09.compare_FST_vs_GWAS_distance..R]. This step helped to distinct regions supported only by differentiation scans from regions also close to GWAS signals. These comparisons were later used during candidate-locus prioritization, but they are not equivalent to GWAS evidence.
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Genomewide_FST_1Mb_annotated.png" />
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig1_FST_50kb_GEMMA_Campbell_annotated.png" />
 
 SNPs with the higher FST values are located in chromosome 1, 3, 16 and among sexual chromosomes. Most GEMMA Bonferroni SNPs did not fall within the strongest FST windows, but some GWAS signals were located near Campbell candidate genes and close to differentiated regions.
-A high FST value usually means that allelic frequencies between tusked and tuskless individuals are differents. Thereby, if a GWAS GEMMA SNPs have a high FST value, then this GWAS SNPs is located inside a region where tusked and tuskless individuals are differents. Morevoer, a Bonferroni SNPs near to Campbell candidate gene and inside a high FST window, would suggest spatial concordance between GWAS association, TT/TX differentiation and prior tooth/tusk candidate genes.
+A high FST value usually means that allelic frequencies between tusked and tuskless individuals are differents. Thereby, if a GWAS GEMMA SNPs have a high FST value, then this GWAS SNPs is located inside a region where tusked and tuskless individuals are differents. Moreover, a Bonferroni SNPs near to Campbell candidate gene and inside a high FST window, would suggest spatial concordance between GWAS association, TT/TX differentiation and prior tooth/tusk candidate genes.
 
-## 3. Heterozygosity scan 
+### 3.2 Observed Heterozygosity  
 
-Observed heterozygosity is estimated across candidate regions to test whether differentiated windows also showed reduced heterozygosity in one tusk type [SEE 10
-heterozygosity_TT_TX.sh - 13.windowed_observed_heterozygosity.R]. 
-Observed heterozygosity is used as an additional evidence layer [SEE 14.add_Het_to_integrated_candidate_table.R and 15.plot_genomewide_delta_Ho.R].
+Observed heterozygosity was estimated to identify regions with reduced within-group genetic diversity [SEE 10.heterozygosity_TT_TX.sh - 15.plot_genomewide_delta_Ho.R].
+The comparison is expressed as : **ΔHo = Ho_TX - Ho_TT** 
+
+- **ΔHo < 0**, meaning that tuskless individuals display lower heterozygoty than tusked individuals.
+- **ΔHo > 0**, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity.
+- For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity.
+
+A local decrease in heterozygosity can be compatible with recent selection or the presence of a frequent local haplotype, but can also be produced by demographic structure, drift or technical effects It is therefore interpreted only as one component of a multi-metric signal
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_Ho_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig2_delta_Ho_50kb_GEMMA_Campbell_annotated.png" />
 
-Here, I computed the heterozygosity delta (ΔHo = Ho_TX - Ho_TT). If ΔHo < 0, meaning that tuskless individuals display lower heterozygoty than tusked individuals, and if ΔHo > 0, tusked individuals have lower heterozygosity than tuskless individuals. A local decrease of the heterozygosity can be associated with recent selection, frequent haplotype in a group, or a local lost of diversity. For a potential selection in tuskless individuals, I should observe a high FST and a ΔHo < 0, concluding on a real difference in the associated region and that tuskless individuals carry less local diversity. 
 Similar to mean FST graphs, SNPs with significant heterozygosity values are located in chromosome 22, 32 and among sexual chromosomes. 
 
 The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants.
 
-## 4. Nucleotide diversity scan
+### 3.3 Nucleotide diversity
 
-Nucleotide diversity is estimated for each tusk types and compared [SEE 16.compare_pi_TT_TX.R]. The difference Δπ (π_TX - π_TT) is then used to identify regions with one group showing a reduced local diversity [SEE 17.compare_pi_FST_GWAS.R and 18.annotate_reduced_pi_FST_overlap.R]. If Δπ <0, tuskless individuals have a lower nucleotidic diversity, while Δπ >0 means that tusked individuals have a lower nucleotidic diversity. For a recent selection in TX, high FST, negatif Δπ and ΔHo are expected and would suggest that tuskless individuals carry a more homogeneous haplotype in the associated region. For a selection in tusked individuals, high FST and positif Δπ and ΔHo are wanted meaning that diversity is lesser in tusked than tuskless individuals. 
+Nucleotide diversity was calculated for each tusk types and summarized as : 
+**Δπ = π_TX - π_TT** used to identify regions with one group showing a reduced local diversity 
+
+- **Δπ <0**: tuskless individuals have a lower nucleotidic diversity.
+- **Δπ >0**: tusked individuals have a lower nucleotidic diversity. 
+
+[SEE 16.compare_pi_TT_TX.R - 18.annotate_reduced_pi_FST_overlap.R]. For a recent selection in TX, high FST, negatif Δπ and ΔHo are expected and would suggest that tuskless individuals carry a more homogeneous haplotype in the associated region. For a selection in tusked individuals, high FST and positif Δπ and ΔHo are wanted meaning that diversity is lesser in tusked than tuskless individuals. 
+The interpretation of Δπ is directional. A negative Δπ indicates reduced local diversity in tuskless individuals, whereas a positive Δπ indicates reduced local diversity in tusked individuals.
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_pi_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig3_delta_pi_50kb_GEMMA_Campbell_annotated.png" />
 
-Here I can observed that four regions are negatif for the three last metrics : chr 22, 26 and 32 and among sexual chromosomes. 
+Here I can observed that four regions are negatives for the three last metrics : chr 22, 26 and 32 and among sexual chromosomes. 
 
-## 5. Tajima's D scan
+### 3.4 Tajima's D 
 
-The Tajima's D is calculated in genomic windows for each phenotype group [SEE 19.TajimaD_TT_TX.sh]. Differences in Tajima's D is used to detect regions where the allele-frequency spectrum differed between tusked and tuskless elephants. I have intersected Tajima’s D differences with FST and pi signals to be able to compare with other metrics [SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]. Tajima’s D differences were used as a third population-genomic evidence layer.
+The Tajima's D was calculated in genomic windows for each phenotype group [SEE 19.TajimaD_TT_TX.sh]. Differences in Tajima's D is used to detect regions where the allele-frequency spectrum differed between tusked and tuskless elephants. I have intersected Tajima’s D differences with FST and pi signals to be able to compare with other metrics [SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]. Tajima’s D differences were used as a third population-genomic evidence layer.
 
-About the Tajima's D, this metric compare two diversity forms : average diversity between sequences and the number of variants. A negatif Tajima's D means that there are an excess of rare variants which can be suitable with recent or sweep selection, demographic expansion or purify selection. A positif Tajima's D means that there is an excess of variants with intermediate frequency, and can be associated with balancing selection, population structure, bottleneck event or population mixature. In the following plots, ΔTajimaD (TajimaD_TX - TajimaD_TT) is displayed. Consequently, ΔTajimaD < 0 means that tuskless individuals have a lower Tajima's D than tusked ones and for a ΔTajimaD > 0, tusked individuals have a lower Tajima's D than tuskless individuals. 
+The comparison is expressed as : 
+**ΔTajimaD = TajimaD_TX - TajimaD_TT**
+
+- **ΔTajimaD < 0** : Tajima's D is lower in TX
+- **ΔTajimaD > 0** : Tajima's D is lower in TT
+
+[SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]
+
+About the Tajima's D, this metric compare two diversity forms : average diversity between sequences and the number of variants. A negatif Tajima's D can be associated with an excess of rare variants which can be suitable with recent or sweep selection, demographic expansion or purify selection. A positif Tajima's D means that there is an excess of variants with intermediate frequency, and can be associated with balancing selection, population structure, bottleneck event or population mixature.
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/TT_TX_delta_TajimaD_50kb_genomewide.png"/>
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Fig4_delta_TajimaD_50kb_GEMMA_Campbell_annotated.png" />
 
 **All the figures combining Bonferroni SNP GEMMA, Campbell candidate genes, and metrics were generated from [SEE 25bis.plot_genomewide_scans_with_GEMMA_Campbell.R]**.
 
-## 6. Convergent candidate regions and Campbell candidate genes
+### 3.5. Integrated Campbell candidate genes
 
 For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes [SEE 22-29 scripts]. The script 25bis was computed during this step.
 
 <img width="900" height="700" alt="image" src="https://github.com/Hohugu/Genomic-on-Asian-elephant-Tusk/blob/04.Selection-Differentiation-scans/Candidate_gene.png"/>
 
 The SNPs and the region on chromosome 3 that I have circled here are closed to Campbell candidate's genes but also for one of them displayed a high FST value. This particular SNP can also be found in other metrics with under 0 values for Heterozygosity, nucleotide diversity and Tajima's D metrics and strenghten thereby its potential association with tusk phenotype, in addition to be relatively close with AMELX. Moreover, this SNP is over the Bonferroni threshold in GEMMA mixed-GWAS (female and male included). Because this SNP is significant in the all-sample GEMMA model but not recovered as the same lead SNP in the male-only analysis, this signal may be influenced by sex composition or sex-linked genetic structure. It should therefore be interpreted cautiously and not as direct evidence for a female-carried causal mutation.
+
+Three final autosomal candidate regions were retained in the original all-individual analysis [SEE 42.make_final_selection_candidate_regions.R]:
+
+| Region | Coordinates | Top SNP | Max FST | Δπ | ΔTajimaD | Ho direction | Evidence score | Genes |
+|---|---|---|---:|---:|---:|---|---:|---|
+| FST_region_18 | CM044020.1:77800001-77850000 | CM044020.1:77845197:C:T | 0.162061 | -0.00195076 | -2.422898 | TX lower | 4 | LOC126077071; LOC126077054 |
+| FST_region_9 | CM044022.1:120700001-120750000 | CM044022.1:120714630:A:T | 0.139687 | -0.00145871 | -2.511417 | TX lower | 4 | no clear protein-coding gene |
+| FST_region_56 | CM044021.1:137050001-137100000 | CM044021.1:137060324:A:G | 0.137149 | -0.00138704 | -1.731080 | TX lower | 4 | no clear protein-coding gene |
+
+All three regions showed:
+- elevated differentiation;
+- reduced π in TX;
+- lower Tajima's D in TX;
+- lower observed heterozygosity in TX.
+These regions are compatible with local differentiation or selection-related processes, but they are not proof of selection. In addition, the sex imbalance in the original dataset requires these signals to be interpreted cautiously.
+
+## 4. Male-only genome-wide scan: 40 TT vs 6 TX
+
+A second genome-wide scan was therefore performed using only males (40 tusked males (TT) & 6 tuskless males (TX)). This removes the major sex-composition confound present in the original analysis, but introduces a strong sample-size imbalance between phenotype groups. The male-only analyses include:
+- genome-wide FST;
+- observed heterozygosity;
+- nucleotide diversity;
+- Tajima's D;
+- integrated multi-metric candidate windows;
+- SNP- and gene-level annotation.
+  
+### 4.1 Genome-wide FST
+
+A complete genome-wide FST analysis was repeated using only males. The final SNP-level FST table contained **21,295,223 SNPs**.
+To remain consistent with the original pipeline, negative FST estimates were excluded before calculating candidate-window summaries. Fixed non-overlapping windows were then generated, and empirical upper-tail thresholds were used to identify differentiated regions.
+Using 50-kb windows and the historical p99.9 threshold:
+- 86 candidate windows were identified;
+- these merged into 75 candidate regions.
+All SNPs located in these candidate windows were extracted for annotation.
+The resulting FST-only candidate annotation contained 1,741 SNPs. Most were successfully assigned to an intragenic, exonic or nearest-gene context. A small set of variants located on currently unresolved contigs remains to be checked during the final annotation-completeness audit.
+
+## 5. Population-balanced male-only sensitivity analysis
+
+To evaluate the robustness of the male-only results to the 40 vs 6 imbalance, a repeated balanced design was implemented. All six tuskless males were retained in every replicate. For each replicate, six tusked males were sampled while preserving population representation:
+- 3 TT males from India & 3 TT males from Myanmar randomly;
+- 3 TX males from India;
+- 3 TX males from Myanmar.
+This 6 TT vs 6 TX design was repeated 100 times.
+For each replicate, genome-wide FST, Ho, π and Tajima's D were recalculated. Candidate windows were then summarized across the 100 resamplings using both:
+- the median signal across replicates;
+- the recurrence of extreme windows across replicates.
+This balanced sensitivity analysis is used to identify candidate regions that are less dependent on the original group-size imbalance.
+
 
 ## 7. Local LD and allele-frequency refinement
 
