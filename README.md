@@ -151,6 +151,16 @@ Moreover, a SNP located on chromosome NC_064846.1 on gene lncRNA LOC126069593 (C
 
 The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. Among the candidate genes, MEP1B emerged as one of the strongest local signals. In the mixed GWAS, MEP1B showed a stronger within-gene association than MEP1A (p = 5.34E-03 versus p = 1.52E-02) and comparable suggestive associations within larger windows.
 
+**<ins>Bonferroni-significant SNPs on sex-linked scaffolds.<ins>**
+
+| Scaffold | SNP | GWAS p-value | Gene / annotation |
+|---|---|---:|---|
+| CM044047.1 | `57860099:C:G` to `57860123:C:T` | 2.13E-12 | `LOC126068943` — **tenomodulin (TNMD)** |
+| CM044047.1 | `144848375:A:C` | 7.25E-10 | `LOC126069437` — **dystrophin (DMD)** |
+| CM044047.1 | `154448329:G:T` | 1.46E-09 | `LOC126068977` — **PDK3** |
+| CM044047.1 | `170145312:G:T` | 1.56E-10 | `LOC126069593` — uncharacterized lncRNA |
+| CM044048.1 | `14979125:G:T` | 6.14E-10 | `LOC126069858` — **GLRA3-like** |
+
 <details>
   
 <summary>Show Gene related to SNPs with description and litterature</summary>
