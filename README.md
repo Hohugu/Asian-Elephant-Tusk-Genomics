@@ -27,14 +27,14 @@ Three complementary analysis designs are considered :
 
 The distinction between these designs is important because the original phenotype groups were strongly imbalanced with respect to sex, whereas the male-only analyses remove this major source of confounding.
 
-## 3. Initial all-individual genome-wide scan
+## 2. Initial all-individual genome-wide scan
 
 The first population-genomic scan compared all available tusked and tuskless individuals. This analysis provided the initial genome-wide FST, Ho, pi and Tajima's D candidate regions.
 
 However, the TT and TX groups were not balanced for sex: the tusked group was male, whereas most tuskless individuals were female. Consequently, some differentiation signals could reflect sex-linked structure rather than tusk phenotype alone.
 For this reason, these results are retained as the initial exploratory genome-wide scan, but they are complemented by male-only analyses.
 
-### 3.1 Genome-wide FST
+### 2.1 Genome-wide FST
 
 Genome-wide FST was calculated in genomic windows to identify regions with elevated allele-frequency between tusked and tuskless elephants [SEE 01.FST_genomewide_TT_vs_TX.sh - 03.FST_make_windows.R]. FST scans identified genomic windows showing elevated differentiation between tusked and tuskless individuals [SEE 04.plot_FST_genomewide.R]. Then I summarized FST values in genomic windows, identified candidate FST-enriched regions, and annotated these regions with nearby genes [SEE 05.FST_merge_candidate_regions.R - 07.make_FST_candidate_regions_annotated.R].
 These regions were used as the first layer of evidence for selection/differentiation candidate regions.
@@ -47,7 +47,7 @@ FST candidate regions were also compared with GWAS signals to test whether diffe
 SNPs with the higher FST values are located in chromosome 1, 3, 16 and among sexual chromosomes. Most GEMMA Bonferroni SNPs did not fall within the strongest FST windows, but some GWAS signals were located near Campbell candidate genes and close to differentiated regions.
 A high FST value usually means that allelic frequencies between tusked and tuskless individuals are differents. Thereby, if a GWAS GEMMA SNPs have a high FST value, then this GWAS SNPs is located inside a region where tusked and tuskless individuals are differents. Moreover, a Bonferroni SNPs near to Campbell candidate gene and inside a high FST window, would suggest spatial concordance between GWAS association, TT/TX differentiation and prior tooth/tusk candidate genes.
 
-### 3.2 Observed Heterozygosity  
+### 2.2 Observed Heterozygosity  
 
 Observed heterozygosity was estimated to identify regions with reduced within-group genetic diversity [SEE 10.heterozygosity_TT_TX.sh - 15.plot_genomewide_delta_Ho.R].
 The comparison is expressed as : **ΔHo = Ho_TX - Ho_TT** 
@@ -65,7 +65,7 @@ Similar to mean FST graphs, SNPs with significant heterozygosity values are loca
 
 The final candidate selection/differentiation regions showed reduced heterozygosity in tuskless elephants.
 
-### 3.3 Nucleotide diversity
+### 2.3 Nucleotide diversity
 
 Nucleotide diversity was calculated for each tusk types and summarized as : 
 **Δπ = π_TX - π_TT** used to identify regions with one group showing a reduced local diversity 
@@ -81,7 +81,7 @@ The interpretation of Δπ is directional. A negative Δπ indicates reduced loc
 
 Here I can observed that four regions are negatives for the three last metrics : chr 22, 26 and 32 and among sexual chromosomes. 
 
-### 3.4 Tajima's D 
+### 2.4 Tajima's D 
 
 The Tajima's D was calculated in genomic windows for each phenotype group [SEE 19.TajimaD_TT_TX.sh]. Differences in Tajima's D is used to detect regions where the allele-frequency spectrum differed between tusked and tuskless elephants. I have intersected Tajima’s D differences with FST and pi signals to be able to compare with other metrics [SEE 20.compare_TajimaD_TT_TX.R and 21.intersect_FST_pi_TajimaD.R]. Tajima’s D differences were used as a third population-genomic evidence layer.
 
@@ -100,7 +100,7 @@ About the Tajima's D, this metric compare two diversity forms : average diversit
 
 **All the figures combining Bonferroni SNP GEMMA, Campbell candidate genes, and metrics were generated from [SEE 25bis.plot_genomewide_scans_with_GEMMA_Campbell.R]**.
 
-### 3.5. Integrated Campbell candidate genes
+### 2.5. Integrated Campbell candidate genes
 
 For this part, I combined FST, nucleotide diversity and Tajima's D candidate regions with annotated convergent regions. Then I compared selection/differentiation signals with Campbell's candidate genes, to assess whether these regions are closed to Campbell's genes [SEE 22-29 scripts]. The script 25bis was computed during this step.
 
@@ -123,7 +123,7 @@ All three regions showed:
 - lower observed heterozygosity in TX.
 These regions are compatible with local differentiation or selection-related processes, but they are not proof of selection. In addition, the sex imbalance in the original dataset requires these signals to be interpreted cautiously.
 
-## 4. Male-only genome-wide scan: 40 TT vs 6 TX
+## 3. Male-only genome-wide scan: 40 TT vs 6 TX
 
 A second genome-wide scan was therefore performed using only males (40 tusked males (TT) & 6 tuskless males (TX)). This removes the major sex-composition confound present in the original analysis, but introduces a strong sample-size imbalance between phenotype groups. The male-only analyses include:
 - genome-wide FST;
@@ -133,7 +133,7 @@ A second genome-wide scan was therefore performed using only males (40 tusked ma
 - integrated multi-metric candidate windows;
 - SNP- and gene-level annotation.
   
-### 4.1 Genome-wide FST
+### 3.1 Genome-wide FST
 
 A complete genome-wide FST analysis was repeated using only males. The final SNP-level FST table contained **21,295,223 SNPs**.
 To remain consistent with the original pipeline, negative FST estimates were excluded before calculating candidate-window summaries. Fixed non-overlapping windows were then generated, and empirical upper-tail thresholds were used to identify differentiated regions.
@@ -143,7 +143,7 @@ Using 50-kb windows and the historical p99.9 threshold:
 All SNPs located in these candidate windows were extracted for annotation.
 The resulting FST-only candidate annotation contained 1,741 SNPs. Most were successfully assigned to an intragenic, exonic or nearest-gene context. A small set of variants located on currently unresolved contigs remains to be checked during the final annotation-completeness audit.
 
-### 4.2 Integrated male-only FST, Ho, π and Tajima's D scan
+### 3.2 Integrated male-only FST, Ho, π and Tajima's D scan
 
 FST, observed heterozygosity, nucleotide diversity and Tajima's D were also integrated in the male-only dataset.
 Under the exploratory strict 0.1% multi-metric framework, five FST-anchored regions were retained:
@@ -160,7 +160,7 @@ The five regions contained 2,828 unique SNPs, all of which were extracted and an
 The annotation includes SNP-level FST values, genomic context, gene assignment and distance to the assigned gene. Coding SNPs were present in CDH18 and SEC61A1.
 These regions are useful as exploratory male-only candidates, but the 40 TT vs 6 TX sample-size imbalance can influence both allele-frequency and diversity estimates. This motivated the population-balanced 6v6 sensitivity analysis described below.
 
-## 5. Population-balanced male-only sensitivity analysis
+## 4. Population-balanced male-only sensitivity analysis
 
 To evaluate the robustness of the male-only results to the 40 vs 6 imbalance, a repeated balanced design was implemented. All six tuskless males were retained in every replicate. For each replicate, six tusked males were sampled while preserving population representation:
 - 3 TT males from India & 3 TT males from Myanmar randomly;
@@ -172,7 +172,7 @@ For each replicate, genome-wide FST, Ho, π and Tajima's D were recalculated. Ca
 - the recurrence of extreme windows across replicates.
 This balanced sensitivity analysis is used to identify candidate regions that are less dependent on the original group-size imbalance.
 
-### 5.1 Resampling design
+### 4.1 Resampling design
 
 The male-only dataset was reanalysed using 100 balanced 6 TT vs 6 TX replicates/iterations.
 For every replicate:
@@ -181,7 +181,7 @@ For every replicate:
 - population composition was balanced between India and Myanmar.
 Genome-wide FST, observed heterozygosity, nucleotide diversity and Tajima's D were recalculated independently in each replicate.
 
-### 5.2 Consensus signal and recurrence
+### 4.2 Consensus signal and recurrence
 
 Two complementary quantities were used:
 1. the median value across the 100 replicates, which describes the typical signal;
@@ -199,7 +199,7 @@ The consensus empirical thresholds were:
 | ΔTajimaD, lower tail | -1.724626510 | -2.670842656 |
 | ΔTajimaD, upper tail | 1.614918310 | 2.3503501607 |
 
-### 5.3 Integrated candidate windows
+### 4.3 Integrated candidate windows
 
 Candidate windows were defined using multi-metric convergence at the 0.1% level.
 The final strict set contained:
@@ -212,7 +212,7 @@ A separate recurrence criterion identified 10 windows supported by at least two 
 One additional tail-contig window, JAMZQU010000059.1:100001-150000, was retained as an explicitly exploratory extreme-Ho signal.
 The final annotation universe therefore contained 38 windows.
 
-### 5.4 SNP-level extraction and annotation
+### 4.4 SNP-level extraction and annotation
 
 All SNPs located within the 38 candidate windows were extracted from the full QC dataset. This produced exactly:
 - 32,827 candidate-window SNPs;
@@ -231,7 +231,7 @@ The annotation categories were:
 Among these variants, 869 SNPs were exonic.
 The phrase candidate-window SNPs is important: these 32,827 SNPs are all variants located inside candidate windows. They are not all individually extreme for FST or another statistic.
 
-### 5.5 Priority regional signals
+### 4.5 Priority regional signals
 
 Priority regional plots were generated from the strongest integrated signals.
 Particularly notable regions include:
@@ -243,7 +243,7 @@ Particularly notable regions include:
 - the exploratory JAMZQU tail-contig Ho signal.
 The current regional figures are considered working figures. Before final publication-level use, adjacent candidate windows should be merged consistently and SNP-level regional FST should be recalculated across the full local interval rather than only inside preselected candidate windows.
 
-## 6. Local LD and allele-frequency refinement
+## 5. Local LD and allele-frequency refinement
 
 This step refined candidate regions by identifying local allele-frequency patterns and LD structure within differentiated genomic intervals. For that I summarized local LD and allele-frequency differences within priority candidate regions [SEE 30-38 scripts]. The script and the methodology was insipired from : https://cloufield.github.io/GWASTutorial/19_ld/.
 
@@ -254,7 +254,7 @@ priority-region variant tables
 delta allele-frequency ranked variants
 annotated top delta-AF variants
 
-## 7. XY selection signal annotation
+## 6. XY selection signal annotation
 
 These scripts extracted and summarized XY-linked or XY-enriched selection signals and annotated top candidate regions.
 The sex-linked signals were retained as an additional selection/differentiation evidence layer and were later used during rare-variant and final candidate-locus integration [SEE 39-41].
@@ -290,7 +290,7 @@ XY selection signal tables
 XY top-region annotation tables
 
 
-## 8. Final selection/differentiation candidate regions
+## 7. Final selection/differentiation candidate regions
 
 The annotation framework distinguishes:
 - coding CDS variants;
@@ -328,7 +328,7 @@ Evidence_score_with_Het = 4
 
 These regions are compatible with selection or haplotypic differentiation between tusked and tuskless elephants. However, they do not prove selection. Genetic drift, residual population structure and technical artifacts cannot be fully excluded.
 
-## 9. Conclusion
+## 8. Conclusion
 
 This part identified three final candidate regions of TT/TX genomic differentiation. These regions were supported by multiple population-genomic signals, including FST, nucleotide diversity, Tajima’s D and observed heterozygosity.
 
