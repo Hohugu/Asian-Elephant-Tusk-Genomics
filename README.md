@@ -148,13 +148,14 @@ The resulting FST-only candidate annotation contained 1,741 SNPs. Most were succ
 FST, observed heterozygosity, nucleotide diversity and Tajima's D were also integrated in the male-only dataset.
 Under the exploratory strict 0.1% multi-metric framework, five FST-anchored regions were retained:
 
-| Region | Coordinates | Main supporting metrics | Main local annotation |
-|---|---|---|---|
-| PRIMARY_001 | CM044021.1:23200001-23250000 | FST + π | CDH18 |
-| PRIMARY_002 | CM044021.1:200750001-200850000 | FST + additional diversity signal | ZNF454 / MGAT2-like |
-| PRIMARY_003 | CM044024.1:93500001-93550000 | FST + additional diversity signal | TRNAK-UUU |
-| PRIMARY_004 | CM044024.1:164700001-164750000 | FST + Tajima's D | SORCS2-like |
-| PRIMARY_005 | CM044039.1:42550001-42600000 | FST + Tajima's D | SEC61A1 / RPL9-like |
+| Region | Coordinates | Strict 0.1% metrics | Broader 1% metrics | Main local annotation |
+|---|---|---|---|---|
+| PRIMARY_001 | CM044021.1:23200001-23250000 | FST + nucleotide diversity | FST + heterozygosity + nucleotide diversity | CDH18 |
+| PRIMARY_002a | CM044021.1:200750001-200800000 | FST + Tajima's D | FST + heterozygosity + nucleotide diversity + Tajima's D | ZNF454 / MGAT2-like region |
+| PRIMARY_002b | CM044021.1:200800001-200850000 | FST + nucleotide diversity + Tajima's D | FST + heterozygosity + nucleotide diversity + Tajima's D | ZNF454 / MGAT2-like region |
+| PRIMARY_003 | CM044024.1:93500001-93550000 | FST + Tajima's D | FST + heterozygosity + nucleotide diversity + Tajima's D | TRNAK-UUU region |
+| PRIMARY_004 | CM044024.1:164700001-164750000 | FST + Tajima's D | FST + nucleotide diversity + Tajima's D | SORCS2-like |
+| PRIMARY_005 | CM044039.1:42550001-42600000 | FST + Tajima's D | FST + heterozygosity + Tajima's D | SEC61A1 / RPL9-like |
 
 The five regions contained 2,828 unique SNPs, all of which were extracted and annotated.
 The annotation includes SNP-level FST values, genomic context, gene assignment and distance to the assigned gene. Coding SNPs were present in CDH18 and SEC61A1.
@@ -242,6 +243,16 @@ Particularly notable regions include:
 - several additional FST-anchored or recurrent multi-metric regions;
 - the exploratory JAMZQU tail-contig Ho signal.
 The current regional figures are considered working figures. Before final publication-level use, adjacent candidate windows should be merged consistently and SNP-level regional FST should be recalculated across the full local interval rather than only inside preselected candidate windows.
+
+| Coordinates | Strict 0.1% metrics | Median FST | Median ΔHo | Median Δπ | Median ΔTajimaD |
+|---|---|---:|---:|---:|---:|
+| CM044026.1:48600001-48650000 | FST + Ho + TajimaD | 0.3883192 | -0.2468348 | -0.001022123 | -2.811294 |
+| CM044020.1:114700001-114750000 | FST + TajimaD | 0.3841758 | -0.1619718 | -0.001229542 | -3.563275 |
+| CM044039.1:42550001-42600000 | FST + TajimaD | 0.2784752 | 0.2029672 | 0.000748180 | 3.332765 |
+| CM044027.1:84850001-84900000 | FST + TajimaD | 0.2782997 | -0.1110926 | -0.001201060 | -2.923185 |
+| CM044026.1:55800001-55850000 | FST + nucleotide diversity | 0.2774050 | -0.2050883 | -0.009441868 | -2.127157 |
+| CM044024.1:78450001-78500000 | FST + TajimaD | 0.2808902 | -0.1759868 | -0.000565607 | -3.216030 |
+| CM044024.1:164700001-164750000 | FST + TajimaD | 0.2860438 | 0.1702142 | 0.001772594 | 2.377594 |
 
 ## 5. Local LD and allele-frequency refinement
 
