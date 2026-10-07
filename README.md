@@ -172,7 +172,7 @@ The Campbell candidate gene analysis was expanded to include MEP1B and PLA2G7. A
 **CALB2** :  LOC126064930 - INNE -  PMID 39881289 — Comparative evaluation of calretinin immunohistochemical expression in calcifying odontogenic cyst and ameloblastoma (2025) ; PMID 16270201 — Calcium transport in human salivary glands: a proposed model of calcium secretion into saliva (2006). CALB2/calretinin and other calcium-binding proteins are reported from dental epithelial tissues, including the ameolar epithelium. [Korkmaz et al 2010]
 
 
-**PDK3** : PMID 34586189 — Odontogenic gene expression profile of human dental pulp-derived cells under high glucose influence: a microarray analysis (2021)
+**PDK3** : PMID 34586189 — Odontogenic gene expression profile of human dental pulp-derived cells under high glucose influence: a microarray analysis (2021). Mutation in PDK3 (pyruvate deshydrogenase kinase 3) causing Charcot-Marie-Tooth disease.
 
 **TNMD** : PMID 27811845 — Dental pulp stem cells express tendon markers under mechanical loading and are a potential cell source for tissue engineering of tendon-like tissue (2016) ; PMID 24079397 — GDFs promote tenogenic characteristics on human periodontal ligament-derived cells in culture at late passages (2013) ; PMID 34476994 — Mesenchymal Stem Cell Sheets for Engineering of the Tendon-Bone Interface (2022) ; PMID 25978185 — Expression of DMP1 in the developing mouse tongue embryo (2015) ; PMID 21627568 — Effect of in vitro passaging on the stem cell-related properties of tendon-derived stem cells-implications in tissue engineering (2012)
 
